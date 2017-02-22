@@ -79,7 +79,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Mi Primer Proyecto Web
+                    Mi Primer Proyecto
                 </div>
 
                 <div class="links">
