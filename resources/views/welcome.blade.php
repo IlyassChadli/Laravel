@@ -79,7 +79,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Mi Primer Proyecto
+                citas de pacientes
                 </div>
 
                 <div class="links">
