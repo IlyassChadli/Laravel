@@ -14,7 +14,7 @@
     <style>
         html, body {
             background-color: #fff;
-            background-image:linear-gradient(up );
+
             color: #636b6f;
             font-family: 'Raleway', sans-serif;
             font-weight: 100;
@@ -66,13 +66,13 @@
         }
     </style>
 </head>
-<body>
-<header style="background-color: #fff"> <div class="flex-center" style="margin-top: auto; align-content: center">
+<body style="background-color: #080808">
+<header style="background-color: #080808"> <div class="flex-center" style="margin-top: auto; align-content: center">
 
-        <h1> Gestor Clínico </h1> </div> </header>
+        <h1 class="links"> GestMED </h1> </div> </header>
 
 <hr>
-<nav class=" flex-center" style="background-color: #fff;">
+<nav class=" flex-center" style="background-color: #080808;">
     <table>
         <tr>
             <td>    <a href="{{ url('/objetivos') }}" style="color: #cccccc; "><b>  Objetivos  </b></a> &nbsp;&nbsp;&nbsp; </td>
@@ -86,33 +86,33 @@
 <br>
 
 <main class="flex-center  m-b-md" style="background-color: #000;">
-    <h1>Presentación</h1>
+    <h1 style="color: #2ca02c">Presentación</h1>
 </main>
 <div>
 
 
 
-    <article class="content" style="margin-right:250px;margin-left: 250px; ">
-        <h1>Clínica Equis</h1>
-        <div  style=" color: #880000; text-align: justify; "><b><p>Desde la nueva Clínica Equis, nos llega la propuesta de desarrollar un herramienta
+    <article class="content" style=" background-color:#000 ;margin-right:250px;margin-left: 250px; ">
+        <h1 style="color: #cccccc;">Clínica Equis</h1>
+        <div  style=" color:  #cccccc; "><b><p>Desde la nueva Clínica Equis, nos llega la propuesta de desarrollar un herramienta
                     que les ayude en la gestión de la clínica con la siguentes caracteristicas:.</p> </b>
-            <table>
+            <table >
                 <b>La herramienta será usada para :</b >
-                    <ul  style=" color: #880000; text-align: justify; "><b>Por Admins:</b>
+                    <ul  style=" color:  #cccccc; text-align: justify; "><b>Por Admins:</b>
                         <li>El registro de Clientes</li>
                         <li>Gestionar las citas de los Clientes</li>
                     </ul>
-                    <ul  style=" color: #880000; text-align: justify; "><b>Por Medicos:</b>
+                    <ul  style=" color:  #cccccc; text-align: justify; "><b>Por Medicos:</b>
                         <li>Solicitar pruebas para un Paciente (si son necesarias)</li>
                         <li>Consultar el informe de resultados del laboratorio correspondiente a un paciente</li>
 
                     </ul>
-                    <ul  style=" color: #880000; text-align: justify; "><b>Por Personal de Laboratorio:</b>
+                    <ul  style=" color:  #cccccc; text-align: justify; "><b>Por Personal de Laboratorio:</b>
                         <li>Realizara la pruebas de la solicitud</li>
                         <li>El Facultativo del laboratorio validará los informes </li>
 
                     </ul>
-                    <ul  style=" color: #880000; text-align: justify; "><b>Por Clientes</b>
+                    <ul  style=" color: #cccccc; text-align: justify; "><b>Por Clientes</b>
                         <li>Los Clientes podran pedir una cita, anularla</li>
                         <li>Podra solicitar el informe de resultados </li>
 
@@ -120,7 +120,10 @@
 
             </table>
 
+            <table >
+                <img style="background-color: #080808; width: auto;  height: auto" src="../images/cruz.png">
 
+            </table>
         </div>
     </article>
 
