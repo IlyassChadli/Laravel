@@ -1,95 +1,132 @@
 <!DOCTYPE html>
 <html lang="{{ config('app.locale') }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+    <title>Mi primer App</title>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
+    <!-- Styles -->
+    <style>
+        html, body {
+            background-color: #fff;
+            background-image:linear-gradient(up );
+            color: #636b6f;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 100;
+            height: 100vh;
+            margin: 0;
+        }
 
-            .full-height {
-                height: 100vh;
-            }
+        .full-height {
+            height: 100vh;
+        }
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
+        .flex-center {
+            align-items: center;
+            display: flex;
+            justify-content: center;
+        }
 
-            .position-ref {
-                position: relative;
-            }
+        .position-ref {
+            position: relative;
+        }
 
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
+        .top-right {
+            position: absolute;
+            right: 10px;
+            top: 18px;
+        }
 
-            .content {
-                text-align: center;
-            }
+        .content {
+            text-align: center;
+            size: 15;
+        }
 
-            .title {
-                font-size: 84px;
-            }
+        .title {
+            font-size: 84px;
+        }
 
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
+        .links > a {
+            color: #636b6f;
+            padding: 0 25px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: .1rem;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
 
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @if (Auth::check())
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ url('/login') }}">Login</a>
-                        <a href="{{ url('/register') }}">Register</a>
-                    @endif
-                </div>
-            @endif
+        .m-b-md {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+<header style="background-color: #fff"> <div class="flex-center" style="margin-top: auto; align-content: center">
 
-            <div class="content">
-                <div class="title m-b-md">
-                citas de pacientes
-                </div>
+        <h1> Gestor Clínico </h1> </div> </header>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
-            </div>
+<hr>
+<nav class=" flex-center" style="background-color: #fff;">
+    <table>
+        <tr>
+            <td>    <a href="{{ url('/objetivos') }}" style="color: #cccccc; "><b>  Objetivos  </b></a> &nbsp;&nbsp;&nbsp; </td>
+            <td>    <a href="{{ url('/autores') }}" style="color: #cccccc;"> <b> Autores  </b></a> &nbsp;&nbsp;&nbsp;</td>
+            <td>    <a href="{{ url('/registro') }}"style="color: #cccccc;"> <b> Registro</b></a> &nbsp;&nbsp;&nbsp;</td>
+        </tr>
+    </table>
+</nav>
+
+<hr>
+<br>
+
+<main class="flex-center  m-b-md" style="background-color: #000;">
+    <h1>Presentación</h1>
+</main>
+<div>
+
+
+
+    <article class="content" style="margin-right:250px;margin-left: 250px; ">
+        <h1>Clínica Equis</h1>
+        <div  style=" color: #880000; text-align: justify; "><b><p>Desde la nueva Clínica Equis, nos llega la propuesta de desarrollar un herramienta
+                    que les ayude en la gestión de la clínica con la siguentes caracteristicas:.</p> </b>
+            <table>
+                <b>La herramienta será usada para :</b >
+                    <ul  style=" color: #880000; text-align: justify; "><b>Por Admins:</b>
+                        <li>El registro de Clientes</li>
+                        <li>Gestionar las citas de los Clientes</li>
+                    </ul>
+                    <ul  style=" color: #880000; text-align: justify; "><b>Por Medicos:</b>
+                        <li>Solicitar pruebas para un Paciente (si son necesarias)</li>
+                        <li>Consultar el informe de resultados del laboratorio correspondiente a un paciente</li>
+
+                    </ul>
+                    <ul  style=" color: #880000; text-align: justify; "><b>Por Personal de Laboratorio:</b>
+                        <li>Realizara la pruebas de la solicitud</li>
+                        <li>El Facultativo del laboratorio validará los informes </li>
+
+                    </ul>
+                    <ul  style=" color: #880000; text-align: justify; "><b>Por Clientes</b>
+                        <li>Los Clientes podran pedir una cita, anularla</li>
+                        <li>Podra solicitar el informe de resultados </li>
+
+                    </ul>
+
+            </table>
+
+
         </div>
-    </body>
+    </article>
+
+
+
+
+</div>
+</body>
 </html>

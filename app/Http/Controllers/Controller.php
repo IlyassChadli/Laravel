@@ -12,8 +12,5 @@ class Controller extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 }
 
-public funnction index(){
 
-    $pacientes = Pacientes::all()
-    return view('pacientes/index')
-}
+

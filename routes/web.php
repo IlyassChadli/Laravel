@@ -14,3 +14,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/objetivos', function () {
+    return view('objetivos');
+});
+Route::get('/autores', function () {
+    return view('autores');
+});
+Route::get('/registro', function () {
+    return view('registro');
+});
