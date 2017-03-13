@@ -23,3 +23,6 @@ Route::get('/autores', function () {
 Route::get('/registro', function () {
     return view('registro');
 });
+
+Route::resource('medicos',MedicoController);
+

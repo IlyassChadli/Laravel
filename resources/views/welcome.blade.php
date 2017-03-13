@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Mi primer App</title>
+    <title>GESTMED - Inicio</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -13,7 +13,7 @@
     <!-- Styles -->
     <style>
         html, body {
-            background-color: #fff;
+            background-color: #080808;
 
             color: #636b6f;
             font-family: 'Raleway', sans-serif;
@@ -66,7 +66,7 @@
         }
     </style>
 </head>
-<body style="background-color: #080808">
+<body>
 <header style="background-color: #080808"> <div class="flex-center" style="margin-top: auto; align-content: center">
 
         <h1 class="links"> GestMED </h1> </div> </header>
@@ -88,31 +88,31 @@
 <main class="flex-center  m-b-md" style="background-color: #000;">
     <h1 style="color: #2ca02c">Presentación</h1>
 </main>
-<div>
+<div >
 
 
 
     <article class="content" style=" background-color:#000 ;margin-right:250px;margin-left: 250px; ">
-        <h1 style="color: #cccccc;">Clínica Equis</h1>
+        <h1 style="color: #2ca02c; size: 35;">Clínica Equis</h1>
         <div  style=" color:  #cccccc; "><b><p>Desde la nueva Clínica Equis, nos llega la propuesta de desarrollar un herramienta
                     que les ayude en la gestión de la clínica con la siguentes caracteristicas:.</p> </b>
-            <table >
-                <b>La herramienta será usada para :</b >
-                    <ul  style=" color:  #cccccc; text-align: justify; "><b>Por Admins:</b>
+            <table style="color: #2ca02c; " >
+                <b >La herramienta será usada para :</b >
+                    <ul  style="  text-align: justify; "><b>Por Admins:</b>
                         <li>El registro de Clientes</li>
                         <li>Gestionar las citas de los Clientes</li>
                     </ul>
-                    <ul  style=" color:  #cccccc; text-align: justify; "><b>Por Medicos:</b>
+                    <ul  style="; text-align: justify; "><b>Por Medicos:</b>
                         <li>Solicitar pruebas para un Paciente (si son necesarias)</li>
                         <li>Consultar el informe de resultados del laboratorio correspondiente a un paciente</li>
 
                     </ul>
-                    <ul  style=" color:  #cccccc; text-align: justify; "><b>Por Personal de Laboratorio:</b>
+                    <ul  style=" text-align: justify; "><b>Por Personal de Laboratorio:</b>
                         <li>Realizara la pruebas de la solicitud</li>
                         <li>El Facultativo del laboratorio validará los informes </li>
 
                     </ul>
-                    <ul  style=" color: #cccccc; text-align: justify; "><b>Por Clientes</b>
+                    <ul  style=" text-align: justify; "><b>Por Clientes</b>
                         <li>Los Clientes podran pedir una cita, anularla</li>
                         <li>Podra solicitar el informe de resultados </li>
 
@@ -121,7 +121,7 @@
             </table>
 
             <table >
-                <img style="background-color: #080808; width: auto;  height: auto" src="../images/cruz.png">
+                <img style="background-color: #080808; width: auto;  height: auto;" src="../images/clinica.png">
 
             </table>
         </div>
@@ -131,5 +131,18 @@
 
 
 </div>
+
+<hr>
+<nav class=" flex-center" style="background-color: #080808;">
+    <table>
+        <tr>
+            <td>    <a href="{{ url('/objetivos') }}" style="color: #cccccc; "><b>  Objetivos  </b></a> &nbsp;&nbsp;&nbsp; </td>
+            <td>    <a href="{{ url('/autores') }}" style="color: #cccccc;"> <b> Autores  </b></a> &nbsp;&nbsp;&nbsp;</td>
+            <td>    <a href="{{ url('/registro') }}"style="color: #cccccc;"> <b> Registro</b></a> &nbsp;&nbsp;&nbsp;</td>
+        </tr>
+    </table>
+</nav>
+
+<hr>
 </body>
 </html>
