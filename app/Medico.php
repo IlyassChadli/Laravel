@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Medico extends Model
 {
-    protected $fillable = [ 'DNI','consulta_id','numeroColegiado', 'especialidad'];
+    protected $fillable = [ 'dni','consulta_id','numeroColegiado', 'especialidad'];
 
 
     public function getNmroColegiado()
