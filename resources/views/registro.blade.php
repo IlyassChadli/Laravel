@@ -5,7 +5,11 @@
  * Date: 02/03/2017
  * Time: 20:23
  */?><!DOCTYPE html>
+<<<<<<< HEAD
 < lang="{{ config('app.locale') }}">
+=======
+<div lang="{{ config('app.locale') }}">
+>>>>>>> origin/master
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -89,6 +93,7 @@
     </table>
 </nav>
 
+<<<<<<< HEAD
 <div style="position: static; color: #3c763d ">
 
     <form id="datos_paciente" action="">
@@ -156,6 +161,29 @@
             </div>
         </div>
     </div>
+=======
+
+<div class="flex-center">
+
+    <form  id="contact_form " action="#" method="POST" enctype="multipart/form-data" style="margin-top: auto; align-content: center">
+        <div class="row">
+        <label for="name">Tu nombre:</label></br>
+        <input id="name" class="input" name="name" type="text" value="" size="30" /></br>
+        </div>
+</br>
+    <div class="row">
+        <label for="email">Tu email:</label><br />
+        <input id="email" class="input" name="email" type="text" value="" size="30" /></br>
+    </div>
+    </br>
+    <div class="row">
+        <label for="message">Tu Passwor:</label><br />
+        <input id="name" class="input" name="name" type="password" value="" size="30" /></br>
+    </div>
+    </br>
+    <input id="submit_button" type="submit" value="Registrar" />
+</form>
+>>>>>>> origin/master
 </div>
 </br>
 </br>

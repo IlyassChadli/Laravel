@@ -20,8 +20,7 @@ class CreateMedicosTable extends Migration
             $table->string('especialidad');
             $table->timestamps();
 
-        });
-    }
+        });}
 
     /**
      * Reverse the migrations.
@@ -30,6 +29,8 @@ class CreateMedicosTable extends Migration
      */
     public function down()
     {
+
         Schema::dropIfExists('medicos');
+
     }
 }

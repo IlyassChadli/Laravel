@@ -24,4 +24,8 @@ Route::get('/registro', function () {
     return view('registro');
 });
 
+<<<<<<< HEAD
+=======
+Route::resource('medicos','MedicoController');
+>>>>>>> origin/master
 
