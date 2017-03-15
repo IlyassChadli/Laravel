@@ -15,10 +15,10 @@ class CreatePacientesTable extends Migration
     {
         Schema::create('pacientes', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nombre');
+            $table->string('dni');
+            $table->integer('numPaciente');
             $table->timestamps();
-
-
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
         });
     }

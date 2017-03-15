@@ -15,12 +15,15 @@ class CreateMedicosTable extends Migration
     {
         Schema::create('medicos', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+            $table->string('dni');
             $table->Integer('numColegiado');
-            $table->string('especialidad');
+            $table->string('consulta');
+            $table->Integer('sueldo');
             $table->timestamps();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('consulta_id')->references('id')->on('consultas')->onDelete('cascade');
 
-        });}
+        });    }
 
     /**
      * Reverse the migrations.
@@ -29,8 +32,6 @@ class CreateMedicosTable extends Migration
      */
     public function down()
     {
-
-        Schema::dropIfExists('medicos');
-
+        Schema::drop('medicos');
     }
 }
