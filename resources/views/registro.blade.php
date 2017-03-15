@@ -165,7 +165,7 @@
 
 <div class="flex-center">
 
-    <form  id="contact_form " action="#" method="POST" enctype="multipart/form-data" style="margin-top: auto; align-content: center">
+    <form  id="contact_form " action= "" method="POST" enctype="multipart/form-data" style="margin-top: auto; align-content: center">
         <div class="row">
         <label for="name">Tu nombre:</label></br>
         <input id="name" class="input" name="name" type="text" value="" size="30" /></br>
