@@ -92,7 +92,19 @@
 
 <div class="flex-center">
 
-    <form  id="contact_form " action= "" method="POST" enctype="multipart/form-data" style="margin-top: auto; align-content: center">
+    @foreach ($medicos as $medico)
+    <tr>
+        <td>{{ $medico->name }}</td>
+        <td>{{ $medico->surname }}</td>
+        <td>{{ $medico->especialidad->name }}</td>
+
+        <td>
+            {!! Form::open(['route' => ['medicos.edit',$medico->id], 'method' => 'get']) !!}
+            {!!   Form::submit('Editar', ['class'=> 'btn btn-warning'])!!}
+            {!! Form::close() !!}
+        </td>
+
+    <!--<form  id="contact_form " action= "" method="POST" enctype="multipart/form-data" style="margin-top: auto; align-content: center">
         <div class="row">
         <label for="name">Tu nombre:</label></br>
         <input id="name" class="input" name="name" type="text" value="" size="30" /></br>
@@ -109,7 +121,7 @@
     </div>
     </br>
     <input id="submit_button" type="submit" value="Registrar" />
-</form>
+</form>-->
 </div>
 </br>
 </br>
