@@ -24,5 +24,5 @@ Route::get('/registro', function () {
     return view('registro');
 });
 
-Route::resource('medicos',MedicoController);
+Route::resource('medicos','MedicoController');
 

@@ -13,15 +13,13 @@ class CreateMedicosTable extends Migration
      */
     public function up()
     {
-
-            Schema::create('medicos', function (Blueprint $table) {
-                $table->increments('dni');
-                $table->string('name');
-                $table->string('consulta_id');
-                $table->string('numeroColegiado');
-                $table->string('especialidad');
-            });
-    }
+        Schema::create('medicos', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name');
+            $table->string('numeroColegiado');
+            $table->string('especialidad');
+            $table->timestamps();
+        });    }
 
     /**
      * Reverse the migrations.
@@ -30,6 +28,6 @@ class CreateMedicosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('medicos');
+        Schema::drop('medicos');
     }
 }

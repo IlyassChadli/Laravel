@@ -5,7 +5,7 @@
  * Date: 02/03/2017
  * Time: 20:23
  */?><!DOCTYPE html>
-< lang="{{ config('app.locale') }}">
+<div lang="{{ config('app.locale') }}">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -89,73 +89,27 @@
     </table>
 </nav>
 
-<div style="position: static; color: #3c763d ">
 
-    <form id="datos_paciente" action="">
+<div class="flex-center">
 
-        <
-    </form>
-</div>
-
-
-
-<div id="app">
-
-
-    <div class="container flex-center">
+    <form  id="contact_form " action="#" method="POST" enctype="multipart/form-data" style="margin-top: auto; align-content: center">
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Login</div>
-                    <div class="panel-body">
-                        <form class="form-horizontal" role="form" method="POST" action="">
-                            <input type="hidden" name="_token" value="qs4DCQ3XKGYCtZLm9djrHl2D82sqJZ55kIxKBrBQ">
-
-                            <div class="form-group">
-                                <label for="email" class="col-md-4 control-label">E-Mail</label>
-
-                                <div class="col-md-6">
-                                    <input id="email" type="email" class="form-control" name="email" value="" required="" autofocus="">
-
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="password" class="col-md-4 control-label">Password</label>
-
-                                <div class="col-md-6">
-                                    <input id="password" type="password" class="form-control" name="password" required="">
-
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <div class="col-md-6 col-md-offset-4">
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" name="remember"> Recordar
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            </br>
-                            <div class="form-group">
-                                <div class="col-md-8 col-md-offset-4">
-                                    <button type="submit" class="btn btn-primary">
-                                        Login
-                                    </button>
-</br>
-                                    <a class="btn" href="">
-                                        ¿Olvidaste tu contraseña?
-                                    </a>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
+        <label for="name">Tu nombre:</label></br>
+        <input id="name" class="input" name="name" type="text" value="" size="30" /></br>
         </div>
+</br>
+    <div class="row">
+        <label for="email">Tu email:</label><br />
+        <input id="email" class="input" name="email" type="text" value="" size="30" /></br>
     </div>
+    </br>
+    <div class="row">
+        <label for="message">Tu Passwor:</label><br />
+        <input id="name" class="input" name="name" type="password" value="" size="30" /></br>
+    </div>
+    </br>
+    <input id="submit_button" type="submit" value="Registrar" />
+</form>
 </div>
 </br>
 </br>
