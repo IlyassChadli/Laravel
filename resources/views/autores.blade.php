@@ -82,7 +82,7 @@
 <nav class=" flex-center" style="background-color: #fff;">
     <table>
         <tr>
-            <td>    <a href="{{ url('/welcome') }}" style="color: #cccccc; "><b>  Inicio  </b></a></td>
+            <td>    <a href="{{ url('/') }}" style="color: #cccccc; "><b>  Inicio  </b></a></td>
             <td>    <a href="{{ url('/objetivos') }}" style="color: #cccccc;"> <b> Objetivos  </b></a></td>
             <td>    <a href="{{ url('/registro') }}"style="color: #cccccc;"> <b> Registro</b></a></td>
         </tr>
@@ -104,7 +104,7 @@
 <nav class=" flex-center" style="background-color: #fff;">
     <table>
         <tr>
-            <td>    <a href="{{ url('/objetivos') }}" style="color: #cccccc; "><b>  Objetivos  </b></a> &nbsp;&nbsp;&nbsp; </td>
+            <td>    <a href="{{ url('/') }}" style="color: #cccccc; "><b>  Inicio  </b></a> &nbsp;&nbsp;&nbsp; </td>
             <td>    <a href="{{ url('/autores') }}" style="color: #cccccc;"> <b> Autores  </b></a> &nbsp;&nbsp;&nbsp;</td>
             <td>    <a href="{{ url('/registro') }}"style="color: #cccccc;"> <b> Registro</b></a> &nbsp;&nbsp;&nbsp;</td>
         </tr>
