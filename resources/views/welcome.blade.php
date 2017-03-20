@@ -90,7 +90,7 @@
 </main>
 <div >
 
-
+<div>{{$medicos}}</div>
 
     <article class="content" style=" background-color:#000 ;margin-right:250px;margin-left: 250px; ">
         <h1 style="color: #2ca02c; size: 35;">Clínica Equis</h1>
@@ -126,7 +126,6 @@
             </table>
         </div>
     </article>
-
 
 
 
