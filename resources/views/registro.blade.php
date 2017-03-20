@@ -178,9 +178,6 @@
 </br>
 
 
-    <div class="content">
-         @foreach ()
-    </div>
 <nav class=" flex-center" style="background-color: #fff;">
     <table>
         <tr>
