@@ -15,6 +15,8 @@ class CreateConsultasTable extends Migration
     {
         Schema::create('consultas', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('centro_id');
+            $table->foreign('centro_id')->references('id')->on('centros')->onDelete('cascade');
             $table->timestamps();
         });
     }

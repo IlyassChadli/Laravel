@@ -19,6 +19,8 @@ class CreateAdministradorsTable extends Migration
             $table->string('centro');
             $table->integer('sueldo');
             $table->timestamps();
+            $table->unsignedInteger('user_id');
+            $table->unsignedInteger('centro_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('centro_id')->references('id')->on('centros')->onDelete('cascade');
 

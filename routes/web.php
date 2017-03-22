@@ -29,3 +29,8 @@ Route::get('/registro', function () {
 Route::resource('medicos','MedicoController');
 >>>>>>> origin/master
 
+Route::post('/registro', 'Auth\RegisterController@register');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
