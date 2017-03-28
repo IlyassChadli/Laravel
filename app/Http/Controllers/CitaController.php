@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Cita;
 use Illuminate\Http\Request;
 
-class MedicoController extends Controller
+class CitaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,9 +14,8 @@ class MedicoController extends Controller
      */
     public function index()
     {
-        $medicos = Medico::all();
-
-        return view('medicos/index',['medicos'=>$medicos]);
+        $citas=Cita::all();
+        return view('citas/index',['citas'=>$citas]);
     }
 
     /**
@@ -42,10 +42,10 @@ class MedicoController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Cita  $cita
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Cita $cita)
     {
         //
     }
@@ -53,10 +53,10 @@ class MedicoController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Cita  $cita
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Cita $cita)
     {
         //
     }
@@ -65,10 +65,10 @@ class MedicoController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Cita  $cita
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Cita $cita)
     {
         //
     }
@@ -76,13 +76,13 @@ class MedicoController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Cita  $cita
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Medico $medico)
+    public function destroy(Cita $cita)
     {
-        $medico->delete();
-        flash('medico borrado correctamente');
-        return redirect()->route('medicco.index');
+        $cita->delete();
+        flash('cita borrada correctamente');
+        return redirect()->route('cita.index');
     }
 }

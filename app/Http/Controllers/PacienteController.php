@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Paciente;
 use Illuminate\Http\Request;
 
-class MedicoController extends Controller
+class PacienteController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,9 +14,8 @@ class MedicoController extends Controller
      */
     public function index()
     {
-        $medicos = Medico::all();
-
-        return view('medicos/index',['medicos'=>$medicos]);
+        $pacientes=Paciente::all();
+        return view('pacientes/index',['pacientes'=>$pacientes]);
     }
 
     /**
@@ -42,10 +42,10 @@ class MedicoController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Paciente  $paciente
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Paciente $paciente)
     {
         //
     }
@@ -53,10 +53,10 @@ class MedicoController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Paciente  $paciente
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Paciente $paciente)
     {
         //
     }
@@ -65,10 +65,10 @@ class MedicoController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Paciente  $paciente
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Paciente $paciente)
     {
         //
     }
@@ -76,13 +76,13 @@ class MedicoController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Paciente  $paciente
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Medico $medico)
+    public function destroy(Paciente $paciente)
     {
-        $medico->delete();
-        flash('medico borrado correctamente');
-        return redirect()->route('medicco.index');
+        $paciente->delete();
+        flash('paciente borrado correctamente');
+        return redirect()->route('paciente.index');
     }
 }

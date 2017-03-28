@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Prueba;
 use Illuminate\Http\Request;
 
-class MedicoController extends Controller
+class PruebaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,9 +14,8 @@ class MedicoController extends Controller
      */
     public function index()
     {
-        $medicos = Medico::all();
-
-        return view('medicos/index',['medicos'=>$medicos]);
+        $pruebas=Prueba::all();
+        return view('pruebas/index',['pruebas'=>$pruebas]);
     }
 
     /**
@@ -42,10 +42,10 @@ class MedicoController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Prueba  $prueba
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Prueba $prueba)
     {
         //
     }
@@ -53,10 +53,10 @@ class MedicoController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Prueba  $prueba
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Prueba $prueba)
     {
         //
     }
@@ -65,10 +65,10 @@ class MedicoController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Prueba  $prueba
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Prueba $prueba)
     {
         //
     }
@@ -76,13 +76,13 @@ class MedicoController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Prueba  $prueba
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Medico $medico)
+    public function destroy(Prueba $prueba)
     {
-        $medico->delete();
-        flash('medico borrado correctamente');
-        return redirect()->route('medicco.index');
+        $prueba->delete();
+        flash('prueba borrada correctamente');
+        return redirect()->route('pruebas.index');
     }
 }
