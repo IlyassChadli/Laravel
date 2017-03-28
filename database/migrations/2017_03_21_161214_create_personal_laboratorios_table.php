@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLaboratoriosTable extends Migration
+class CreatePersonalLaboratoriosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,13 @@ class CreateLaboratoriosTable extends Migration
      */
     public function up()
     {
-        Schema::create('laboratorios', function (Blueprint $table) {
+        Schema::create('personal__laboratorios', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('centro_id');
-            $table->foreign('centro_id')->references('id')->on('centros')->onDelete('cascade');
-
+            $table->unsignedInteger('lab_id');
+            $table->boolean('facultativo');
             $table->timestamps();
+            $table->foreign('lab_id')->references('id')->on('laboratorios')->onDelete('cascade');
+
         });
     }
 
@@ -29,6 +30,6 @@ class CreateLaboratoriosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('laboratorios');
+        Schema::dropIfExists('personal__laboratorios');
     }
 }
