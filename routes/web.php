@@ -25,10 +25,10 @@ Route::get('/registro', function () {
 });
 
 
-Route::resource('medicos','MedicoController');
+Route::resource('/medicos','MedicoController');
 
 
-Route::post('/registro', 'Auth\RegisterController@register');
+
 
 Auth::routes();
 
