@@ -38,7 +38,7 @@ class User extends Authenticatable
         return $this->hasOne('App\Administrador');
     }
     public function personalDeLab(){
-        return $this->hasOne('App\PersonalLAB');
+        return $this->hasOne('App\Personal_Laboratorio');
     }
 
 }
