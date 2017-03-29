@@ -28,17 +28,17 @@ class User extends Authenticatable
     ];
 
     public function paciente(){
-        return $this->hasOne('App\Paciente');
+        return $this->belongsTo('App\Paciente');
 
     }
     public function medico(){
-        return $this->hasOne('App\Medico');
+        return $this->belongsTo('App\Medico');
     }
     public function administrador(){
-        return $this->hasOne('App\Administrador');
+        return $this->belongsTo('App\Administrador');
     }
     public function personalDeLab(){
-        return $this->hasOne('App\Personal_Laboratorio');
+        return $this->belongsTo('App\Personal_Laboratorio');
     }
 
 }

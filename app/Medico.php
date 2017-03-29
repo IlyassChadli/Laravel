@@ -11,18 +11,22 @@ class Medico extends Model
 
 
 
-    public function getNmroColegiado()
-    {
-        return $this->numeroColegiado;
-    }
-
-    public function getConsulta()
-    {
-        return $this->hasOneconsulta;
-    }
 
     public function getFullNameAttribute()
     {
         return $this->name .' '.$this->surname;
+    }
+
+    public function consulta()
+    {
+        return $this->hasOne('App/Consulta') ;
+    }
+    public function user()
+    {
+        return $this->hasOne('App/User') ;
+    }
+    public function solicitud()
+    {
+        return $this->hasMany('App/Solucitud') ;
     }
 }

@@ -17,4 +17,19 @@ class Cita extends Model
     {
         return $this->belongsTo('App\Paciente');
     }
+    public function administrador()
+{
+    return $this->belongsTo('App\Administrador');
+
+}
+    public function consulta()
+    {
+        return $this->belongsTo('App\Consulta');
+
+    }
+    public function solicitud()
+    {
+        return $this->has('App\Solicitud');
+
+    }
 }
