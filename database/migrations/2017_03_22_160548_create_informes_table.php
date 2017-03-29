@@ -14,7 +14,7 @@ class CreateInformesTable extends Migration
     public function up()
     {
         Schema::create('informes', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id')->unique();
             $table->unsignedInteger('lab_id');
             $table->unsignedInteger('medico_id');
             $table->unsignedInteger('cita_id');

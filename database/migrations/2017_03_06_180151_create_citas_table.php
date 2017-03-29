@@ -14,7 +14,7 @@ class CreateCitasTable extends Migration
     public function up()
     {
         Schema::create('citas', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id')->unique();
             $table->unsignedInteger('medico_id');
             $table->unsignedInteger('admin_id');
             $table->unsignedInteger('paciente_id');

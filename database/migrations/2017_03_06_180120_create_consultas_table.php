@@ -14,7 +14,7 @@ class CreateConsultasTable extends Migration
     public function up()
     {
         Schema::create('consultas', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id')->unique();
             $table->unsignedInteger('centro_id');
             $table->foreign('centro_id')->references('id')->on('centros')->onDelete('cascade');
             $table->timestamps();

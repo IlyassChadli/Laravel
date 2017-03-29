@@ -14,7 +14,7 @@ class CreatePersonalLaboratoriosTable extends Migration
     public function up()
     {
         Schema::create('personal__laboratorios', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id')->unique();
             $table->unsignedInteger('lab_id');
             $table->boolean('facultativo');
             $table->timestamps();
