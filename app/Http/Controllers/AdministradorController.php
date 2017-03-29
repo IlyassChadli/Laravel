@@ -81,6 +81,8 @@ class AdministradorController extends Controller
      */
     public function destroy(Administrador $administrador)
     {
-        //
+        $administrador->delete();
+        flash('administrador borrado correctamente');
+        return redirect()->route('administrador.index');
     }
 }
