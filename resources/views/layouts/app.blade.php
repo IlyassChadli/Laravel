@@ -109,7 +109,7 @@
 
                             <li>    <a href="{{ url('/objetivos') }}" style="color: #cccccc; "><b>  Objetivos  </b></a> &nbsp;&nbsp;&nbsp; </li>
                             <li>    <a href="{{ url('/autores') }}" style="color: #cccccc;"> <b> Autores  </b></a> &nbsp;&nbsp;&nbsp;</li>
-                            <li>    <a href="{{ url('/register') }}"style="color: #cccccc;"> <b> Registro</b></a> &nbsp;&nbsp;&nbsp;</li>
+                            <li>    <a href="{{ url('/zona_admin') }}"style="color: #cccccc;"> <b> Zona Admin</b></a> &nbsp;&nbsp;&nbsp;</li>
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">

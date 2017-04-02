@@ -5,7 +5,7 @@
  * Date: 02/03/2017
  * Time: 20:23
  */?><!DOCTYPE html>
-<div lang="{{ config('app.locale') }}">
+<hr lang="{{ config('app.locale') }}">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -89,12 +89,15 @@
     </table>
 </nav>
 
-
-    <div class="container flex-center">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Registro</div>
+<div class="flex-center">
+    <!--#################################-->
+    <!--Fomrulario Paciente -->
+    <!--#################################-->
+    <div class="container" style="float: left;border: ridge; width: 300px;">
+        <div class="content">
+            <div class="col-md-8" >
+                <div class="panel panel-default" >
+                    <div class="panel-heading" ><h3>Registro Paciente</h3></div>
                     <div class="panel-body">
                         <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
                             {{ csrf_field() }}
@@ -174,11 +177,276 @@
             </div>
         </div>
     </div>
-</br>
-</br>
+<!--#################################-->
+<!--Fomrulario Personal Laboratorio -->
+<!--#################################-->
 
+    <div class="container" style="float: left;border: ridge; width: 300px;">
+        <div class="content">
+            <div class="col-md-8" >
+                <div class="panel panel-default" >
+                    <div class="panel-heading" ><h3>Registro Personal Laboratorio</h3></div>
+                    <div class="panel-body">
+                        <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
+                            {{ csrf_field() }}
 
-<nav class=" flex-center" style="background-color: #fff;">
+                            <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                                <label for="name" class="col-md-4 control-label">Nombre</label>
+
+                                <div class="col-md-6">
+                                    <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
+
+                                    @if ($errors->has('name'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('name') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                                <label for="email" class="col-md-4 control-label">E-Mail</label>
+
+                                <div class="col-md-6">
+                                    <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
+
+                                    @if ($errors->has('email'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+                            <div class="form-group{{ $errors->has('dni') ? ' has-error' : '' }}">
+                                <label for="dni" class="col-md-4 control-label">DNI</label>
+
+                                <div class="col-md-6">
+                                    <input id="dni" type="text" class="form-control" name="dni" required>
+
+                                    @if ($errors->has('dni'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('dni') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+                            <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                                <label for="password" class="col-md-4 control-label">Password</label>
+
+                                <div class="col-md-6">
+                                    <input id="password" type="password" class="form-control" name="password" required>
+
+                                    @if ($errors->has('password'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="password-confirm" class="col-md-4 control-label">Confirmar Password</label>
+
+                                <div class="col-md-6">
+                                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-6 col-md-offset-4">
+                                    <button type="submit" class="btn btn-primary">
+                                        Registrarse
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--#################################-->
+    <!--Fomrulario Medico -->
+    <!--#################################-->
+    <div class="container" style="float: left; width: 300px;">
+        <div class="content">
+            <div class="col-md-8" >
+                <div class="panel panel-default" style="border: ridge;">
+                    <div class="panel-heading" ><h3>Registro Medicos</h3></div>
+                    <div class="panel-body">
+                        <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
+                            {{ csrf_field() }}
+
+                            <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                                <label for="name" class="col-md-4 control-label">Nombre</label>
+
+                                <div class="col-md-6">
+                                    <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
+
+                                    @if ($errors->has('name'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('name') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                                <label for="email" class="col-md-4 control-label">E-Mail</label>
+
+                                <div class="col-md-6">
+                                    <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
+
+                                    @if ($errors->has('email'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+                            <div class="form-group{{ $errors->has('dni') ? ' has-error' : '' }}">
+                                <label for="dni" class="col-md-4 control-label">DNI</label>
+
+                                <div class="col-md-6">
+                                    <input id="dni" type="text" class="form-control" name="dni" required>
+
+                                    @if ($errors->has('dni'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('dni') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+                            <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                                <label for="password" class="col-md-4 control-label">Password</label>
+
+                                <div class="col-md-6">
+                                    <input id="password" type="password" class="form-control" name="password" required>
+
+                                    @if ($errors->has('password'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="password-confirm" class="col-md-4 control-label">Confirmar Password</label>
+
+                                <div class="col-md-6">
+                                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-6 col-md-offset-4">
+                                    <button type="submit" class="btn btn-primary">
+                                        Registrarse
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--#################################-->
+    <!--Fomrulario Administradores -->
+    <!--#################################-->
+    <div class="container" style="float: left; width: 300px;">
+        <div class="content">
+            <div class="col-md-8" >
+                <div class="panel panel-default" style="border: ridge;">
+                    <div class="panel-heading"><h3>Registro administradores</h3></div>
+                    <div class="panel-body">
+                        <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
+                            {{ csrf_field() }}
+
+                            <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                                <label for="name" class="col-md-4 control-label">Nombre</label>
+
+                                <div class="col-md-6">
+                                    <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
+
+                                    @if ($errors->has('name'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('name') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                                <label for="email" class="col-md-4 control-label">E-Mail</label>
+
+                                <div class="col-md-6">
+                                    <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
+
+                                    @if ($errors->has('email'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+                            <div class="form-group{{ $errors->has('dni') ? ' has-error' : '' }}">
+                                <label for="dni" class="col-md-4 control-label">DNI</label>
+
+                                <div class="col-md-6">
+                                    <input id="dni" type="text" class="form-control" name="dni" required>
+
+                                    @if ($errors->has('dni'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('dni') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+                            <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                                <label for="password" class="col-md-4 control-label">Password</label>
+
+                                <div class="col-md-6">
+                                    <input id="password" type="password" class="form-control" name="password" required>
+
+                                    @if ($errors->has('password'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="password-confirm" class="col-md-4 control-label">Confirmar Password</label>
+
+                                <div class="col-md-6">
+                                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-6 col-md-offset-4">
+                                    <button type="submit" class="btn btn-primary">
+                                        Registrarse
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--#################################-->
+<!--Botonera -->
+<!--#################################-->
+<footer>
+
+<nav class="links flex-center" style="background-color: #fff;">
     <table>
         <tr>
             <td>    <a href="{{ url('/') }}" style="color: #cccccc; "><b>  Inicio  </b></a></td>
@@ -189,6 +457,6 @@
         </tr>
     </table>
 </nav>
-
+</footer>
 </body>
 </html>

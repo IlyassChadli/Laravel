@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('inicio');
 });
 Route::get('/objetivos', function () {
     return view('objetivos');
@@ -23,9 +23,11 @@ Route::get('/autores', function () {
 Route::get('/registro', function () {
     return view('registro');
 });
+Route::get('/zona_admin', function () {
+    return view('zona_admin');
+});
 
-
-Route::resource('/medicos','MedicoController');
+Route::resource('/registerMedico','MedicoController');
 
 
 
