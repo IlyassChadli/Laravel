@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password','tipo_user'
     ];
 
     /**
@@ -27,7 +27,7 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function paciente(){
+ /*   public function paciente(){
         return $this->belongsTo('App\Paciente');
 
     }
@@ -39,6 +39,6 @@ class User extends Authenticatable
     }
     public function personalDeLab(){
         return $this->belongsTo('App\Personal_Laboratorio');
-    }
+    }*/
 
 }

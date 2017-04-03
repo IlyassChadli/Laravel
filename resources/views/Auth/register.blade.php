@@ -60,6 +60,37 @@
                             </div>
                         </div>
 
+                        <div class="form-group{{ $errors->has('tipo_user') ? ' has-error' : '' }}">
+                            <label for="tipo_user" class="col-md-4 control-label">Tipo Usuario</label>
+
+                            <select name="tipo_user">
+                                <option value=""></option>
+                                <option value="paciente">Paciente</option>
+                                <option value="admin">Administrador</option>
+                                <option value="medico">Médico</option>
+                                <option value="tel">TEL</option>
+
+                            </select>
+                               @if ($errors->has('tipo_user'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('tipo_user') }}</strong>
+                                    </span>
+                                @endif
+
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-6 col-md-offset-4">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="remember" > Recordar
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+
+
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">

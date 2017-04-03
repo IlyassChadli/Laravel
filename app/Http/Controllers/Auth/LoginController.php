@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -25,7 +27,20 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    public function index()
+    {
+        $tipo_user=Auth::users()->tipo_user;
+        if($tipo_user=='paciente'){
+            return view('paciente.home');
+        }
+        if($tipo_user=='medico'){
+            return view('medico.home');
+        }if($tipo_user=='admin'){
+        return view('admin.home');
+        }if($tipo_user=='tel'){
+        return view('admin.home');
+        }
+    }
 
     /**
      * Create a new controller instance.

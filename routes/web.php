@@ -14,6 +14,9 @@
 Route::get('/', function () {
     return view('inicio');
 });
+Route::get('/welcome', function () {
+    return view('welcome');
+});
 Route::get('/objetivos', function () {
     return view('objetivos');
 });

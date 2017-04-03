@@ -90,7 +90,7 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
+                    <a class="navbar-brand" href="{{ url('/welcome') }}">
                         GesMed
                     </a>
                 </div>
@@ -110,6 +110,7 @@
                             <li>    <a href="{{ url('/objetivos') }}" style="color: #cccccc; "><b>  Objetivos  </b></a> &nbsp;&nbsp;&nbsp; </li>
                             <li>    <a href="{{ url('/autores') }}" style="color: #cccccc;"> <b> Autores  </b></a> &nbsp;&nbsp;&nbsp;</li>
                             <li>    <a href="{{ url('/zona_admin') }}"style="color: #cccccc;"> <b> Zona Admin</b></a> &nbsp;&nbsp;&nbsp;</li>
+
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -127,7 +128,8 @@
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
                                         </form>
-                                    </li>
+                                        </li>
+                                    <li>    <a href="{{ url('/zona_admin') }}"style="color: #cccccc;"> <b> Zona Admin</b></a> &nbsp;&nbsp;&nbsp;</li>
                                 </ul>
                             </li>
                         @endif

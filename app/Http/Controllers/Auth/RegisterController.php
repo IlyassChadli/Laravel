@@ -27,7 +27,20 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected function redirectTo()
+    {
+        $tipo_user=Auth::user()->tipo_user;
+        if($tipo_user=='paciente'){
+            return view('paciente.home');
+        }
+        if($tipo_user=='medico'){
+            return view('medico.home');
+        }if($tipo_user=='admin'){
+            return view('admin.home');
+        }if($tipo_user=='tel'){
+            return view('admin.home');
+    }
+    }
 
     /**
      * Create a new controller instance.
@@ -51,6 +64,7 @@ class RegisterController extends Controller
             'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
+            'tipo_user'=>'required|max:255'
         ]);
     }
 
@@ -66,6 +80,7 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            'tipo_user'=>$data['tipo_user']
         ]);
     }
 }

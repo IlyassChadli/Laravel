@@ -75,7 +75,7 @@
 
             @else
                 <a href="{{ url('/login') }}"><b>Login</b></a>
-                <a href="{{ url('/zona_admin') }}"><b>Zona Administradores</b></a>
+                <a href="{{ url('/register') }}"><b>Registro</b></a>
             @endif
 
 
