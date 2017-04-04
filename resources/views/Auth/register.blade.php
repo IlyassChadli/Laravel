@@ -1,19 +1,73 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+    <style>
+        html, body {
+            background-color: #080808;
+
+            color: #636b6f;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 100;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .full-height {
+            height: 100vh;
+        }
+
+        .flex-center {
+            align-items: center;
+            display: flex;
+            justify-content: center;
+        }
+
+        .position-ref {
+            position: relative;
+        }
+
+        .top-right {
+            position: absolute;
+            right: 10px;
+            top: 18px;
+        }
+
+        .content {
+            text-align: center;
+            size: 15;
+        }
+
+        .title {
+            font-size: 84px;
+        }
+
+        .links > a {
+            color: #636b6f;
+            padding: 0 25px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: .1rem;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .m-b-md {
+            margin-bottom: 30px;
+        }
+    </style>
+<div class="container" style="background-color: #080808;">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Registro</div>
-                <div class="panel-body">
+        <div class="col-md-8 col-md-offset-2" style="background-color: #080808; color: #d7ebf6">
+            <div class="panel panel-default"style="background-color: #080808; color: #d7ebf6">
+                <div class="panel-heading" style="background-color: #080808; color: #d7ebf6">Registro</div>
+                <div class="panel-body"style="background-color: #080808; color: #d7ebf6">
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
                         {{ csrf_field() }}
 
-                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}"style="background-color: #080808; color: #d7ebf6">
                             <label for="name" class="col-md-4 control-label">Nombre</label>
 
-                            <div class="col-md-6">
+                            <div class="col-md-6"style="background-color: #080808; color: #d7ebf6">
                                 <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
 
                                 @if ($errors->has('name'))
@@ -24,10 +78,10 @@
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}"style="background-color: #080808; color: #d7ebf6">
                             <label for="email" class="col-md-4 control-label">E-Mail</label>
 
-                            <div class="col-md-6">
+                            <div class="col-md-6" style="background-color: #080808; color: #d7ebf6">
                                 <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
 
                                 @if ($errors->has('email'))

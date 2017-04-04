@@ -35,6 +35,7 @@
     .content {
         text-align: center;
         size: 15;
+
     }
 
     .title {
@@ -75,10 +76,10 @@
         ]) !!};
     </script>
 </head>
-<body>
-    <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
-            <div class="container">
+<body   style="background-color: #080808;>
+    <div id="app" style="background-color: #080808; color: #d7ebf6">
+        <nav class="navbar navbar-default navbar-static-top"style="background-color: #080808; color: #d7ebf6">
+            <div class="container" >
                 <div class="navbar-header">
 
                     <!-- Collapsed Hamburger -->
@@ -90,8 +91,8 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/welcome') }}">
-                        GesMed
+                    <a class="navbar-brand" href="{{ url('/welcome') }}" >
+                        <strong> GesMed</strong>
                     </a>
                 </div>
 

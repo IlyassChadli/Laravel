@@ -2,11 +2,11 @@
 
 @section('content')
 <div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Login</div>
-                <div class="panel-body">
+    <div class="row" >
+        <div class="col-md-8 col-md-offset-2"style="background-color: #080808; color: #d7ebf6">
+            <div class="panel panel-default"style="background-color: #080808; color: #d7ebf6">
+                <div class="panel-heading"style="background-color: #080808; color: #d7ebf6">Login</div>
+                <div class="panel-body"style="background-color: #080808; color: #d7ebf6">
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
                         {{ csrf_field() }}
 
