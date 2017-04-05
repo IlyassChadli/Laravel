@@ -3,7 +3,7 @@
 
 <style>
     html, body {
-        background-color: #080808;
+        background-color: #27b50b;
 
         color: #636b6f;
         font-family: 'Raleway', sans-serif;
@@ -76,8 +76,8 @@
         ]) !!};
     </script>
 </head>
-<body   style="background-color: #080808;>
-    <div id="app" style="background-color: #080808; color: #d7ebf6">
+<body   style="background-color: #27b50b";>
+    <div id="app" style="background-color: #27b50b; color: #d7ebf6">
         <nav class="navbar navbar-default navbar-static-top"style="background-color: #080808; color: #d7ebf6">
             <div class="container" >
                 <div class="navbar-header">
@@ -107,7 +107,7 @@
                         <!-- Authentication Links -->
                         @if (Auth::guest())
                             <li><a href="{{ route('login') }}"  style="color: #cccccc; "><b>Login</b></a></li>
-
+                            <li>    <a href="{{ url('/register') }}"style="color: #cccccc;" ><b>Registro</b></a></li>
                             <li>    <a href="{{ url('/objetivos') }}" style="color: #cccccc; "><b>  Objetivos  </b></a> &nbsp;&nbsp;&nbsp; </li>
                             <li>    <a href="{{ url('/autores') }}" style="color: #cccccc;"> <b> Autores  </b></a> &nbsp;&nbsp;&nbsp;</li>
                             <li>    <a href="{{ url('/zona_admin') }}"style="color: #cccccc;"> <b> Zona Admin</b></a> &nbsp;&nbsp;&nbsp;</li>

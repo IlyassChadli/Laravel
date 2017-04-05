@@ -29,16 +29,16 @@ class LoginController extends Controller
      */
     public function index()
     {
-        $tipo_user=Auth::users()->tipo_user;
+        $tipo_user=Auth::user()->tipo_user;
         if($tipo_user=='paciente'){
             return view('paciente.home');
         }
         if($tipo_user=='medico'){
             return view('medico.home');
         }if($tipo_user=='admin'){
-        return view('admin.home');
+            return view('admin.home');
         }if($tipo_user=='tel'){
-        return view('admin.home');
+            return view('admin.home');
         }
     }
 

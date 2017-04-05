@@ -3,7 +3,7 @@
 @section('content')
     <style>
         html, body {
-            background-color: #080808;
+            background-color: #27b50b;
 
             color: #636b6f;
             font-family: 'Raleway', sans-serif;
@@ -55,11 +55,11 @@
             margin-bottom: 30px;
         }
     </style>
-<div class="container" style="background-color: #080808;">
+<div class="container" style="background-color:#27b50b">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2" style="background-color: #080808; color: #d7ebf6">
-            <div class="panel panel-default"style="background-color: #080808; color: #d7ebf6">
-                <div class="panel-heading" style="background-color: #080808; color: #d7ebf6">Registro</div>
+        <div class="col-md-8 col-md-offset-2" style="background-color: #27b50b; color: #d7ebf6">
+            <div class="panel panel-default"style="background-color: #27b50b; color: #d7ebf6">
+                <div class="panel-heading" style="background-color:#27b50b; color: #d7ebf6">Registro</div>
                 <div class="panel-body"style="background-color: #080808; color: #d7ebf6">
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
                         {{ csrf_field() }}
@@ -117,7 +117,7 @@
                         <div class="form-group{{ $errors->has('tipo_user') ? ' has-error' : '' }}">
                             <label for="tipo_user" class="col-md-4 control-label">Tipo Usuario</label>
 
-                            <select name="tipo_user">
+                            <select id="selction"name="tipo_user">
                                 <option value=""></option>
                                 <option value="paciente">Paciente</option>
                                 <option value="admin">Administrador</option>
@@ -132,18 +132,6 @@
                                 @endif
 
                         </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember" > Recordar
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">

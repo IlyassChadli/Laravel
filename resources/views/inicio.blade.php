@@ -13,7 +13,7 @@
     <!-- Styles -->
     <style>
         html, body {
-         background-color: #080808;
+         background-color: #27b50b;
         color: #d7ebf6;
             font-family: 'Raleway', sans-serif;
             font-weight: 100;
@@ -72,7 +72,7 @@
                 <a href="{{ url('/home') }}">Citas</a>
                 <a href="{{ url('/objetivos') }}">  Objetivos  </a>
                 <a href="{{ url('/autores') }}" > Autores </a>
-
+                <a href="{{ url('/register') }}"><b>Registro</b></a>
             @else
                 <a href="{{ url('/login') }}"><b>Login</b></a>
                 <a href="{{ url('/register') }}"><b>Registro</b></a>
