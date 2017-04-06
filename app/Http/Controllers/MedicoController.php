@@ -39,7 +39,7 @@ class MedicoController extends Controller
         $this->validate($request, [
             'name' => 'required|max:255',
             'surname' => 'required|max:255',
-            '' => 'required|exists:especialidads,id'
+
         ]);
         $medico = new Medico($request->all());
         $medico->save();
