@@ -72,7 +72,7 @@
                 <a href="{{ url('/home') }}">Citas</a>
 
             @else
-                <a href="{{ url('/login') }}"><b>Login</b></a>
+
             @endif
                  <a href="{{ url('/objetivos') }}" style="color: #cccccc; "><b>  Objetivos  </b></a> &nbsp;&nbsp;&nbsp;
                  <a href="{{ url('/autores') }}" style="color: #cccccc;"> <b> Autores  </b></a> &nbsp;&nbsp;&nbsp;

@@ -27,6 +27,12 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+
+
+    public function getTipoUser(){
+
+        return $this->tipo_user;
+    }
  /*   public function paciente(){
         return $this->belongsTo('App\Paciente');
 

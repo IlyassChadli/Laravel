@@ -69,13 +69,14 @@
     @if (Route::has('login'))
         <div class="top-right links">
             @if (Auth::check())
-                <a href="{{ url('/home') }}">Citas</a>
-                <a href="{{ url('/objetivos') }}">  Objetivos  </a>
-                <a href="{{ url('/autores') }}" > Autores </a>
+
+
                 <a href="{{ url('/register') }}"><b>Registro</b></a>
+
             @else
                 <a href="{{ url('/login') }}"><b>Login</b></a>
-                <a href="{{ url('/register') }}"><b>Registro</b></a>
+                <a href="{{ url('/objetivos') }}">  Objetivos  </a>
+                <a href="{{ url('/autores') }}" > Autores </a>
             @endif
 
 

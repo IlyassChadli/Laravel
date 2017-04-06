@@ -91,7 +91,7 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/welcome') }}" >
+                    <a class="navbar-brand" href="{{ url('/') }}" >
                         <strong> GesMed</strong>
                     </a>
                 </div>
@@ -106,12 +106,10 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @if (Auth::guest())
-                            <li><a href="{{ route('login') }}"  style="color: #cccccc; "><b>Login</b></a></li>
-                            <li>    <a href="{{ url('/register') }}"style="color: #cccccc;" ><b>Registro</b></a></li>
-                            <li>    <a href="{{ url('/objetivos') }}" style="color: #cccccc; "><b>  Objetivos  </b></a> &nbsp;&nbsp;&nbsp; </li>
-                            <li>    <a href="{{ url('/autores') }}" style="color: #cccccc;"> <b> Autores  </b></a> &nbsp;&nbsp;&nbsp;</li>
-                            <li>    <a href="{{ url('/zona_admin') }}"style="color: #cccccc;"> <b> Zona Admin</b></a> &nbsp;&nbsp;&nbsp;</li>
-
+                           <!-- <li>    <a href="{{ route('login') }}"  style="color: #cccccc; "><b>Login</b></a></li>
+                            <li>    <a href="{{ url('/register') }}"style="color: #cccccc;" ><b>Registro</b></a></li>-->
+                            <li>    <a href="{{ url('/objetivos') }}" style="color: #cccccc; "><b>  Objetivos  </b></a>  </li>
+                            <li>    <a href="{{ url('/autores') }}" style="color: #cccccc;"> <b> Autores  </b></a> </li>
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
