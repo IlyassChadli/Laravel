@@ -25,7 +25,7 @@ class MedicoController extends Controller
      */
     public function create()
     {
-        //
+        return view('Medico/create');
     }
 
     /**
@@ -36,7 +36,19 @@ class MedicoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required|max:255',
+            'surname' => 'required|max:255',
+            '' => 'required|exists:especialidads,id'
+        ]);
+        $medico = new Medico($request->all());
+        $medico->save();
+
+        // return redirect('especialidades');
+
+        flash('Medico creado correctamente');
+
+        return redirect()->route('medicos.index');
     }
 
     /**
