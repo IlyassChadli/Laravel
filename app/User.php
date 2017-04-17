@@ -33,18 +33,18 @@ class User extends Authenticatable
 
         return $this->tipo_user;
     }
- /*   public function paciente(){
-        return $this->belongsTo('App\Paciente');
+    public function paciente(){
+        return $this->hasMany('App\Paciente');
 
     }
     public function medico(){
-        return $this->belongsTo('App\Medico');
+        return $this->hasMany('App\Medico');
     }
     public function administrador(){
-        return $this->belongsTo('App\Administrador');
+        return $this->hasMany('App\Administrador');
     }
     public function personalDeLab(){
-        return $this->belongsTo('App\Personal_Laboratorio');
-    }*/
+        return $this->hasMany('App\Personal_Laboratorio');
+    }
 
 }

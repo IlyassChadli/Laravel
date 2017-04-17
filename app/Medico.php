@@ -23,10 +23,14 @@ class Medico extends Model
     }
     public function user()
     {
-        return $this->hasOne('App/User') ;
+        return $this->belongsTo('App/User') ;
     }
     public function solicitud()
     {
-        return $this->hasMany('App/Solucitud') ;
+        return $this->hasOne('App/Solucitud') ;
+    }
+    public function cita()
+    {
+        return $this->hasMany('App/Cita') ;
     }
 }
