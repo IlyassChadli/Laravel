@@ -18,7 +18,7 @@ class CreatePacientesTable extends Migration
             $table->string('dni');
             $table->string('nombre');
             $table->string('apellidos');
-            $table->integer('numPaciente');
+
             $table->timestamps();
             $table->unsignedInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

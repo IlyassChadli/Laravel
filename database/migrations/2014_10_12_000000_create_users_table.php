@@ -18,7 +18,8 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
-            $table->enum('tipo_user',['paciente','medico','admin','tel']);
+            $table->string('direccion');
+            $table->string('dni')->unique();
             $table->rememberToken();
             $table->timestamps();
         });

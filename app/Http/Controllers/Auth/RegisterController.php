@@ -29,18 +29,10 @@ class RegisterController extends Controller
      */
     protected function redirectTo()
     {
-        $tipo_user=Auth::user()->tipo_user;
-        if($tipo_user=='paciente'){
-            return view('paciente.home');
-        }
-        if($tipo_user=='medico'){
-            return view('medico.home');
-        }if($tipo_user=='admin'){
-            return view('admin.home');
-        }if($tipo_user=='tel'){
-            return view('admin.home');
+
+            return view('home');
     }
-    }
+
 
     /**
      * Create a new controller instance.
@@ -63,8 +55,9 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
+            'dni'=> 'required|max:8',
             'password' => 'required|min:6|confirmed',
-            'tipo_user'=>'required|max:255'
+            'direccion'=> 'required'
         ]);
     }
 
@@ -79,8 +72,9 @@ class RegisterController extends Controller
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'password' => bcrypt($data['password']),
-            'tipo_user'=>$data['tipo_user']
+            'dni'=> $data['dni'],
+            'direccion'=>$data['direccion'],
+            'password' => bcrypt($data['password'])
         ]);
     }
 }

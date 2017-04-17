@@ -38,11 +38,22 @@ class MedicoController extends Controller
     {
         $this->validate($request, [
             'name' => 'required|max:255',
-            'surname' => 'required|max:255',
-
+            'email' => 'required|email|max:255|unique:users',
+            'dni'=> 'required|max:8',
+            'password' => 'required|min:6|confirmed',
+            'direccion'=> 'required',
+            'consulta_id'=>'required'
         ]);
-        $medico = new Medico($request->all());
+
+
+
+        $user = new User($request->all());
+        $user->password=bcrypt($user->password);
+        $user->save();
+        $medico=new Medico($request->all());
+        $medico->user_id=$user->id;
         $medico->save();
+
 
         // return redirect('especialidades');
 
