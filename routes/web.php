@@ -30,7 +30,7 @@ Route::get('/zona_admin', function () {
     return view('zona_admin');
 });
 
-Route::resource('medicos','MedicoController');
+Route::resource('Medico','MedicoController');
 
 
 
