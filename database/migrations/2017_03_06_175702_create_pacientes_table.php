@@ -17,7 +17,7 @@ class CreatePacientesTable extends Migration
             $table->increments('id')->unique();
             $table->string('dni');
             $table->string('nombre');
-            $table->string('apellidos');
+            $table->integer('numPaciente');
 
             $table->timestamps();
             $table->unsignedInteger('user_id');

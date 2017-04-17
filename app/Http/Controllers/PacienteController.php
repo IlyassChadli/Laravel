@@ -36,8 +36,28 @@ class PacienteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required|max:255',
+            'email' => 'required|email|max:255|unique:users',
+            'dni'=> 'required|max:8',
+            'password' => 'required|min:6|confirmed',
+            'numPaciente'=> 'required|max:255',
+        ]);
+
+
+
+        $user = new User($request->all());
+        $user->password=bcrypt($user->password);
+        $user->save();
+        $paciente=new Paciente($request->all());
+        $paciente->user_id=$user->id;
+        $paciente->save();
+
+        flash('Paciente creado correctamente');
+
+        return redirect()->route('Pacientes.index');
     }
+
 
     /**
      * Display the specified resource.
