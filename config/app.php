@@ -135,7 +135,8 @@ return [
     |
     */
 
-    'providers' => [
+    'providers' => [ Laracasts\Flash\FlashServiceProvider::class,
+
 
 
 

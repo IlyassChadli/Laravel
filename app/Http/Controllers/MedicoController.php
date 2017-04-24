@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Medico;
 use Illuminate\Http\Request;
 
 class MedicoController extends Controller
@@ -15,7 +16,7 @@ class MedicoController extends Controller
     {
         $medicos = Medico::all();
 
-        return view('medico',['medicos'=>$medicos]);
+        return view('Medico.index',['medicos'=>$medicos]);
     }
 
     /**
@@ -81,7 +82,8 @@ class MedicoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $medico=Medico::find($id);
+        return view('Medico.edit',['medico'=>$medico]);
     }
 
     /**
@@ -91,8 +93,9 @@ class MedicoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,Medico $medico)
+    public function update(Request $request,$id)
     {
+        $medico=Medico::find($id);
         $this->validate($request, ['name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
             'dni'=> 'required|max:8',
@@ -102,7 +105,7 @@ class MedicoController extends Controller
         $medico->fill($request->all());
         $medico->save();
         flash('Medico modificado correctamente');
-        return redirect()->route('medicos.index');
+        return redirect()->route('Medico.edit');
     }
 
     /**
@@ -115,6 +118,6 @@ class MedicoController extends Controller
     {
         $medico->delete();
         flash('medico borrado correctamente');
-        return redirect()->route('medicco.index');
+        return redirect()->route('Medico.index');
     }
 }

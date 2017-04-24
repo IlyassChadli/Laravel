@@ -11,14 +11,22 @@
                         @include('flash::message')
 
                         {!! Form::model($medico, [ 'route' => ['medicos.update',$medico->id], 'method'=>'PUT']) !!}
-
                         <div class="form-group">
                             {!! Form::label('name', 'Nombre del medico') !!}
-                            {!! Form::text('name',$medico->name,['class'=>'form-control', 'required', 'autofocus']) !!}
+                            {!! Form::text('name',null,['class'=>'form-control', 'required', 'autofocus']) !!}
                         </div>
                         <div class="form-group">
-                            {!! Form::label('surname', 'Apellidos del medico') !!}
-                            {!! Form::text('surname',$medico->surname,['class'=>'form-control', 'required']) !!}
+                            {!! Form::label('dni', 'DNI') !!}
+                            {!! Form::text('dni',null,['class'=>'form-control', 'required']) !!}
+                        </div>
+                        <div class="form-group">
+                            {!! Form::label('numColegiado', 'Numero de Colegiado ') !!}
+                            {!! Form::text('numColegiado',null,['class'=>'form-control', 'required', 'autofocus']) !!}
+                        </div>
+
+                        <div class="form-group">
+                            {!! Form::label('consulta_id', 'Consulta Asignada ') !!}
+                            {!! Form::text('consulta_id',null,['class'=>'form-control', 'required', 'autofocus']) !!}
                         </div>
 
                         {!! Form::submit('Guardar',['class'=>'btn-primary btn']) !!}
