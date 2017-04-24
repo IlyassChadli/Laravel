@@ -55,7 +55,7 @@ class MedicoController extends Controller
         $medico->save();
 
 
-        // return redirect('especialidades');
+
 
         flash('Medico creado correctamente');
 
@@ -91,9 +91,18 @@ class MedicoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,Medico $medico)
     {
-        //
+        $this->validate($request, ['name' => 'required|max:255',
+            'email' => 'required|email|max:255|unique:users',
+            'dni'=> 'required|max:8',
+            'password' => 'required|min:6|confirmed',
+            'direccion'=> 'required',
+            'consulta_id'=>'required']);
+        $medico->fill($request->all());
+        $medico->save();
+        flash('Medico modificado correctamente');
+        return redirect()->route('medicos.index');
     }
 
     /**
