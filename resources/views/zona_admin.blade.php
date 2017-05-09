@@ -81,11 +81,16 @@
     @endif
 
     <div class="content">
-        <div class="title m-b-md">
+        <div class="title">
+            Administrar Medicos
+
 
         </div>
 
         <div class="links">
+
+            <a href="{{ url('/Medico') }}" style="color: #cccccc; "><b>              Administrar Medicos
+                </b></a> &nbsp;&nbsp;&nbsp;
 
         </div>
     </div>

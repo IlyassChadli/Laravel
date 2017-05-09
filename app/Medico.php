@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Medico extends Model
 {
 
-    protected $fillable = [ 'dni','consulta_id','user_id','direccion'];
+    protected $fillable = [ 'dni','consulta_id','user_id','numColegiado'];
 
 
 
@@ -27,7 +27,7 @@ class Medico extends Model
     }
     public function solicitud()
     {
-        return $this->hasOne('App/Solucitud') ;
+        return $this->hasMany('App/Solucitud') ;
     }
     public function cita()
     {

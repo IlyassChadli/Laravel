@@ -71,7 +71,7 @@
 
     <!-- Scripts -->
     <script>
-        window.Laravel = {!! json_encode([
+        window.Laravel ={!! json_encode([
             'csrfToken' => csrf_token(),
         ]) !!};
     </script>
@@ -107,10 +107,9 @@
                         <!-- Authentication Links -->
                         @if (Auth::guest())
                            <!-- <li>    <a href="{{ route('login') }}"  style="color: #cccccc; "><b>Login</b></a></li>-->
-                            <li>    <a href="{{ url('/register') }}"style="color: #cccccc;" ><b>Registro</b></a></li>
-                            <li>    <a href="{{ url('/objetivos') }}" style="color: #cccccc; "><b>  Objetivos  </b></a>  </li>
-                            <li>    <a href="{{ url('/autores') }}" style="color: #cccccc;"> <b> Autores  </b></a> </li>
-                            @
+                                <li>    <a href="{{ url('/objetivos') }}" style="color: #cccccc; "><b>  Objetivos  </b></a>  </li>
+                                <li>    <a href="{{ url('/autores') }}" style="color: #cccccc;"> <b> Autores  </b></a> </li>
+                                <li>    <a href="{{ url('/zona_admin') }}"style="color: #cccccc;"> <b> Zona Admin</b></a></li>
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -129,7 +128,7 @@
                                             {{ csrf_field() }}
                                         </form>
                                         </li>
-                                    <li>    <a href="{{ url('/zona_admin') }}"style="color: #cccccc;"> <b> Zona Admin</b></a> &nbsp;&nbsp;&nbsp;</li>
+
                                 </ul>
                             </li>
                         @endif
@@ -137,6 +136,21 @@
                 </div>
             </div>
         </nav>
+        @if (count($errors) > 0)
+            <div class="container">
+                <div class="row ">
+                    <div class="alert alert-danger col-md-8 col-md-offset-2">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        @endif
+
 
         @yield('content')
     </div>

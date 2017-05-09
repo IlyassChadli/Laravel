@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Medico;
 use Illuminate\Http\Request;
-
+use League\Flysystem\Exception;
+use App\User;
 class MedicoController extends Controller
 {
     /**
@@ -16,7 +17,7 @@ class MedicoController extends Controller
     {
         $medicos = Medico::all();
 
-        return view('Medico.index',['medicos'=>$medicos]);
+        return view('Medico/index',['medicos'=>$medicos]);
     }
 
     /**
@@ -37,30 +38,34 @@ class MedicoController extends Controller
      */
     public function store(Request $request)
     {
+
         $this->validate($request, [
             'name' => 'required|max:255',
+            'numColegiado'=>'required|max:255',
             'email' => 'required|email|max:255|unique:users',
-            'dni'=> 'required|max:8',
-            'password' => 'required|min:6|confirmed',
+            'dni'=> 'required|max:9',
+            'password' => 'required|min:6|',
             'direccion'=> 'required',
-            'consulta_id'=>'required'
+            'consulta_id'=>'required',
         ]);
 
+            $user = new User($request->all());
+            $user->password = bcrypt($user->password);
+            $user->save();
+            $medico = new Medico($request->all());
+
+            $medico->user_id = $user->id;
+
+            $medico->save();
+        dd($medico);
+
+            flash('Medico creado correctamente');
+
+            return redirect()->route('Medico.index');
 
 
-        $user = new User($request->all());
-        $user->password=bcrypt($user->password);
-        $user->save();
-        $medico=new Medico($request->all());
-        $medico->user_id=$user->id;
-        $medico->save();
 
 
-
-
-        flash('Medico creado correctamente');
-
-        return redirect()->route('medicos.index');
     }
 
     /**
@@ -83,7 +88,7 @@ class MedicoController extends Controller
     public function edit($id)
     {
         $medico=Medico::find($id);
-        return view('Medico.edit',['medico'=>$medico]);
+        return view('Medico/edit',['medico'=>$medico]);
     }
 
     /**

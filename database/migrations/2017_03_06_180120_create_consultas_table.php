@@ -18,7 +18,6 @@ class CreateConsultasTable extends Migration
             $table->unsignedInteger('centro_id');
             $table->unsignedInteger('medico_id');
             $table->foreign('centro_id')->references('id')->on('centros')->onDelete('cascade');
-            $table->foreign('medico_id')->references('id')->on('medicos')->onDelete('cascade');
             $table->timestamps();
         });
     }

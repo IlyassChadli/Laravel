@@ -71,10 +71,10 @@
             @if (Auth::check())
 
             @else
-                <a href="{{ url('/register') }}"><b>Registro</b></a>
                 <a href="{{ url('/login') }}"><b>Login</b></a>
                 <a href="{{ url('/objetivos') }}">  Objetivos  </a>
                 <a href="{{ url('/autores') }}" > Autores </a>
+                <a href="{{ url('/zona_admin') }}"style="color: #cccccc;" ><b>Admin</b></a>
             @endif
 
 

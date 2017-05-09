@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('inicio');
 });
 Route::get('/welcome', function () {
-    return view('welcome');
+        return view('welcome');
 });
 Route::get('/objetivos', function () {
     return view('objetivos');
@@ -31,7 +31,6 @@ Route::get('/zona_admin', function () {
 });
 
 Route::resource('Medico','MedicoController');
-
 
 
 

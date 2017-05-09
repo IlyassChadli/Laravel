@@ -17,7 +17,6 @@ class CreateMedicosTable extends Migration
             $table->increments('id')->unique();
             $table->string('dni');
             $table->integer('numColegiado');
-            $table->integer('sueldo');
             $table->timestamps();
             $table->unsignedInteger('user_id');
             $table->unsignedInteger('consulta_id');
