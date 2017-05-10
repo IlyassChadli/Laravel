@@ -107,6 +107,7 @@
             <td>    <a href="{{ url('/') }}" style="color: #cccccc; "><b>  Inicio  </b></a> &nbsp;&nbsp;&nbsp; </td>
             <td>    <a href="{{ url('/autores') }}" style="color: #cccccc;"> <b> Autores  </b></a> &nbsp;&nbsp;&nbsp;</td>
             <td>    <a href="{{ url('/registro') }}"style="color: #cccccc;"> <b> Registro</b></a> &nbsp;&nbsp;&nbsp;</td>
+            <td>    <a href="{{ url('/zona_admin') }}"style="color: #cccccc;"> <b> Admin</b></a> &nbsp;&nbsp;&nbsp;</td>
         </tr>
     </table>
 </nav>

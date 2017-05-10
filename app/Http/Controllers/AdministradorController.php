@@ -14,8 +14,8 @@ class AdministradorController extends Controller
      */
     public function index()
     {
-        $administradors = Administrador::all();
-        return view('administradors/index',['administradors'=>$administradors]);
+        $administrador = Administrador::all();
+        return view('Administrador/index',['administradors'=>$administrador]);
     }
 
     /**
@@ -25,7 +25,7 @@ class AdministradorController extends Controller
      */
     public function create()
     {
-        //
+       return view('Administrador/create');
     }
 
     /**
@@ -36,7 +36,27 @@ class AdministradorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+            $this->validate($request, [
+                'name' => 'required|max:255',
+                'numColegiado'=>'required|max:255',
+                'email' => 'required|email|max:255|unique:users',
+                'dni'=> 'required|max:9',
+                'password' => 'required|min:6|',
+                'direccion'=> 'required',
+            ]);
+            $user = new User($request->all());
+            $user->password = bcrypt($user->password);
+            $user->save();
+            $administrador = new Administrador($request->all());
+
+            $administrador->user_id = $user->id;
+
+            $administrador->save();
+
+
+            flash('Administrador creado correctamente');
+
+            return redirect()->route('Administrador.index');
     }
 
     /**
@@ -56,9 +76,10 @@ class AdministradorController extends Controller
      * @param  \App\Administrador  $administrador
      * @return \Illuminate\Http\Response
      */
-    public function edit(Administrador $administrador)
+    public function edit($id)
     {
-        //
+        $administrador=Administrador::find($id);
+        return view('Administrador/edit',['administrador'=>$administrador]);
     }
 
     /**
@@ -68,9 +89,21 @@ class AdministradorController extends Controller
      * @param  \App\Administrador  $administrador
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Administrador $administrador)
+    public function update(Request $request, $id)
     {
-        //
+        $administrador=Administrador::find($id);
+        $this->validate($request, [
+            'name' => 'required|max:255',
+            'numColegiado'=>'required|max:255',
+            'email' => 'required|email|max:255|unique:users',
+            'dni'=> 'required|max:9',
+            'password' => 'required|min:6|',
+            'direccion'=> 'required',
+        ]);
+        $administrador->fill($request->all());
+        $administrador->save();
+        flash('Administrador modificado correctamente');
+        return redirect()->route('Administrador.edit');
     }
 
     /**
@@ -79,8 +112,9 @@ class AdministradorController extends Controller
      * @param  \App\Administrador  $administrador
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Administrador $administrador)
+    public function destroy($id)
     {
+        $administrador=Administrador::find($id);
         $administrador->delete();
         flash('administrador borrado correctamente');
         return redirect()->route('administrador.index');

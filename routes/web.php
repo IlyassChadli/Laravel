@@ -36,4 +36,4 @@ Route::resource('Medico','MedicoController');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+

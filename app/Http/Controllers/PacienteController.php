@@ -76,9 +76,10 @@ class PacienteController extends Controller
      * @param  \App\Paciente  $paciente
      * @return \Illuminate\Http\Response
      */
-    public function edit(Paciente $paciente)
+    public function edit($id)
     {
-        //
+        $paciente=Paciente::find($id);
+        return view('Pacientes/edit',['paciente'=>$paciente]);
     }
 
     /**
@@ -88,9 +89,20 @@ class PacienteController extends Controller
      * @param  \App\Paciente  $paciente
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Paciente $paciente)
+    public function update(Request $request, $id)
     {
-        //
+        $paciente=Paciente::find($id);
+        $this->validate($request, [
+            'name' => 'required|max:255',
+            'email' => 'required|email|max:255|unique:users',
+            'dni'=> 'required|max:8',
+            'password' => 'required|min:6|confirmed',
+            'numPaciente'=> 'required|max:255',
+        ]);
+        $paciente->fill($request->all());
+        $paciente->save();
+        flash('Paciente modificado correctamente');
+        return redirect()->route('Pacientes.edit');
     }
 
     /**
@@ -99,10 +111,11 @@ class PacienteController extends Controller
      * @param  \App\Paciente  $paciente
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Paciente $paciente)
+    public function destroy($id)
     {
+        $paciente=Paciente::find($id);
         $paciente->delete();
         flash('paciente borrado correctamente');
-        return redirect()->route('paciente.index');
+        return redirect()->route('Pacientes.index');
     }
 }

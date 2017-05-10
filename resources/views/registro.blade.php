@@ -178,7 +178,7 @@
         </div>
     </div>
 <!--#################################-->
-<!--Fomrulario Personal Laboratorio -->
+<!--Fomrulario PersonalLab -->
 <!--#################################-->
 
     <div class="container" style="float: left;border: ridge; width: 300px;">
