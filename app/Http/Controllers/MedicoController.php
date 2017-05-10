@@ -6,6 +6,7 @@ use App\Medico;
 use Illuminate\Http\Request;
 use League\Flysystem\Exception;
 use App\User;
+use App\Consulta;
 class MedicoController extends Controller
 {
     /**
@@ -57,7 +58,7 @@ class MedicoController extends Controller
             $medico->user_id = $user->id;
 
             $medico->save();
-        dd($medico);
+
 
             flash('Medico creado correctamente');
 

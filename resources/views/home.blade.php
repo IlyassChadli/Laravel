@@ -5,9 +5,13 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
+                <div class="panel-heading">Bienvenido</div>
 
-                <div class="panel-body">
+                <div class="panel-body" style="color: #0d3625">
+
+            Navege por el Panel Superior para mas opciones
+
+
 
                 </div>
             </div>

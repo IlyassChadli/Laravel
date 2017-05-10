@@ -16,9 +16,9 @@
                     <table class="table table-striped table-bordered">
                         <tr>
                             <th>Nombre</th>
-                            <th>Consulta</th>
-                            <th>Colegiado num.</th>
-
+                            <th>Apellidos</th>
+                            <th>Especialidad</th>
+                            <th colspan="2">Acciones</th>
                         </tr>
 
                         @foreach ($medicos as $medico)
@@ -26,8 +26,8 @@
 
                             <tr>
                                 <td>{{ $medico->name }}</td>
-                                <td>{{ $medico->consultaId }}</td>
-                                <td>{{ $medico->numColegiado }}</td>
+                                <td>{{ $medico->surname }}</td>
+                                <td>{{ $medico->especialidad->name }}</td>
 
                                 <td>
                                     {!! Form::open(['route' => ['Medico.edit',$medico->id], 'method' => 'get']) !!}
@@ -48,6 +48,7 @@
                 </div>
             </div>
         </div>
-
+    </div>
+</div>
 @endsection
 

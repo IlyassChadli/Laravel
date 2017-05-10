@@ -37,6 +37,32 @@
                                     @endif
                                 </div>
                             </div>
+                            <div class="form-group{{ $errors->has('dni') ? ' has-error' : '' }}">
+                                <label for="dni" class="col-md-4 control-label">dni</label>
+
+                                <div class="col-md-6">
+                                    <input id="dni" type="dni" class="form-control" name="dni" value="{{ old('dni') }}" required>
+
+                                    @if ($errors->has('dni'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('dni') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+                            <div class="form-group{{ $errors->has('direccion') ? ' has-error' : '' }}">
+                                <label for="direccion" class="col-md-4 control-label">Direccion</label>
+
+                                <div class="col-md-6">
+                                    <input id="direccion" type="direccion" class="form-control" name="direccion" value="{{ old('direccion') }}" required>
+
+                                    @if ($errors->has('direccion'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('direccion') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
 
                             <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                                 <label for="password" class="col-md-4 control-label">Password</label>

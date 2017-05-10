@@ -104,13 +104,15 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
+                    @if (Route::has('login'))
                         <!-- Authentication Links -->
                         @if (Auth::guest())
-                           <!-- <li>    <a href="{{ route('login') }}"  style="color: #cccccc; "><b>Login</b></a></li>-->
+                                <li>    <a href="{{ route('login') }}"  style="color: #cccccc; "><b>Login</b></a></li>
                                 <li>    <a href="{{ url('/objetivos') }}" style="color: #cccccc; "><b>  Objetivos  </b></a>  </li>
                                 <li>    <a href="{{ url('/autores') }}" style="color: #cccccc;"> <b> Autores  </b></a> </li>
-                                <li>    <a href="{{ url('/zona_admin') }}"style="color: #cccccc;"> <b> Zona Admin</b></a></li>
+
                         @else
+
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     {{ Auth::user()->name }} <span class="caret"></span>
@@ -129,9 +131,13 @@
                                         </form>
                                         </li>
 
+                                    <li><a href="{{ url('/zona_admin') }}"> <b> Zona Admin</b></a></li>
+
                                 </ul>
                             </li>
                         @endif
+                     @endif
+
                     </ul>
                 </div>
             </div>
@@ -159,3 +165,17 @@
     <script src="/js/app.js"></script>
 </body>
 </html>
+@if (Route::has('login'))
+    <div class="top-right links">
+        @if (Auth::check())
+
+        @else
+            <a href="{{ url('/login') }}"><b>Login</b></a>
+            <a href="{{ url('/objetivos') }}">  Objetivos  </a>
+            <a href="{{ url('/autores') }}" > Autores </a>
+            <a href="{{ url('/zona_admin') }}"style="color: #cccccc;" ><b>Admin</b></a>
+        @endif
+
+
+    </div>
+@endif
