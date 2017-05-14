@@ -15,7 +15,7 @@ class PruebaController extends Controller
     public function index()
     {
         $pruebas=Prueba::all();
-        return view('pruebas/index',['pruebas'=>$pruebas]);
+        return view('Prueba/index',['pruebas'=>$pruebas]);
     }
 
     /**
@@ -25,7 +25,7 @@ class PruebaController extends Controller
      */
     public function create()
     {
-        //
+        return view('Prueba/create');
     }
 
     /**
@@ -36,7 +36,25 @@ class PruebaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'tipo' => 'required|max:255',
+            'direccion'=> 'required',
+            'consulta_id'=>'required',
+        ]);
+
+        $user = new User($request->all());
+        $user->save();
+        $prueba = new Prueba($request->all());
+
+        $prueba->user_id = $user->id;
+
+        $prueba->save();
+
+
+        flash('Prueba creado correctamente');
+
+        return redirect()->route('Prueba.index');
+
     }
 
     /**
@@ -56,9 +74,10 @@ class PruebaController extends Controller
      * @param  \App\Prueba  $prueba
      * @return \Illuminate\Http\Response
      */
-    public function edit(Prueba $prueba)
+    public function edit($id)
     {
-        //
+        $prueba=Prueba::find($id);
+        return view('Prueba/edit',['prueba'=>$prueba]);
     }
 
     /**
@@ -68,9 +87,18 @@ class PruebaController extends Controller
      * @param  \App\Prueba  $prueba
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Prueba $prueba)
+    public function update(Request $request, $id)
     {
-        //
+        $prueba=Prueba::find($id);
+        $this->validate($request, [
+            'tipo' => 'required|max:255',
+            'direccion'=> 'required',
+            'consulta_id'=>'required',
+        ]);
+        $prueba->fill($request->all());
+        $prueba->save();
+        flash('Prueba modificado correctamente');
+        return redirect()->route('Prueba.edit');
     }
 
     /**
@@ -79,8 +107,9 @@ class PruebaController extends Controller
      * @param  \App\Prueba  $prueba
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Prueba $prueba)
+    public function destroy($id)
     {
+        $prueba=Prueba::find($id);
         $prueba->delete();
         flash('prueba borrada correctamente');
         return redirect()->route('pruebas.index');

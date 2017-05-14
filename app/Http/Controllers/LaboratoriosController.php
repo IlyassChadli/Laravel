@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Laboratorio;
 use App\laboratorios;
 use Illuminate\Http\Request;
 
@@ -14,8 +15,8 @@ class LaboratoriosController extends Controller
      */
     public function index()
     {
-        $laboratorios=laboratorios::all();
-        return view('laboatorios/index',['laboratorios'=>$laboratorios]);
+        $laboratorios=Laboratorio::all();
+        return view('Laboratorio/index',['laboratorios'=>$laboratorios]);
     }
 
     /**
@@ -25,7 +26,7 @@ class LaboratoriosController extends Controller
      */
     public function create()
     {
-        //
+        return view('Laboratorio/create');
     }
 
     /**
@@ -36,7 +37,25 @@ class LaboratoriosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $this->validate($request, [
+            'name' => 'required|max:255',
+            'planta'=> 'required',
+            'departamento'=>'required',
+        ]);
+
+        $user = new User($request->all());
+        $user->save();
+        $laboratorio = new Laboratorio($request->all());
+
+        $laboratorio->user_id = $user->id;
+
+        $laboratorio->save();
+
+
+        flash('Laboratorio creado correctamente');
+
+        return redirect()->route('Laboratorio.index');
     }
 
     /**
@@ -56,9 +75,10 @@ class LaboratoriosController extends Controller
      * @param  \App\laboratorios  $laboratorios
      * @return \Illuminate\Http\Response
      */
-    public function edit(laboratorios $laboratorios)
+    public function edit($id)
     {
-        //
+        $laboratorio=Laboratorio::find($id);
+        return view('Laboratorio/edit',['laboratorio'=>$laboratorio]);
     }
 
     /**
@@ -68,9 +88,17 @@ class LaboratoriosController extends Controller
      * @param  \App\laboratorios  $laboratorios
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, laboratorios $laboratorios)
+    public function update(Request $request,$id)
     {
-        //
+        $laboratorio=Laboratorio::find($id);
+        $this->validate($request, [ 'name' => 'required|max:255',
+            'planta'=> 'required',
+            'departamento'=>'required',
+        ]);
+        $laboratorio->fill($request->all());
+        $laboratorio->save();
+        flash('Laboratorio modificado correctamente');
+        return redirect()->route('Laboratorio.edit');
     }
 
     /**
@@ -79,10 +107,11 @@ class LaboratoriosController extends Controller
      * @param  \App\laboratorios  $laboratorios
      * @return \Illuminate\Http\Response
      */
-    public function destroy(laboratorios $laboratorios)
+    public function destroy($id)
     {
-        $laboratorios->delete();
+        $laboratorio=Laboratorio::find($id);
+        $laboratorio->delete();
         flash('laboratorio borrado correctamente');
-        return redirect()->route('laboratorios.index');
+        return redirect()->route('Laboratorio.index');
     }
 }
