@@ -121,8 +121,9 @@ class MedicoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Medico $medico)
+    public function destroy($id)
     {
+        $medico=Medico::find($id);
         $medico->delete();
         flash('medico borrado correctamente');
         return redirect()->route('Medico.index');
