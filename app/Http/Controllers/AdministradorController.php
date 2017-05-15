@@ -79,7 +79,7 @@ class AdministradorController extends Controller
     public function edit($id)
     {
         $administrador=Administrador::find($id);
-        return view('Administrador/edit',['Administrador'=>$administrador]);
+        return view('Administrador/edit',['administrador'=>$administrador]);
     }
 
     /**
@@ -117,6 +117,6 @@ class AdministradorController extends Controller
         $administrador=Administrador::find($id);
         $administrador->delete();
         flash('administrador borrado correctamente');
-        return redirect()->route('administrador.index');
+        return redirect()->route('Administrador.index');
     }
 }

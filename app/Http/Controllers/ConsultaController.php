@@ -76,6 +76,7 @@ class ConsultaController extends Controller
     public function edit($id)
     {
         $consulta=Consulta::find($id);
+        return view('Consultas/edit',['consultas'=>$consulta]);
     }
 
     /**
