@@ -31,17 +31,17 @@ class User extends Authenticatable
 
 
     public function paciente(){
-        return $this->hasMany('App\Paciente');
+        return $this->hasOne('App\Paciente');
 
     }
     public function medico(){
-        return $this->hasMany('App\Medico');
+        return $this->hasOne('App\Medico');
     }
     public function administrador(){
-        return $this->hasMany('App\Administrador');
+        return $this->hasOne('App\Administrador');
     }
     public function personalDeLab(){
-        return $this->hasMany('App\Personal_Laboratorio');
+        return $this->hasOne('App\Personal_Laboratorio');
     }
 
 }

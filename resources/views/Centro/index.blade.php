@@ -25,7 +25,7 @@
 
 
                             <tr>
-                                <td>{{ $medico->name }}</td>
+                                <td>{{ $medico->$user->name }}</td>
                                 <td>{{ $medico->surname }}</td>
                                 <td>{{ $medico->especialidad->name }}</td>
 
