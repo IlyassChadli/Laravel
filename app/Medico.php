@@ -14,23 +14,23 @@ class Medico extends Model
 
     public function getFullNameAttribute()
     {
-        return $this->name .' '.$this->surname;
+        return $this->user->name;
     }
 
     public function consulta()
     {
-        return $this->hasOne('App/Consulta') ;
+        return $this->hasOne('App\Consulta') ;
     }
     public function user()
     {
-        return $this->belongsTo('App/User') ;
+        return $this->belongsTo('App\User') ;
     }
     public function solicitud()
     {
-        return $this->hasMany('App/Solucitud') ;
+        return $this->hasMany('App\Solucitud') ;
     }
     public function cita()
     {
-        return $this->hasMany('App/Cita') ;
+        return $this->hasMany('App\Cita') ;
     }
 }

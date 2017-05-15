@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use League\Flysystem\Exception;
 use App\User;
 use App\Consulta;
+
 class MedicoController extends Controller
 {
     /**
@@ -89,7 +90,7 @@ class MedicoController extends Controller
     public function edit($id)
     {
         $medico=Medico::find($id);
-        return view('Medico/edit',['medico'=>$medico]);
+        return view('Medico/edit',['medico'=>$medico,'user'=>$medico->user]);
     }
 
     /**

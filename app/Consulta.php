@@ -10,14 +10,14 @@ class Consulta extends Model
 
     public function centro()
     {
-        return $this->belongsTo('App/Centro') ;
+        return $this->belongsTo('App\Centro') ;
     }
     public function cita()
     {
-        return $this->hasMany('App/Cita') ;
+        return $this->hasMany('App\Cita') ;
     }
     public function medico()
     {
-        return $this->belongsTo('App/Medico') ;
+        return $this->belongsTo('App\Medico') ;
     }
 }

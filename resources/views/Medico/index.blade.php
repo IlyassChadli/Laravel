@@ -25,8 +25,8 @@
 
 
                             <tr>
-                                <td>{{ $medico->name }}</td>
-                                <td>{{ $medico->consultaId }}</td>
+                                <td>{{ $medico->user->name }}</td>
+                                <td>{{ $medico->consulta}}</td>
                                 <td>{{ $medico->numColegiado }}</td>
 
                                 <td>
