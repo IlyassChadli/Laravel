@@ -9,7 +9,7 @@
 
                 <div class="panel-body" style="color: #0d3625">
 
-            Navege por el Panel Superior para mas opciones
+            Navegue por el Panel Superior para mas opciones
 
 
 

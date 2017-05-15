@@ -15,7 +15,7 @@ class ConsultaController extends Controller
     public function index()
     {
         $consultas=Consulta::all();
-        return view('consultas/index',['consultas'=>$consultas]);
+        return view('Consulta/index',['consultas'=>$consultas]);
     }
 
     /**
@@ -25,7 +25,7 @@ class ConsultaController extends Controller
      */
     public function create()
     {
-        //
+       return view('Consulta/create');
     }
 
     /**
@@ -36,7 +36,24 @@ class ConsultaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required|max:255',
+
+            'departamento'=> 'required',
+        ]);
+        $user = new User($request->all());
+
+        $user->save();
+        $consulta = new Consulta($request->all());
+
+        $consulta->user_id = $user->id;
+
+        $consulta->save();
+
+
+        flash('Consulta creada correctamente');
+        return redirect()->route('Consulta.index');
+
     }
 
     /**
@@ -56,9 +73,9 @@ class ConsultaController extends Controller
      * @param  \App\Consulta  $consulta
      * @return \Illuminate\Http\Response
      */
-    public function edit(Consulta $consulta)
+    public function edit($id)
     {
-        //
+        $consulta=Consulta::find($id);
     }
 
     /**

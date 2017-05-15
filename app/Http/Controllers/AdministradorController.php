@@ -79,7 +79,7 @@ class AdministradorController extends Controller
     public function edit($id)
     {
         $administrador=Administrador::find($id);
-        return view('Administrador/edit',['administrador'=>$administrador]);
+        return view('Administrador/edit',['Administrador'=>$administrador]);
     }
 
     /**
