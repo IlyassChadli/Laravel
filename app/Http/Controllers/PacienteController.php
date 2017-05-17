@@ -15,7 +15,7 @@ class PacienteController extends Controller
     public function index()
     {
         $pacientes=Paciente::all();
-        return view('pacientes/index',['pacientes'=>$pacientes]);
+        return view('Paciente/index',['pacientes'=>$pacientes]);
     }
 
     /**
@@ -25,6 +25,7 @@ class PacienteController extends Controller
      */
     public function create()
     {
+        return view('Paciente/create');
         //
     }
 
@@ -55,7 +56,7 @@ class PacienteController extends Controller
 
         flash('Paciente creado correctamente');
 
-        return redirect()->route('Pacientes.index');
+        return redirect()->route('Paciente.index');
     }
 
 
@@ -79,7 +80,7 @@ class PacienteController extends Controller
     public function edit($id)
     {
         $paciente=Paciente::find($id);
-        return view('Pacientes/edit',['paciente'=>$paciente]);
+        return view('Paciente/edit',['paciente'=>$paciente]);
     }
 
     /**
@@ -102,7 +103,7 @@ class PacienteController extends Controller
         $paciente->fill($request->all());
         $paciente->save();
         flash('Paciente modificado correctamente');
-        return redirect()->route('Pacientes.edit');
+        return redirect()->route('Paciente.edit');
     }
 
     /**
@@ -116,6 +117,6 @@ class PacienteController extends Controller
         $paciente=Paciente::find($id);
         $paciente->delete();
         flash('paciente borrado correctamente');
-        return redirect()->route('Pacientes.index');
+        return redirect()->route('Paciente.index');
     }
 }

@@ -64,7 +64,7 @@
                     <div class="panel-body">
                         @include('flash::message')
 
-                        {!! Form::open(['route' => 'pacientes.store']) !!}
+                        {!! Form::open(['route' => 'Paciente.store']) !!}
                         <div class="form-group">
                             {!! Form::label('name', 'Nombre del paciente') !!}
                             {!! Form::text('name',null,['class'=>'form-control', 'required', 'autofocus']) !!}
@@ -79,6 +79,13 @@
                             {!! Form::label('email', 'Email ') !!}
                             {!! Form::text('email',null,['class'=>'form-control', 'required', 'autofocus']) !!}
                         </div>
+
+
+
+                        <!--  meter Campo Password -->
+
+
+
                         <div class="form-group">
                             {!! Form::label('numPaciente', 'Numero del paciente') !!}
                             {!! Form::text('numPaciente',null,['class'=>'form-control', 'required', 'autofocus']) !!}

@@ -93,6 +93,18 @@
                 </b></a> &nbsp;&nbsp;&nbsp;
 
         </div>
+        <div class="title">
+            Administrar Pacientes
+
+
+        </div>
+
+        <div class="links">
+
+            <a href="{{ url('/Paciente') }}" style="color: #cccccc; "><b>              Administrar Medicos
+                </b></a> &nbsp;&nbsp;&nbsp;
+
+        </div>
     </div>
 </div>
 </body>

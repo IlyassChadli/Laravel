@@ -34,7 +34,7 @@ Route::get('/home', function () {
 });
 
 Route::resource('Medico','MedicoController');
-
+Route::resource('Paciente','PacienteController');
 
 
 Auth::routes();
