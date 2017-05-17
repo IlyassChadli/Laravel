@@ -6,7 +6,7 @@ use App\Laboratorio;
 use App\Personal_Laboratorio;
 use Illuminate\Http\Request;
 
-class Personal_Laboratorio extends Controller
+class PersonalLaboratorio extends Controller
 {
     /**
      * Display a listing of the resource.
