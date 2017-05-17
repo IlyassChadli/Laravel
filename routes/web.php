@@ -35,7 +35,7 @@ Route::get('/home', function () {
 
 Route::resource('Medico','MedicoController');
 Route::resource('Paciente','PacienteController');
-Route::resource('PersonalLab','Personal_LaboratorioController');
+Route::resource('PersonalLab','PersonalLaboratorioController');
 Route::resource('Laboratorio','LaboratoriosController');
 Route::resource('Citas','CitaController');
 Route::resource('Consulta','ConsultaController');
