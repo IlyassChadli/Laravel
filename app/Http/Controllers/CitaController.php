@@ -15,7 +15,7 @@ class CitaController extends Controller
     public function index()
     {
         $citas=Cita::all();
-        return view('citas/index',['citas'=>$citas]);
+        return view('Cita/index',['citas'=>$citas]);
     }
 
     /**
@@ -25,7 +25,7 @@ class CitaController extends Controller
      */
     public function create()
     {
-        //
+        return view('Cita/create');
     }
 
     /**
@@ -36,7 +36,23 @@ class CitaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required|max:255',
+
+            'consultaid'=> 'required',
+        ]);
+        $user = new User($request->all());
+
+        $user->save();
+        $cita = new Consulta($request->all());
+
+        $cita->user_id = $user->id;
+
+        $cita->save();
+
+
+        flash('Consulta creada correctamente');
+        return redirect()->route('Consulta.index');
     }
 
     /**

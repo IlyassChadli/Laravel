@@ -37,7 +37,22 @@ class PersonalLaboratorio extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required|max:255',
+            'email' => 'required|email|max:255|unique:users',
+            'dni'=> 'required|max:9',
+            'password' => 'required|min:6|',
+            'direccion'=> 'required',
+        ]);
+        $user = new User($request->all());
+        $user->save();
+        $personalLab = new PersonalLaboratorio($request->all());
+
+        $personalLab->user_id = $user->id;
+        $personalLab->fill($request->all());
+        $personalLab->save();
+        flash('Personal de laboratorio creado correctamente');
+        return redirect()->route('PersonalLab.index');
     }
 
     /**
@@ -57,9 +72,10 @@ class PersonalLaboratorio extends Controller
      * @param  \App\Personal_Laboratorio  $personal_Laboratorio
      * @return \Illuminate\Http\Response
      */
-    public function edit(Personal_Laboratorio $personal_Laboratorio)
+    public function edit($id)
     {
-        //
+        $personalLab=PersonalLaboratorio::find($id);
+        return view('PersonalLab/edit',['personalLab'=>$personalLab]);
     }
 
     /**
@@ -91,8 +107,11 @@ class PersonalLaboratorio extends Controller
      * @param  \App\Personal_Laboratorio  $personal_Laboratorio
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Personal_Laboratorio $personal_Laboratorio)
+    public function destroy($id)
     {
-        //
+        $personalLab=PersonalLaboratorio::find($id);
+        $personalLab->delete();
+        flash('personal de laboratorio borrado correctamente');
+        return redirect()->route('PersonalLab.index');
     }
 }
