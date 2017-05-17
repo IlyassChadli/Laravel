@@ -117,6 +117,6 @@ class AdministradorController extends Controller
         $administrador=Administrador::find($id);
         $administrador->delete();
         flash('administrador borrado correctamente');
-        return redirect()->route('administrador.index');
+        return redirect()->route('Administrador.index');
     }
 }

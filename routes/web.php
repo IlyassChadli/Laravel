@@ -29,6 +29,9 @@ Route::get('/registro', function () {
 Route::get('/zona_admin', function () {
     return view('zona_admin');
 });
+Route::get('/home', function () {
+    return view('home');
+});
 
 Route::resource('Medico','MedicoController');
 
