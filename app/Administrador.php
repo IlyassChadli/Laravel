@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Administrador extends Model
 {
-    protected $fillable = [ 'DNI'];
+    protected $fillable = [ 'dni'];
 
 
     public function user()

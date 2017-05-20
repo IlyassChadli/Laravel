@@ -4,8 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Personal_Laboratorio extends Model
+class PersonalLaboratorio extends Model
+
 {
+    protected $fillable = [ 'DNI', 'laboratorio_id'];
     public function user()
     {
         return $this->belongsTo('App/User') ;

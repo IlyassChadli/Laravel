@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Laboratorio;
-use App\Personal_Laboratorio;
+use App\PersonalLaboratorio;
 use Illuminate\Http\Request;
 
-class PersonalLaboratorio extends Controller
+class PersonalLaboratorioController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,7 @@ class PersonalLaboratorio extends Controller
     public function index()
     {
         $personalLab=PersonalLaboratorio::all();
-        return view('PersonalLab/index',['personalLab'=>personalLab]);
+        return view('PersonalLab/index',['personalLab'=>$personalLab]);
     }
 
     /**

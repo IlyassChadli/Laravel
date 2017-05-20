@@ -80,7 +80,15 @@
                             {!! Form::text('email',null,['class'=>'form-control', 'required', 'autofocus']) !!}
                         </div>
 
+                        <div class="form-group ">
+                            {!! Form::label('password', 'Password') !!}
+                            {!! Form::password('password',null,['class'=>'form-control ', 'required']) !!}
+                        </div>
 
+                        <div class="form-group">
+                            {!! Form::label('direccion', 'Direccion ') !!}
+                            {!! Form::text('direccion',null,['class'=>'form-control', 'required', 'autofocus']) !!}
+                        </div>
 
                         <!--  meter Campo Password -->
 

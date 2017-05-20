@@ -7,7 +7,7 @@
 
         color: #636b6f;
         font-family: 'Raleway', sans-serif;
-        font-weight: 100;
+        font-weight: lighter;
         height: 100vh;
         margin: 0;
     }
@@ -104,7 +104,9 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
+
                     @if (Route::has('login'))
+
                         <!-- Authentication Links -->
                         @if (Auth::guest())
                                 <li>    <a href="{{ route('login') }}"  style="color: #cccccc; "><b>Login</b></a></li>
@@ -112,7 +114,7 @@
                                 <li>    <a href="{{ url('/autores') }}" style="color: #cccccc;"> <b> Autores  </b></a> </li>
 
                         @else
-
+                                <li>Bienvenido </li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     {{ Auth::user()->name }} <span class="caret"></span>

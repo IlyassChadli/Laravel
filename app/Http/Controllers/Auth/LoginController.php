@@ -29,18 +29,25 @@ class LoginController extends Controller
      */
     public function index()
     {
-        $tipo_user=Auth::user()->tipo_user;
-        if($tipo_user=='paciente'){
-            return view('paciente.home');
-        }
-        if($tipo_user=='medico'){
-            return view('medico.home');
-        }if($tipo_user=='admin'){
-            return view('admin.home');
-        }if($tipo_user=='tel'){
-            return view('admin.home');
-        }
+        return view('home');
+
     }
+public function redirectTo()
+{
+    $user = Auth::user();
+    if ($user->hasPaciente()) {
+        return view('Paciente');
+    }
+    if ($user->hasMedico()) {
+        return view('Medico');
+    }
+    if ($user->hasAdministrador()) {
+        return view('zona_admin');
+    }
+    if ($user->hasPersonalDeLab()) {
+        return view('PersonalLab');
+    }
+}
 
     /**
      * Create a new controller instance.
