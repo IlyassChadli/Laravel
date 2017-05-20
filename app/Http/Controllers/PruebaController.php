@@ -41,18 +41,9 @@ class PruebaController extends Controller
             'direccion'=> 'required',
             'consulta_id'=>'required',
         ]);
-
-        $user = new User($request->all());
-        $user->save();
         $prueba = new Prueba($request->all());
-
-        $prueba->user_id = $user->id;
-
         $prueba->save();
-
-
         flash('Prueba creado correctamente');
-
         return redirect()->route('Prueba.index');
 
     }
@@ -112,6 +103,6 @@ class PruebaController extends Controller
         $prueba=Prueba::find($id);
         $prueba->delete();
         flash('prueba borrada correctamente');
-        return redirect()->route('pruebas.index');
+        return redirect()->route('Prueba.index');
     }
 }

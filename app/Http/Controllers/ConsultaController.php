@@ -41,13 +41,7 @@ class ConsultaController extends Controller
 
             'departamento'=> 'required',
         ]);
-        $user = new User($request->all());
-
-        $user->save();
         $consulta = new Consulta($request->all());
-
-        $consulta->user_id = $user->id;
-
         $consulta->save();
 
 
@@ -86,9 +80,22 @@ class ConsultaController extends Controller
      * @param  \App\Consulta  $consulta
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Consulta $consulta)
+    public function update(Request $request, $id)
     {
-        //
+        $consulta=Consulta::find($id);
+        $this->validate($request, [
+            'name' => 'required|max:255',
+
+            'departamento'=> 'required',
+        ]);
+        $consulta->fill($request->all());
+        $consulta->save();
+
+
+        flash('Consulta modificada correctamente');
+        return redirect()->route('Consulta.edit');
+
+
     }
 
     /**

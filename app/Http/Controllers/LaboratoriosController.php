@@ -44,12 +44,7 @@ class LaboratoriosController extends Controller
             'departamento'=>'required',
         ]);
 
-        $user = new User($request->all());
-        $user->save();
         $laboratorio = new Laboratorio($request->all());
-
-        $laboratorio->user_id = $user->id;
-
         $laboratorio->save();
 
 

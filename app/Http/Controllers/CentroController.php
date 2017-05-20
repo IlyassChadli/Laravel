@@ -23,9 +23,9 @@ class CentroController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+       return view ('Centro/create');
     }
 
     /**
@@ -36,7 +36,19 @@ class CentroController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required|max:255',
+            'direccion'=> 'required',
+            'departamentos'=>'required',
+        ]);
+
+        $centro = new centro($request->all());
+        $centro->save();
+
+
+        flash('Centro creado correctamente');
+
+        return redirect()->route('Centro.index');
     }
 
     /**
@@ -56,9 +68,10 @@ class CentroController extends Controller
      * @param  \App\Centro  $centro
      * @return \Illuminate\Http\Response
      */
-    public function edit(Centro $centro)
+    public function edit($id)
     {
-        //
+        $centro=Centro::find($id);
+        return view('Centro/edit',['centro'=>$centro]);
     }
 
     /**
@@ -68,9 +81,22 @@ class CentroController extends Controller
      * @param  \App\Centro  $centro
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Centro $centro)
+    public function update(Request $request, $id)
     {
-        //
+        $centro=Centro::find($id);
+        $this->validate($request, [
+            'name' => 'required|max:255',
+            'direccion'=> 'required',
+            'departamentos'=>'required',
+        ]);
+
+        $centro->fill($request->all());
+        $centro->save();
+
+
+        flash('Centro modificado correctamente');
+
+        return redirect()->route('Centro.edit');
     }
 
     /**
@@ -83,6 +109,6 @@ class CentroController extends Controller
     {
         $centro->delete();
         flash('centro borrado correctamente');
-        return redirect()->route('centro.index');
+        return redirect()->route('Centro.index');
     }
 }

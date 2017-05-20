@@ -41,18 +41,14 @@ class CitaController extends Controller
 
             'consultaid'=> 'required',
         ]);
-        $user = new User($request->all());
 
-        $user->save();
+
         $cita = new Consulta($request->all());
-
-        $cita->user_id = $user->id;
-
         $cita->save();
 
 
-        flash('Consulta creada correctamente');
-        return redirect()->route('Consulta.index');
+        flash('Cita creada correctamente');
+        return redirect()->route('Cita.index');
     }
 
     /**
@@ -72,9 +68,10 @@ class CitaController extends Controller
      * @param  \App\Cita  $cita
      * @return \Illuminate\Http\Response
      */
-    public function edit(Cita $cita)
+    public function edit($id)
     {
-        //
+        $cita=Cita::find($id);
+        return view('Cita/edit',['cita'=>$cita]);
     }
 
     /**
@@ -84,9 +81,23 @@ class CitaController extends Controller
      * @param  \App\Cita  $cita
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Cita $cita)
+    public function update(Request $request, $id)
     {
-        //
+        $cita=Cita::find($id);
+
+        $this->validate($request, [
+            'name' => 'required|max:255',
+
+            'consultaid'=> 'required',
+        ]);
+
+
+        $cita->fill($request->all());
+        $cita->save();
+
+
+        flash('Cita modificada correctamente');
+        return redirect()->route('Cita.edit');
     }
 
     /**
@@ -99,6 +110,6 @@ class CitaController extends Controller
     {
         $cita->delete();
         flash('cita borrada correctamente');
-        return redirect()->route('cita.index');
+        return redirect()->route('Cita.index');
     }
 }
