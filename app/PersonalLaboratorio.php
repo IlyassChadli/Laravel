@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class PersonalLaboratorio extends Model
 
 {
-    protected $fillable = [ 'DNI', 'laboratorio_id'];
+    protected $fillable = [ 'facultativo', 'laboratorio_id'];
     public function user()
     {
         return $this->belongsTo('App/User') ;

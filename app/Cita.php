@@ -29,7 +29,8 @@ class Cita extends Model
     }
     public function solicitud()
     {
-        return $this->has('App\Solicitud');
+        return $this->hasOne('App\Solicitud');
 
     }
+
 }

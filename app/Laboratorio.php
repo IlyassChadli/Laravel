@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Laboratorio extends Model
 {
+    protected $fillable = ['centro_id','solicitud_id','PersonalLab_id'];
     public function personal_laboratorio()
     {
         return $this->hasMany('App\Personal_Laboratorio');
@@ -18,8 +19,5 @@ class Laboratorio extends Model
     {
         return $this->hasMany('App\Solucitud');
     }
-    public function informe()
-    {
-        return $this->hasMany('App\Informe');
-    }
+
 }

@@ -19,13 +19,14 @@ class CreateCitasTable extends Migration
             $table->unsignedInteger('admin_id');
             $table->unsignedInteger('paciente_id');
             $table->unsignedInteger('consulta_id');
+            $table->timestamps();
             $table->foreign('medico_id')->references('id')->on('medicos')->onDelete('cascade');
             $table->foreign('paciente_id')->references('id')->on('pacientes')->onDelete('cascade');
             $table->foreign('consulta_id')->references('id')->on('consultas')->onDelete('cascade');
             $table->foreign('admin_id')->references('id')->on('administradors')->onDelete('cascade');
             $table->dateTime('fecha');
 
-            $table->timestamps();
+
         });
     }
 
