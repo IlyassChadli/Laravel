@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Solicitud extends Model
 {
-
+    protected $fillable = [ 'solicitud_id','medico_id', 'laboratorio_id'];
     public function medico(){
         return $this->belongsTo('App\Medico');
     }
