@@ -32,22 +32,7 @@ class LoginController extends Controller
         return view('home');
 
     }
-public function redirectTo()
-{
-    $user = Auth::user();
-    if ($user->hasPaciente()) {
-        return view('Paciente');
-    }
-    if ($user->hasMedico()) {
-        return view('Medico');
-    }
-    if ($user->hasAdministrador()) {
-        return view('zona_admin');
-    }
-    if ($user->hasPersonalDeLab()) {
-        return view('PersonalLab');
-    }
-}
+
 
     /**
      * Create a new controller instance.
