@@ -32,17 +32,20 @@ Route::get('/zona_admin', function () {
 Route::get('/home', function () {
     return view('home');
 });
+Route::get('/inicio', function () {
+    return view('inicio');
 
+});
 Route::resource('Medico','MedicoController');
 Route::resource('Paciente','PacienteController');
 Route::resource('PersonalLab','PersonalLaboratorioController');
 Route::resource('Laboratorio','LaboratoriosController');
-Route::resource('Citas','CitaController');
+Route::resource('Cita','CitaController');
 Route::resource('Consulta','ConsultaController');
 Route::resource('Administrador','AdministradorController');
 Route::resource('Prueba','PruebaController');
 Route::resource('Centro','CentroController');
-
+Route::resource('Solicitud','SolicitudController');
 
 
 Auth::routes();

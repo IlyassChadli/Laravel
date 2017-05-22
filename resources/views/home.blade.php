@@ -11,15 +11,15 @@
 
             @if(Auth::user()->paciente)
                         <p>Opciones de paciente</p>
-                            <li>    <a href="{{ route('login') }}"  style="color: #cccccc; "><b>Opcion1</b></a></li>
-                            <li>    <a href="{{ url('/objetivos') }}" style="color: #cccccc; "><b>  Opcion2  </b></a>  </li>
-                            <li>    <a href="{{ url('/autores') }}" style="color: #cccccc;"> <b> Opcion3  </b></a> </li>
-
-                        @elseif (Auth::user()->medico)
-                        Opciones de Medico
                             <li>    <a href="{{ url('/') }}"  style="color: #cccccc; "><b>Opcion1</b></a></li>
                             <li>    <a href="{{ url('/') }}" style="color: #cccccc; "><b>  Opcion2  </b></a>  </li>
                             <li>    <a href="{{ url('/') }}" style="color: #cccccc;"> <b> Opcion3  </b></a> </li>
+
+                        @elseif (Auth::user()->medico)
+                        Opciones de Medico
+                            <li>    <a href="{{ url('/Cita') }}"  style="color: #cccccc; "><b>Citas</b></a></li>
+                            <li>    <a href="{{ url('/Paciente') }}" style="color: #cccccc; "><b>Pacientes</b></a></li>
+                            <li>    <a href="{{ url('/Solicitud') }}" style="color: #cccccc;"> <b> Solicitud  </b></a> </li>
 
                         @elseif (Auth::user()->administrador)
                             Opciones de admin

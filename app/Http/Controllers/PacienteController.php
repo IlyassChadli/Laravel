@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Paciente;
 use Illuminate\Http\Request;
-
+use App\User;
 class PacienteController extends Controller
 {
     /**
@@ -41,8 +41,8 @@ class PacienteController extends Controller
             'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
             'dni'=> 'required|max:8',
-            'password' => 'required|min:6|confirmed',
-            'numPaciente'=> 'required|max:255',
+            'password' => 'required|min:6|',
+            'numPaciente'=> 'max:255',
         ]);
 
 

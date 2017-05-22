@@ -7,7 +7,7 @@ use App\User;
 class Medico extends Model
 {
 
-    protected $fillable = [ 'dni','consulta_id','user_id','numColegiado'];
+    protected $fillable = ['consulta_id','user_id','numColegiado'];
 
 
 

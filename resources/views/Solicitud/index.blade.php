@@ -4,12 +4,12 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Pagina Citas</div>
+                <div class="panel-heading">Pagina Solicitud</div>
 
                 <div class="panel-body">
                     @include('flash::message')
-                    {!! Form::open(['route' => 'Cita.create', 'method' => 'get']) !!}
-                    {!!   Form::submit('Crear medico', ['class'=> 'btn btn-primary'])!!}
+                    {!! Form::open(['route' => 'Solicitud.create', 'method' => 'get']) !!}
+                    {!!   Form::submit('Crear Solicitud', ['class'=> 'btn btn-primary'])!!}
                     {!! Form::close() !!}
 
                     <br><br>
@@ -21,21 +21,21 @@
                             <th colspan="2">Acciones</th>
                         </tr>
 
-                        @foreach ($citas as $cita)
+                        @foreach ($solicitudes as $solicitud)
 
 
                             <tr>
-                                <td>{{ $cita->fecha_hora }}</td>
-                                <td>{{ $cita->medico_id }}</td>
-                                <td>{{ $cita->paciente_id }}</td>
-                                <td>{{ $cita->consulta_id }}</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+
                                 <td>
-                                    {!! Form::open(['route' => ['Cita.edit',$medico->id], 'method' => 'get']) !!}
+                                    {!! Form::open(['route' => ['Solicitud.edit',$medico->id], 'method' => 'get']) !!}
                                     {!!   Form::submit('Editar', ['class'=> 'btn btn-warning'])!!}
                                     {!! Form::close() !!}
                                 </td>
                                 <td>
-                                    {!! Form::open(['route' => ['Cita.destroy',$medico->id], 'method' => 'delete']) !!}
+                                    {!! Form::open(['route' => ['Solicitud.destroy',$medico->id], 'method' => 'delete']) !!}
                                     {!!   Form::submit('Borrar', ['class'=> 'btn btn-danger' ,'onclick' => 'if(!confirm("¿Está seguro?"))event.preventDefault();'])!!}
                                     {!! Form::close() !!}
 

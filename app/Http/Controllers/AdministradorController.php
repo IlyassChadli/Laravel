@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Administrador;
 use Illuminate\Http\Request;
-
+use App\User;
 class AdministradorController extends Controller
 {
     /**

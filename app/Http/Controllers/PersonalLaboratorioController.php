@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Laboratorio;
 use App\PersonalLaboratorio;
 use Illuminate\Http\Request;
-
+use App\User;
 class PersonalLaboratorioController extends Controller
 {
     /**
