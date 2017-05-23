@@ -13,10 +13,7 @@ use App\Solicitud;
 class SolicitudController extends Controller
 {
 
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+
     /**
      * Display a listing of the resource.
      *
@@ -53,9 +50,9 @@ class SolicitudController extends Controller
     {
 
         $this->validate($request, [
-            'name' => 'required|max:255',
-            'surname' => 'required|max:255',
-            'nuhsa' => 'required|nuhsa|max:255'
+            'medico_id' => 'required|max:255',
+            'solicitud_id' => 'required|max:255',
+            'cita_id' => 'required|max:255'
         ]);
 
         //TODO: crear validación propia para nuhsa
@@ -64,7 +61,7 @@ class SolicitudController extends Controller
 
         // return redirect('especialidades');
 
-        flash('Solicitud creado correctamente');
+        flash('Solicitud creada correctamente');
 
         return redirect()->route('Solicitud.index');
     }
@@ -103,9 +100,9 @@ class SolicitudController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'name' => 'required|max:255',
-            'surname' => 'required|max:255',
-            'nuhsa' => 'required|nuhsa|max:255'
+            'medico_id' => 'required|max:255',
+            'solicitud_id' => 'required|max:255',
+            'cita_id' => 'required|nuhsa|max:255'
         ]);
 
         $solicitud = Solicitud::find($id);

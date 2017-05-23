@@ -37,9 +37,9 @@ class CentroController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required|max:255',
+            'telefono' => 'required|max:9',
             'direccion'=> 'required',
-            'departamentos'=>'required',
+            'centro_id'=>'required',
         ]);
 
         $centro = new centro($request->all());
@@ -85,9 +85,9 @@ class CentroController extends Controller
     {
         $centro=Centro::find($id);
         $this->validate($request, [
-            'name' => 'required|max:255',
+            'telefono' => 'required|max:255',
             'direccion'=> 'required',
-            'departamentos'=>'required',
+            'centro_id'=>'required',
         ]);
 
         $centro->fill($request->all());

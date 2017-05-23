@@ -13,7 +13,7 @@ class CreatePersonalLaboratoriosTable extends Migration
      */
     public function up()
     {
-        Schema::create('personal__laboratorios', function (Blueprint $table) {
+        Schema::create('personallaboratorios', function (Blueprint $table) {
             $table->increments('id')->unique();
             $table->unsignedInteger('lab_id');
             $table->boolean('facultativo');
@@ -30,6 +30,6 @@ class CreatePersonalLaboratoriosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('personal__laboratorios');
+        Schema::dropIfExists('personallaboratorios');
     }
 }

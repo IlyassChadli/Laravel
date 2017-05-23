@@ -37,9 +37,9 @@ class ConsultaController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required|max:255',
+            'medico_id' => 'required|max:255',
 
-            'departamento'=> 'required',
+            'centro_id'=> 'required',
         ]);
         $consulta = new Consulta($request->all());
         $consulta->save();
@@ -84,9 +84,9 @@ class ConsultaController extends Controller
     {
         $consulta=Consulta::find($id);
         $this->validate($request, [
-            'name' => 'required|max:255',
+            'medico_id' => 'required|max:255',
 
-            'departamento'=> 'required',
+            'centro_id'=> 'required',
         ]);
         $consulta->fill($request->all());
         $consulta->save();
@@ -108,6 +108,6 @@ class ConsultaController extends Controller
     {
         $consulta->delete();
         flash('consulta borrada correctamente');
-        return redirect()->route('consulta.index');
+        return redirect()->route('Consulta.index');
     }
 }
