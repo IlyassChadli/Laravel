@@ -56,10 +56,10 @@ class LaboratoriosController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\laboratorios  $laboratorios
+     * @param  \App\Laboratorio  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(laboratorios $laboratorios)
+    public function show(laboratorio $id)
     {
         //
     }
@@ -67,7 +67,7 @@ class LaboratoriosController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\laboratorios  $laboratorios
+     * @param  \App\laboratorio  $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -80,7 +80,7 @@ class LaboratoriosController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\laboratorios  $laboratorios
+     * @param  \App\laboratorio  $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request,$id)

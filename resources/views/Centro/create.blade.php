@@ -67,7 +67,7 @@
                         {!! Form::open(['route' => 'Centro.store']) !!}
                         <div class="form-group">
                             {!! Form::label('telefono', 'Telefono') !!}
-                            {!! Form::text('name',null,['class'=>'form-control', 'required']) !!}
+                            {!! Form::text('telefono',null,['class'=>'form-control', 'required']) !!}
                         </div>
 
                         <div class="form-group">
@@ -77,7 +77,7 @@
 
                         <div class="form-group">
                             {!! Form::label('centro_id', 'Centro id ') !!}
-                            {!! Form::text('consulta_id',null,['class'=>'form-control', 'required', 'autofocus']) !!}
+                            {!! Form::text('centro_id',null,['class'=>'form-control', 'required', 'autofocus']) !!}
                         </div>
 
                         {!! Form::submit('Guardar',['class'=>'btn-primary btn']) !!}

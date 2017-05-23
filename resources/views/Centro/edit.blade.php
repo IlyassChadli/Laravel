@@ -5,30 +5,26 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Editar medico</div>
+                    <div class="panel-heading">Editar centro</div>
 
                     <div class="panel-body">
                         @include('flash::message')
 
-                        {!! Form::model($medico, [ 'route' => ['medicos.update',$medico->id], 'method'=>'PUT']) !!}
+                        {!! Form::model($centro, [ 'route' => ['Centro.update',$centro->id], 'method'=>'PUT']) !!}
                         <div class="form-group">
-                            {!! Form::label('name', 'Nombre del medico') !!}
-                            {!! Form::text('name',null,['class'=>'form-control', 'required', 'autofocus']) !!}
-                        </div>
-                        <div class="form-group">
-                            {!! Form::label('dni', 'DNI') !!}
-                            {!! Form::text('dni',null,['class'=>'form-control', 'required']) !!}
-                        </div>
-                        <div class="form-group">
-                            {!! Form::label('numColegiado', 'Numero de Colegiado ') !!}
-                            {!! Form::text('numColegiado',null,['class'=>'form-control', 'required', 'autofocus']) !!}
+                            {!! Form::label('telefono', 'Telefono') !!}
+                            {!! Form::text('telefono',null,['class'=>'form-control', 'required']) !!}
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('consulta_id', 'Consulta Asignada ') !!}
-                            {!! Form::text('consulta_id',null,['class'=>'form-control', 'required', 'autofocus']) !!}
+                            {!! Form::label('direccion', 'Dirección') !!}
+                            {!! Form::text('direccion',null,['class'=>'form-control' ]) !!}
                         </div>
 
+                        <div class="form-group">
+                            {!! Form::label('centro_id', 'Centro id ') !!}
+                            {!! Form::text('centro_id',null,['class'=>'form-control', 'required', 'autofocus']) !!}
+                        </div>
                         {!! Form::submit('Guardar',['class'=>'btn-primary btn']) !!}
 
                         {!! Form::close() !!}

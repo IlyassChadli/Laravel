@@ -10,23 +10,19 @@
                     <div class="panel-body">
                         @include('flash::message')
 
-                        {!! Form::model($medico, [ 'route' => ['Solicitud.update',$medico->id], 'method'=>'PUT']) !!}
+                        {!! Form::model($solicitud, [ 'route' => ['Solicitud.update',$solicitud->id], 'method'=>'PUT']) !!}
                         <div class="form-group">
-                            {!! Form::label('name', 'Nombre del medico') !!}
-                            {!! Form::text('name',null,['class'=>'form-control', 'required', 'autofocus']) !!}
-                        </div>
-                        <div class="form-group">
-                            {!! Form::label('dni', 'DNI') !!}
-                            {!! Form::text('dni',null,['class'=>'form-control', 'required']) !!}
-                        </div>
-                        <div class="form-group">
-                            {!! Form::label('numColegiado', 'Numero de Colegiado ') !!}
-                            {!! Form::text('numColegiado',null,['class'=>'form-control', 'required', 'autofocus']) !!}
+                            {!! Form::label('medico_id', 'Id del medico') !!}
+                            {!! Form::text('medico_id',null,['class'=>'form-control', 'required']) !!}
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('consulta_id', 'Consulta Asignada ') !!}
-                            {!! Form::text('consulta_id',null,['class'=>'form-control', 'required', 'autofocus']) !!}
+                            {!! Form::label('solicitud_id', 'Id de la solicitud') !!}
+                            {!! Form::text('solicitud_id',null,['class'=>'form-control' ]) !!}
+                        </div>
+                        <div class="form-group">
+                            {!! Form::label('cita_id', 'Id de la cita') !!}
+                            {!! Form::text('cita_id',null,['class'=>'form-control', 'required']) !!}
                         </div>
 
                         {!! Form::submit('Guardar',['class'=>'btn-primary btn']) !!}

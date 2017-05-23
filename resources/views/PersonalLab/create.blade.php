@@ -65,17 +65,13 @@
 
                         {!! Form::open(['route' => 'Solicitud.store']) !!}
                         <div class="form-group">
-                            {!! Form::label('medico_id', 'Id del medico') !!}
-                            {!! Form::text('medico_id',null,['class'=>'form-control', 'required']) !!}
+                            {!! Form::label('laboratorio_id', 'Id del laboratorio') !!}
+                            {!! Form::text('laboratorio_id',null,['class'=>'form-control', 'required']) !!}
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('solicitud_id', 'Id de la solicitud') !!}
-                            {!! Form::text('solicitud_id',null,['class'=>'form-control' ]) !!}
-                        </div>
-                        <div class="form-group">
-                            {!! Form::label('cita_id', 'Id de la cita') !!}
-                            {!! Form::text('cita_id',null,['class'=>'form-control', 'required']) !!}
+                            {!! Form::label('facultativo', 'Facultativo') !!}
+                            {!! Form::text('facultativo',null,['class'=>'form-control' ]) !!}
                         </div>
                         {!! Form::submit('Guardar',['class'=>'btn-primary btn']) !!}
 

@@ -13,7 +13,7 @@ class CreateLaboratoriosTable extends Migration
      */
     public function up()
     {
-        Schema::create('laboratorios', function (Blueprint $table) {
+        Schema::create('Laboratorio', function (Blueprint $table) {
             $table->increments('id')->unique();
             $table->unsignedInteger('centro_id');
             $table->unsignedInteger('Plaboratorio_id');
@@ -32,6 +32,6 @@ class CreateLaboratoriosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('laboratorios');
+        Schema::dropIfExists('Laboratorio');
     }
 }
