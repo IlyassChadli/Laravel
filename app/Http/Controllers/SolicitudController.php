@@ -50,9 +50,9 @@ class SolicitudController extends Controller
     {
 
         $this->validate($request, [
-            'medico_id' => 'required|max:255',
-            'solicitud_id' => 'required|max:255',
-            'cita_id' => 'required|max:255'
+            'medico_id' => 'required|exists:Medico,id',
+            'solicitud_id' => 'required|exists:Solicitud,id',
+            'cita_id' => 'required|exists:Cita,id',
         ]);
 
         //TODO: crear validación propia para nuhsa
@@ -100,9 +100,9 @@ class SolicitudController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'medico_id' => 'required|max:255',
-            'solicitud_id' => 'required|max:255',
-            'cita_id' => 'required|nuhsa|max:255'
+            'medico_id' => 'required|exists:Medico,id',
+            'solicitud_id' => 'required|exists:Solicitud,id',
+            'cita_id' => 'required|exists:Cita,id',
         ]);
 
         $solicitud = Solicitud::find($id);

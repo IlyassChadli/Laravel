@@ -38,7 +38,6 @@ class AdministradorController extends Controller
     {
             $this->validate($request, [
                 'name' => 'required|max:255',
-                'numColegiado'=>'required|max:255',
                 'email' => 'required|email|max:255|unique:users',
                 'dni'=> 'required|max:9',
                 'password' => 'required|min:6|',

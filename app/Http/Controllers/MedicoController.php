@@ -108,7 +108,8 @@ class MedicoController extends Controller
             'dni'=> 'required|max:8',
             'password' => 'required|min:6|confirmed',
             'direccion'=> 'required',
-            'consulta_id'=>'required']);
+            'consulta_id'=>'required|exists:Consulta,id',
+        ]);
         $medico->fill($request->all());
         $medico->save();
         flash('Medico modificado correctamente');

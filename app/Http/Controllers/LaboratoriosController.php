@@ -16,7 +16,7 @@ class LaboratoriosController extends Controller
     public function index()
     {
         $laboratorios=Laboratorio::all();
-        return view('Laboratorio/index',['laboratorios'=>$laboratorios]);
+        return view('Laboratorio/index',['Laboratorio'=>$laboratorios]);
     }
 
     /**
@@ -39,9 +39,9 @@ class LaboratoriosController extends Controller
     {
 
         $this->validate($request, [
-            'name' => 'required|max:255',
-            'planta'=> 'required',
-            'departamento'=>'required',
+            'centro_id'=>'required|exists:Centro,id',
+            'solicitud_id'=>'required|exists:Solicitud,id',
+            'PersonalLab_id'=>'required|exists:PersonalLaboratorio,id',
         ]);
 
         $laboratorio = new Laboratorio($request->all());
@@ -86,9 +86,10 @@ class LaboratoriosController extends Controller
     public function update(Request $request,$id)
     {
         $laboratorio=Laboratorio::find($id);
-        $this->validate($request, [ 'name' => 'required|max:255',
-            'planta'=> 'required',
-            'departamento'=>'required',
+        $this->validate($request, [
+            'centro_id'=>'required|exists:Centro,id',
+            'solicitud_id'=>'required|exists:Solicitud,id',
+            'PersonalLab_id'=>'required|exists:PersonalLaboratorio,id',
         ]);
         $laboratorio->fill($request->all());
         $laboratorio->save();
@@ -99,7 +100,7 @@ class LaboratoriosController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\laboratorios  $laboratorios
+     * @param  \App\laboratorio $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

@@ -37,13 +37,15 @@ class CitaController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required|max:255',
-
-            'consultaid'=> 'required',
+            'fecha_hora' => 'required|date|after:now',
+            'medico_id'=> 'required|exists:Medico,id',
+            'paciente_id'=>'required|exists:Paciente,id',
+            'consulta_id'=> 'required|exists:Consulta,id',
+            'administrador_id'=> 'required|exists:Administrador,id',
         ]);
 
 
-        $cita = new Consulta($request->all());
+        $cita = new Cita($request->all());
         $cita->save();
 
 
@@ -86,9 +88,11 @@ class CitaController extends Controller
         $cita=Cita::find($id);
 
         $this->validate($request, [
-            'name' => 'required|max:255',
-
-            'consultaid'=> 'required',
+            'fecha_hora' => 'required|date|after:now',
+            'medico_id'=> 'required|exists:Medico,id',
+            'paciente_id'=>'required|exists:Paciente,id',
+            'consulta_id'=> 'required|exists:Consulta,id',
+            'administrador_id'=> 'required|exists:Administrador,id',
         ]);
 
 

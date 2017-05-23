@@ -43,6 +43,7 @@ class PersonalLaboratorioController extends Controller
             'dni'=> 'required|max:9',
             'password' => 'required|min:6|',
             'direccion'=> 'required',
+            'facultativo'=>'required',
         ]);
         $user = new User($request->all());
         $user->save();
@@ -94,6 +95,7 @@ class PersonalLaboratorioController extends Controller
             'dni'=> 'required|max:9',
             'password' => 'required|min:6|',
             'direccion'=> 'required',
+            'facultativo'=>'required',
         ]);
         $personalLab->fill($request->all());
         $personalLab->save();
