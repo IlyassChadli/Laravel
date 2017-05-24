@@ -9,15 +9,17 @@
                 <div class="panel-body">
                     @include('flash::message')
                     {!! Form::open(['route' => 'Cita.create', 'method' => 'get']) !!}
-                    {!!   Form::submit('Crear medico', ['class'=> 'btn btn-primary'])!!}
+                    {!!   Form::submit('Crear cita', ['class'=> 'btn btn-primary'])!!}
                     {!! Form::close() !!}
 
                     <br><br>
                     <table class="table table-striped table-bordered">
                         <tr>
-                            <th>Nombre</th>
-                            <th>Apellidos</th>
-                            <th>Especialidad</th>
+                            <th>Fecha y hora</th>
+                            <th>Medico</th>
+                            <th>Pacicente</th>
+                            <th>Consulta</th>
+                            <th>Administrador</th>
                             <th colspan="2">Acciones</th>
                         </tr>
 
@@ -29,6 +31,7 @@
                                 <td>{{ $cita->medico_id }}</td>
                                 <td>{{ $cita->paciente_id }}</td>
                                 <td>{{ $cita->consulta_id }}</td>
+                                <td>{{ $cita->administrador_id }}</td>
                                 <td>
                                     {!! Form::open(['route' => ['Cita.edit',$medico->id], 'method' => 'get']) !!}
                                     {!!   Form::submit('Editar', ['class'=> 'btn btn-warning'])!!}
