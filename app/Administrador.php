@@ -3,10 +3,10 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
+use App\User;
 class Administrador extends Model
 {
-    protected $fillable = [ 'centro_id','sueldo','user_id'];
+    protected $fillable = [ 'centro_id','user_id'];
 
 
     public function user()

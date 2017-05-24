@@ -20,6 +20,10 @@
                             {!! Form::text('dni',null,['class'=>'form-control', 'required']) !!}
                         </div>
                         <div class="form-group">
+                            {!! Form::label('centro_id', 'Centro  de Trabajo ') !!}
+                            {!! Form::text('centro_id',null,['class'=>'form-control', 'required', 'autofocus']) !!}
+                        </div>
+                        <div class="form-group">
                             {!! Form::label('email', 'Email ') !!}
                             {!! Form::text('email',null,['class'=>'form-control', 'required']) !!}
                         </div>

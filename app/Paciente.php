@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
+use App\User;
 class Paciente extends Model
 {
     protected $fillable = ['user_id','numPaciente'];
@@ -11,16 +11,16 @@ class Paciente extends Model
 
     public function user()
     {
-        return $this->belongsTo('App/User') ;
+        return $this->belongsTo('App\User') ;
     }
 
     public function informe()
     {
-        return $this->hasMany('App/Informe') ;
+        return $this->hasMany('App\Informe') ;
     }
     public function cita()
     {
-        return $this->hasMany('App/Cita') ;
+        return $this->hasMany('App\Cita') ;
     }
 
 }

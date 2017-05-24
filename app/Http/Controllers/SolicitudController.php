@@ -55,7 +55,7 @@ class SolicitudController extends Controller
             'cita_id' => 'required|exists:Cita,id',
         ]);
 
-        //TODO: crear validación propia para nuhsa
+
         $solicitud = new Solicitud($request->all());
         $solicitud->save();
 
@@ -74,7 +74,7 @@ class SolicitudController extends Controller
      */
     public function show($id)
     {
-        // TODO: Mostrar las citas de un paciente
+
     }
 
     /**
@@ -87,7 +87,7 @@ class SolicitudController extends Controller
     {
         $solicitud = Solicitud::find($id);
 
-        return view('Solicitud/edit',['solicitud'=> $solicitudes ]);
+        return view('Solicitud/edit',['solicitud'=> $solicitud ]);
     }
 
     /**
