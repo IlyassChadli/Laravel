@@ -44,6 +44,19 @@
                                     </b></a>
                             </td>
                         </tr>
+
+                        <tr>
+                            <td class=" " align="" wigth="17%">
+                                <a href="{{ url('/Centro') }}" style="color: #cccccc; "><b>              Centros
+                                    </b></a>
+                            </td> <td class=" " align="" wigth="17%">
+                                <a href="{{ url('/Laboratorio') }}" style="color: #cccccc; "><b>               Laboratorios
+                                    </b></a> &nbsp;
+                            </td> <td class=" " align="" wigth="17%">
+                                <a href="{{ url('/Informe') }}" style="color: #cccccc; "><b>               Informes
+                                    </b></a>
+                            </td>
+                        </tr>
                     </table>
                     </div>
             </div>

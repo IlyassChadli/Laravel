@@ -7,6 +7,12 @@
                 <div class="panel-heading">Pagina Citas</div>
 
                 <div class="panel-body">
+
+
+
+
+
+
                     @include('flash::message')
                     {!! Form::open(['route' => 'Cita.create', 'method' => 'get']) !!}
                     {!!   Form::submit('Crear cita', ['class'=> 'btn btn-primary'])!!}
@@ -20,7 +26,7 @@
                             <th>Pacicente</th>
                             <th>Consulta</th>
                             <th>Administrador</th>
-                            <th colspan="2">Acciones</th>
+
                         </tr>
 
                         @foreach ($citas as $cita)
@@ -33,12 +39,12 @@
                                 <td>{{ $cita->consulta_id }}</td>
                                 <td>{{ $cita->administrador_id }}</td>
                                 <td>
-                                    {!! Form::open(['route' => ['Cita.edit',$medico->id], 'method' => 'get']) !!}
+                                    {!! Form::open(['route' => ['Cita.edit',$cita->id], 'method' => 'get']) !!}
                                     {!!   Form::submit('Editar', ['class'=> 'btn btn-warning'])!!}
                                     {!! Form::close() !!}
                                 </td>
                                 <td>
-                                    {!! Form::open(['route' => ['Cita.destroy',$medico->id], 'method' => 'delete']) !!}
+                                    {!! Form::open(['route' => ['Cita.destroy',$cita->id], 'method' => 'delete']) !!}
                                     {!!   Form::submit('Borrar', ['class'=> 'btn btn-danger' ,'onclick' => 'if(!confirm("¿Está seguro?"))event.preventDefault();'])!!}
                                     {!! Form::close() !!}
 
@@ -47,7 +53,7 @@
                         @endforeach
                     </table>
                 </div>
-            </div>
+                   </div>
                 </div>
             </div>
         </div>

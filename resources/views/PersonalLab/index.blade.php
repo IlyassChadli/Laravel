@@ -16,8 +16,8 @@
                         <table class="table table-striped table-bordered">
                             <tr>
                                 <th>Nombre</th>
-                                <th>Consulta</th>
-                                <th>numPaciente</th>
+                                <th>Laboratorio</th>
+                                <th>Facultativo</th>
 
                             </tr>
 
@@ -26,8 +26,8 @@
 
                                 <tr>
                                     <td>{{ $personal->user->name }}</td>
-                                    <td></td>
-                                    <td></td>
+                                    <td>{{ $personal->laboratorio_id}}</td>
+                                    <td>{{ $personal->facultativo }}</td>
 
                                     <td>
                                         {!! Form::open(['route' => ['PersonalLab.edit',$paciente->id], 'method' => 'get']) !!}

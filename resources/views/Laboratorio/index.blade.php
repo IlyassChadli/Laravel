@@ -18,7 +18,6 @@
                             <th>Centro</th>
                             <th>Solicitud</th>
                             <th>Personal de laboratorio</th>
-                            <th colspan="2">Acciones</th>
                         </tr>
 
                         @foreach ($Laboratorio as $laboratorios)

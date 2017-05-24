@@ -11,27 +11,25 @@
 
             @if(Auth::user()->paciente)
                         <p>Opciones de paciente</p>
-                            <li>    <a href="{{ url('/') }}"  style="color: #cccccc; "><b>Opcion1</b></a></li>
-                            <li>    <a href="{{ url('/') }}" style="color: #cccccc; "><b>  Opcion2  </b></a>  </li>
-                            <li>    <a href="{{ url('/') }}" style="color: #cccccc;"> <b> Opcion3  </b></a> </li>
+                            <li>    <a href="{{ url('/Cita') }}"  style="color: #cccccc; "><b>Citas</b></a></li>
+
 
                         @elseif (Auth::user()->medico)
                         Opciones de Medico
                             <li>    <a href="{{ url('/Cita') }}"  style="color: #cccccc; "><b>Citas</b></a></li>
                             <li>    <a href="{{ url('/Paciente') }}" style="color: #cccccc; "><b>Pacientes</b></a></li>
-                            <li>    <a href="{{ url('/Solicitud') }}" style="color: #cccccc;"> <b> Solicitud  </b></a> </li>
-
+                            <li>    <a href="{{ url('/Solicitud') }}" style="color: #cccccc;"> <b> Solicitudes  </b></a> </li>
+                        <li>    <a href="{{ url('/Informe') }}" style="color: #cccccc;"> <b> Informes  </b></a> </li>
                         @elseif (Auth::user()->administrador)
                             Opciones de admin
-                            <li>    <a href="{{ url('/') }}"  style="color: #cccccc; "><b>Opcion1</b></a></li>
-                            <li>    <a href="{{ url('/') }}" style="color: #cccccc; "><b>  Opcion2  </b></a>  </li>
-                            <li>    <a href="{{ url('/') }}" style="color: #cccccc;"> <b> Opcion3  </b></a> </li>
+                            <li>    <a href="{{ url('/zona_admin') }}"  style="color: #cccccc; "><b>Panel de control</b></a></li>
+
 
                             @elseif (Auth::user()->personalLab)
 
                                 Opciones de laborarotio
-                                <li>    <a href="{{ url('/') }}"  style="color: #cccccc; "><b>Opcion1</b></a></li>
-                                <li>    <a href="{{ url('/') }}" style="color: #cccccc; "><b>  Opcion2  </b></a>  </li>
+                                <li>    <a href="{{ url('/Informe') }}"  style="color: #cccccc; "><b>Informes</b></a></li>
+                                <li>    <a href="{{ url('/Solicitud') }}" style="color: #cccccc; "><b>  Solicitudes  </b></a>  </li>
                                 <li>    <a href="{{ url('/') }}" style="color: #cccccc;"> <b> Opcion3  </b></a> </li>
 
                             @endif

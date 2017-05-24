@@ -59,19 +59,32 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading"> Crear laboratorio</div>
+                    <div class="panel-heading"> Crear Informe</div>
 
                     <div class="panel-body">
                         @include('flash::message')
 
-                        {!! Form::open(['route' => 'Laboratorio.store']) !!}
+                        {!! Form::open(['route' => 'Informe.store']) !!}
                         <div class="form-group">
-                            {!! Form::label('facultativo', 'facultativo') !!}
-                            {!! Form::text('facultativo',null,['class'=>'form-control', 'required']) !!}
+                            {!! Form::label('personalLab_id', 'Id del Tecnico de Lab') !!}
+                            {!! Form::text('personalLab_id',null,['class'=>'form-control', 'required']) !!}
                         </div>
                         <div class="form-group">
-                            {!! Form::label('laboratorio_id', 'Id del laboratorio') !!}
+                            {!! Form::label('laboratorio_id', 'Id del Laboratorio') !!}
                             {!! Form::text('laboratorio_id',null,['class'=>'form-control', 'required']) !!}
+                        </div>
+                        <div class="form-group">
+                            {!! Form::label('medico_id', 'Id del medico') !!}
+                            {!! Form::text('medico_id',null,['class'=>'form-control', 'required']) !!}
+                        </div>
+
+                        <div class="form-group">
+                            {!! Form::label('paciente_id', 'Id de la Paciente') !!}
+                            {!! Form::text('paciente_id',null,['class'=>'form-control' ]) !!}
+                        </div>
+                        <div class="form-group">
+                            {!! Form::label('validado', 'Validado') !!}
+                            {!! Form::checkbox ('validado',null,['class'=>'form-control']) !!}
                         </div>
                         {!! Form::submit('Guardar',['class'=>'btn-primary btn']) !!}
 

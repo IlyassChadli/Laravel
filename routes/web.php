@@ -46,7 +46,7 @@ Route::resource('Administrador','AdministradorController');
 Route::resource('Prueba','PruebaController');
 Route::resource('Centro','CentroController');
 Route::resource('Solicitud','SolicitudController');
-
+Route::resource('Informe','InformeController');
 
 Auth::routes();
 

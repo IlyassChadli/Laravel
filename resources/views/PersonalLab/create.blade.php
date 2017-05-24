@@ -58,12 +58,12 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading"> Crear Solicitud</div>
+                    <div class="panel-heading"> Crear PersonalLab</div>
 
                     <div class="panel-body">
                         @include('flash::message')
 
-                        {!! Form::open(['route' => 'Solicitud.store']) !!}
+                        {!! Form::open(['route' => 'PersonalLab.store']) !!}
                         <div class="form-group">
                             {!! Form::label('laboratorio_id', 'Id del laboratorio') !!}
                             {!! Form::text('laboratorio_id',null,['class'=>'form-control', 'required']) !!}
