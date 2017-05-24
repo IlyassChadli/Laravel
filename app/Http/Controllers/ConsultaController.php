@@ -14,10 +14,10 @@ class ConsultaController extends Controller
      */
     public function index()
     {
-        $consultas=Consulta::all();
-        return view('Consulta/index',['Consulta'=>$consultas]);
-    }
+        $consultas = Consulta::all();
+        return view('Consulta/index', ['consultas' => $consultas]);
 
+    }
     /**
      * Show the form for creating a new resource.
      *
