@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Administrador;
 use App\Informe;
 use Illuminate\Http\Request;
 use App\User;
-class AdministradorController extends Controller
+class InformeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -38,12 +37,12 @@ class AdministradorController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'validado|required',
-            'resultado|required',
-            'paciente_id|required|exists:Paciente,id',
-            'medico_id|required|exists:Medico,id',
-            'centro_id|required|exists:Centro,id' ,
-            'personalLab_id|required|exists:PersonalLab,id',
+            'validado'=>'required',
+            'resultado'=>'required',
+            'paciente_id'=>'required|exists:Paciente,id',
+            'medico_id'=>'required|exists:Medico,id',
+            'centro_id'=>'required|exists:Centro,id' ,
+            'personalLab_id'=>'required|exists:PersonalLab,id',
         ]);
         $informe = new Informe($request->all());
         $informe->save();
@@ -88,12 +87,12 @@ class AdministradorController extends Controller
     {
         $informe=Administrador::find($id);
         $this->validate($request, [
-            'validado|required',
-            'resultado|required',
-            'paciente_id|required|exists:Paciente,id',
-            'medico_id|required|exists:Medico,id',
-            'centro_id|required|exists:Centro,id' ,
-            'personalLab_id|required|exists:PersonalLab,id',
+            'validado'=>'required',
+            'resultado'=>'required',
+            'paciente_id'=>'required|exists:Paciente,id',
+            'medico_id'=>'required|exists:Medico,id',
+            'centro_id'=>'required|exists:Centro,id' ,
+            'personalLab_id'=>'required|exists:PersonalLab,id',
         ]);
         $informe->fill($request->all());
         $informe->save();

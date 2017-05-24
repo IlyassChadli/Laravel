@@ -15,19 +15,19 @@
                     <br><br>
                     <table class="table table-striped table-bordered">
                         <tr>
-                            <th>Nombre</th>
-                            <th>Apellidos</th>
-                            <th>Especialidad</th>
+                            <th>Dirección</th>
+                            <th>Teléfono</th>
+                            <th>Centro</th>
                             <th colspan="2">Acciones</th>
                         </tr>
 
-                        @foreach ($centros as $centro)
+                        @foreach ($Centro as $centro)
 
 
                             <tr>
-                                <td>{{ $medico->$user->name }}</td>
-                                <td>{{ $medico->surname }}</td>
-                                <td>{{ $medico->especialidad->name }}</td>
+                                <td>{{ $centro->direccion }}</td>
+                                <td>{{ $centro->telefono }}</td>
+                                <td>{{ $centro>centro_id }}</td>
 
                                 <td>
                                     {!! Form::open(['route' => ['Centro.edit',$centro->id], 'method' => 'get']) !!}

@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Administrador extends Model
 {
-    protected $fillable = [ 'centro_id','sueldo','user_id'];
+    protected $fillable = [ 'centro_id','user_id'];
 
 
     public function user()

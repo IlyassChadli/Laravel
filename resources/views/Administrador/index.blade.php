@@ -16,8 +16,8 @@
                         <table class="table table-striped table-bordered">
                             <tr>
                                 <th>Nombre</th>
-                                <th>Consulta</th>
-                                <th>Colegiado num.</th>
+                                <th>Centro</th>
+
 
                             </tr>
 
@@ -26,7 +26,7 @@
 
                                 <tr>
                                     <td>{{ $administrador->user->name }}</td>
-
+                                    <td>{{ $administrador->centro_id }}</td>
 
                                     <td>
                                         {!! Form::open(['route' => ['Administrador.edit',$administrador->id], 'method' => 'get']) !!}
