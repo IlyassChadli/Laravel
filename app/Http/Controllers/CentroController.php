@@ -39,7 +39,6 @@ class CentroController extends Controller
         $this->validate($request, [
             'telefono' => 'required|max:9',
             'direccion'=> 'required',
-            'centro_id'=>'required',
         ]);
 
         $centro = new centro($request->all());
@@ -87,7 +86,6 @@ class CentroController extends Controller
         $this->validate($request, [
             'telefono' => 'required|max:255',
             'direccion'=> 'required',
-            'centro_id'=>'required',
         ]);
 
         $centro->fill($request->all());

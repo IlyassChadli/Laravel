@@ -15,27 +15,28 @@
                     <br><br>
                     <table class="table table-striped table-bordered">
                         <tr>
-                            <th>Nombre</th>
-                            <th>Apellidos</th>
-                            <th>Especialidad</th>
-                            <th colspan="2">Acciones</th>
+                            <th>Numero</th>
+                            <th>Medico</th>
+                            <th>Paciente</th>
+                            <th colspan="2">Laboratorio</th>
                         </tr>
 
                         @foreach ($solicitudes as $solicitud)
 
 
                             <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td>{{ $solicitud->id }}</td>
+                                <td>{{ $solicitud->medico_id->user_id->name}}</td>
+                                <td>{{ $solicitud->cita_id->paciente_id->user_id->name}}</td>
+                                <td>{{ $solicitud->laboratorio_id }}</td>
 
                                 <td>
-                                    {!! Form::open(['route' => ['Solicitud.edit',$medico->id], 'method' => 'get']) !!}
+                                    {!! Form::open(['route' => ['Solicitud.edit',$solicitud->id], 'method' => 'get']) !!}
                                     {!!   Form::submit('Editar', ['class'=> 'btn btn-warning'])!!}
                                     {!! Form::close() !!}
                                 </td>
                                 <td>
-                                    {!! Form::open(['route' => ['Solicitud.destroy',$medico->id], 'method' => 'delete']) !!}
+                                    {!! Form::open(['route' => ['Solicitud.destroy',$solicitud->id], 'method' => 'delete']) !!}
                                     {!!   Form::submit('Borrar', ['class'=> 'btn btn-danger' ,'onclick' => 'if(!confirm("¿Está seguro?"))event.preventDefault();'])!!}
                                     {!! Form::close() !!}
 

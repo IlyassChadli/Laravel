@@ -57,6 +57,16 @@
                                     </b></a>
                             </td>
                         </tr>
+                        <tr>
+                            <td class=" " align="" wigth="17%">
+                               <b></b></a>
+                            </td> <td class=" " align="" wigth="17%">
+                                <a href="{{ url('/Solicitud') }}" style="color: #cccccc; "><b>               Solicitudes
+                                    </b></a> &nbsp;
+                            </td> <td class=" " align="" wigth="17%">
+                               <b>  </b></a>
+                            </td>
+                        </tr>
                     </table>
                     </div>
             </div>

@@ -88,7 +88,7 @@ class PersonalLaboratorioController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $personalLab=Laboratorio::find($id);
+        $personalLab=PersonalLaboratorio::find($id);
         $this->validate($request, [
             'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
