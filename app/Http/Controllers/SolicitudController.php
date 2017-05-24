@@ -51,7 +51,7 @@ class SolicitudController extends Controller
 
         $this->validate($request, [
             'medico_id' => 'required|exists:Medico,id',
-            'solicitud_id' => 'required|exists:Solicitud,id',
+            'laboratorio_id' => 'required|exists:Laboratorio,id',
             'cita_id' => 'required|exists:Cita,id',
         ]);
 
@@ -101,8 +101,8 @@ class SolicitudController extends Controller
     {
         $this->validate($request, [
             'medico_id' => 'required|exists:Medico,id',
-            'solicitud_id' => 'required|exists:Solicitud,id',
             'cita_id' => 'required|exists:Cita,id',
+            'laboratorio_id' => 'required|exists:Laboratorio,id',
         ]);
 
         $solicitud = Solicitud::find($id);
