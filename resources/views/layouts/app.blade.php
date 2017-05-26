@@ -5,7 +5,7 @@
     html, body {
         background-color: #27b50b;
 
-        color: #636b6f;
+        color: #0d3625;
         font-family: 'Raleway', sans-serif;
         font-weight: lighter;
         height: 100vh;
@@ -77,8 +77,8 @@
     </script>
 </head>
 <body   style="background-color: #27b50b";>
-    <div id="app" style="background-color: #27b50b; color: #d7ebf6">
-        <nav class="navbar navbar-default navbar-static-top"style="background-color: #080808; color: #d7ebf6">
+    <div id="app" style="background-color: #27b50b;">
+        <nav class="navbar navbar-default navbar-static-top"style="background-color: #080808;">
             <div class="container" >
                 <div class="navbar-header">
 

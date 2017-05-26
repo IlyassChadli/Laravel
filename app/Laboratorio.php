@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Laboratorio extends Model
 {
-    protected $fillable = ['centro_id','solicitud_id','PersonalLab_id'];
+    protected $fillable = ['centro_id'];
     public function personal_laboratorio()
     {
         return $this->hasMany('App\Personal_Laboratorio');

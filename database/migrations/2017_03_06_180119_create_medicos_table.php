@@ -15,7 +15,6 @@ class CreateMedicosTable extends Migration
     {
         Schema::create('medicos', function (Blueprint $table) {
             $table->increments('id')->unique();
-            $table->string('dni');
             $table->integer('numColegiado');
             $table->timestamps();
             $table->unsignedInteger('user_id');

@@ -6,7 +6,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">Pagina Pacientes</div>
 
-                    <div class="panel-body">
+                    <div class="panel-body" style="color: #0d3625">
                         @include('flash::message')
                         {!! Form::open(['route' => 'Paciente.create', 'method' => 'get']) !!}
                         {!!   Form::submit('Crear Paciente', ['class'=> 'btn btn-primary'])!!}
@@ -16,7 +16,7 @@
                         <table class="table table-striped table-bordered">
                             <tr>
                                 <th>Nombre</th>
-                                <th>Consulta</th>
+                                <th>DNI</th>
                                 <th>numPaciente</th>
 
                             </tr>
@@ -26,8 +26,9 @@
 
                                 <tr>
                                     <td>{{ $paciente->user->name }}</td>
-                                    <td>{{ $paciente->cita}}</td>
+                                    <td>{{ $paciente->user->dni}}</td>
                                     <td>{{ $paciente->numPaciente }}</td>
+
 
                                     <td>
                                         {!! Form::open(['route' => ['Paciente.edit',$paciente->id], 'method' => 'get']) !!}

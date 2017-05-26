@@ -18,6 +18,13 @@ class ConsultaController extends Controller
         return view('Consulta/index', ['consultas' => $consultas]);
 
     }
+    public function consultasXcentro($centro_id )
+    {
+        $centro = Centro::find($centro_id);
+        $consultas=Consulta::all();
+        return view('Consulta/index', ['consultas' => $consultas]);
+
+    }
     /**
      * Show the form for creating a new resource.
      *

@@ -20,14 +20,19 @@
                             <th>Centro</th>
                         </tr>
 
-                        @foreach ($Centro as $centro)
+                        @foreach ($Centros as $centro)
 
 
                             <tr>
                                 <td>{{ $centro->direccion }}</td>
                                 <td>{{ $centro->telefono }}</td>
-                                <td>{{ $centro>centro_id }}</td>
+                                <td>{{ $centro->id }}</td>
 
+                                <td>
+                                    {!! Form::open(['route' => ['Consulta.index',$centro->id],'method' => 'get'])!!}
+                                    {!!   Form::submit('Consultas', ['class'=> 'btn btn-warning'])!!}
+                                    {!! Form::close() !!}
+                                </td>
 
 
                                 <td>

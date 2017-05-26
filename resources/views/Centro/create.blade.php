@@ -72,12 +72,7 @@
 
                         <div class="form-group">
                             {!! Form::label('direccion', 'Dirección') !!}
-                            {!! Form::text('direccion',null,['class'=>'form-control' ]) !!}
-                        </div>
-
-                        <div class="form-group">
-                            {!! Form::label('centro_id', 'Centro id ') !!}
-                            {!! Form::text('centro_id',null,['class'=>'form-control', 'required', 'autofocus']) !!}
+                            {!! Form::text('direccion',null,['class'=>'form-control' , 'required']) !!}
                         </div>
 
                         {!! Form::submit('Guardar',['class'=>'btn-primary btn']) !!}
