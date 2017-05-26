@@ -29,7 +29,7 @@
                                 <td>{{ $centro->id }}</td>
 
                                 <td>
-                                    {!! Form::open(['route' => ['Consulta.index',$centro->id],'method' => 'get'])!!}
+                                    {!! Form::open(['route' => ['Consulta.index'],'method' => 'get'])!!}
                                     {!!   Form::submit('Consultas', ['class'=> 'btn btn-warning'])!!}
                                     {!! Form::close() !!}
                                 </td>

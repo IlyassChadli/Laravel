@@ -6,10 +6,10 @@
     <div class="container">
         <div class="row">
             <div class=" col-md-8 col-md-offset-2">
-                <p class="header h1" style="">Panel Administracion</p>
+                <p class="header h1" style="color: #ffffff;">Panel Administracion</p>
                 <div class="panel panel-default">
-                    <div class="panel-heading">
-                        Eliga una Opción
+                    <div class="panel-heading ">
+                        <h4> <strong> Eliga una Opción</strong>  </h4>
                     </div>
 
 
@@ -17,16 +17,16 @@
 
                         <tr>
                             <td class=" " align="" wigth="17%">
-                                <a href="{{ url('/Medico') }}" style="color: #cccccc; "><b>
+                                <a class="link " href="{{ url('/Medico') }}"><b>
                                         Medicos</b></a>
                             </td>
-                            <td class=" " align="" wigth="17%">
-                                <a href="{{ url('/Paciente') }}" style="color: #cccccc; "><b>
+                            <td  align="" wigth="17%">
+                                <a   class="link " href="{{ url('/Paciente') }}" ><b>
                                         Pacientes
                                     </b></a>
                             </td>
                             <td class=" " align="" wigth="17%">
-                                <a href="{{ url('/Administrador') }}" style="color: #cccccc; "><b>
+                                <a   class="link " href="{{ url('/Administrador') }}" ><b>
                                         Administradores
                                     </b></a></td>
                         <tr>
@@ -34,37 +34,37 @@
                         </tr>
                         <tr>
                             <td class=" " align="" wigth="17%">
-                                <a href="{{ url('/PersonalLab') }}" style="color: #cccccc; "><b>              Pers. Laboratorio
+                                <a class="link "href="{{ url('/PersonalLab') }}"><b>              Pers. Laboratorio
                                     </b></a>
                             </td> <td class=" " align="" wigth="17%">
-                                <a href="{{ url('/Consulta') }}" style="color: #cccccc; "><b>               Consultas
+                                <a class="link "href="{{ url('/Consulta') }}" ><b>               Consultas
                                     </b></a> &nbsp;
                             </td> <td class=" " align="" wigth="17%">
-                                <a href="{{ url('/Cita') }}" style="color: #cccccc; "><b>               Citas
+                                <a class="link "href="{{ url('/Cita') }}" ><b>               Citas
                                     </b></a>
                             </td>
                         </tr>
 
                         <tr>
                             <td class=" " align="" wigth="17%">
-                                <a href="{{ url('/Centro') }}" style="color: #cccccc; "><b>              Centros
+                                <a class="link "href="{{ url('/Centro') }}" ><b>              Centros
                                     </b></a>
                             </td> <td class=" " align="" wigth="17%">
-                                <a href="{{ url('/Laboratorio') }}" style="color: #cccccc; "><b>               Laboratorios
+                                <a class="link "href="{{ url('/Laboratorio') }}" ><b>               Laboratorios
                                     </b></a> &nbsp;
                             </td> <td class=" " align="" wigth="17%">
-                                <a href="{{ url('/Informe') }}" style="color: #cccccc; "><b>               Informes
+                                <a class="link "href="{{ url('/Informe') }}" ><b>               Informes
                                     </b></a>
                             </td>
                         </tr>
                         <tr>
                             <td class=" " align="" wigth="17%">
-                               <b></b></a>
+                               <b></b>
                             </td> <td class=" " align="" wigth="17%">
-                                <a href="{{ url('/Solicitud') }}" style="color: #cccccc; "><b>               Solicitudes
+                                <a class="link  " href="{{ url('/Solicitud') }}" ><b>               Solicitudes
                                     </b></a> &nbsp;
                             </td> <td class=" " align="" wigth="17%">
-                               <b>  </b></a>
+                               <b>  </b>
                             </td>
                         </tr>
                     </table>

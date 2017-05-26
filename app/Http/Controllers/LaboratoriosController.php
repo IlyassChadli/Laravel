@@ -39,9 +39,8 @@ class LaboratoriosController extends Controller
     {
 
         $this->validate($request, [
-            'centro_id'=>'required|exists:Centro,id',
-            'solicitud_id'=>'required|exists:Solicitud,id',
-            'PersonalLab_id'=>'required|exists:PersonalLaboratorio,id',
+            'centro_id'=>'required',
+
         ]);
 
         $laboratorio = new Laboratorio($request->all());
@@ -87,9 +86,7 @@ class LaboratoriosController extends Controller
     {
         $laboratorio=Laboratorio::find($id);
         $this->validate($request, [
-            'centro_id'=>'required|exists:Centro,id',
-            'solicitud_id'=>'required|exists:Solicitud,id',
-            'personalLab_id'=>'required|exists:PersonalLaboratorio,id',
+            'centro_id'=>'required'
         ]);
         $laboratorio->fill($request->all());
         $laboratorio->save();

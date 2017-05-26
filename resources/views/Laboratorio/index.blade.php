@@ -16,8 +16,8 @@
                     <table class="table table-striped table-bordered">
                         <tr>
                             <th>Centro</th>
-                            <th>Solicitud</th>
-                            <th>Personal de laboratorio</th>
+                            <th>Direccion</th>
+
                         </tr>
 
                         @foreach ($Laboratorio as $laboratorios)
@@ -25,14 +25,21 @@
 
                             <tr>
                                 <td>{{ $laboratorios->centro_id }}</td>
-                                <td>{{ $laboratorios->solicitud_id }}</td>
-                                <td>{{ $laboratorios->personalLaboratorio_id }}</td>
+
+                                <td>{{ $laboratorios->centro->direccion }}</td>
+                                <td>
+                                    {!! Form::open(['route' => ['PersonalLab.index'], 'method' => 'get']) !!}
+                                    {!!   Form::submit('Personal Lab ', ['class'=> 'btn btn-warning'])!!}
+                                    {!! Form::close() !!}
+                                </td>
+
 
                                 <td>
                                     {!! Form::open(['route' => ['Laboratorio.edit',$laboratorios->id], 'method' => 'get']) !!}
                                     {!!   Form::submit('Editar', ['class'=> 'btn btn-warning'])!!}
                                     {!! Form::close() !!}
                                 </td>
+
                                 <td>
                                     {!! Form::open(['route' => ['Laboratorio.destroy',$laboratorios->id], 'method' => 'delete']) !!}
                                     {!!   Form::submit('Borrar', ['class'=> 'btn btn-danger' ,'onclick' => 'if(!confirm("¿Está seguro?"))event.preventDefault();'])!!}

@@ -2,11 +2,11 @@
 
 @section('content')
 
-<div class="flex-center position-ref full-height">
+<div class="flex-center position-ref full-height" style="background-color: #00CC99">
 
 
     <div class="content">
-        <div class="title m-b-md">
+        <div class="title m-b-md" style="background-color: #00CC99; color: #ffffff;">
             GesMed
         </div>
 

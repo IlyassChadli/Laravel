@@ -12,12 +12,8 @@
 
                         {!! Form::model($laboratorio, [ 'route' => ['Laboratorio.update',$laboratorio->id], 'method'=>'PUT']) !!}
                         <div class="form-group">
-                            {!! Form::label('facultativo', 'facultativo') !!}
-                            {!! Form::text('facultativo',null,['class'=>'form-control', 'required']) !!}
-                        </div>
-                        <div class="form-group">
-                            {!! Form::label('laboratorio_id', 'Id del laboratorio') !!}
-                            {!! Form::text('laboratorio_id',null,['class'=>'form-control', 'required']) !!}
+                            {!! Form::label('centro_id', 'Centro') !!}
+                            {!! Form::text('centro_id',null,['class'=>'form-control', 'required']) !!}
                         </div>
 
                         {!! Form::submit('Guardar',['class'=>'btn-primary btn']) !!}

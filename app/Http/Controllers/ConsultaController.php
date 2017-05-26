@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Consulta;
 use Illuminate\Http\Request;
-
+use App\Centro;
+use App\Medico;
 class ConsultaController extends Controller
 {
     /**
@@ -18,13 +19,7 @@ class ConsultaController extends Controller
         return view('Consulta/index', ['consultas' => $consultas]);
 
     }
-    public function consultasXcentro($centro_id )
-    {
-        $centro = Centro::find($centro_id);
-        $consultas=Consulta::all();
-        return view('Consulta/index', ['consultas' => $consultas]);
 
-    }
     /**
      * Show the form for creating a new resource.
      *
@@ -44,8 +39,8 @@ class ConsultaController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'medico_id' => 'required|exists:Medico,id',
-            'centro_id'=> 'required|exists:Centro,id',
+            'medico_id' => 'required',
+            'centro_id'=> 'required',
         ]);
         $consulta = new Consulta($request->all());
         $consulta->save();
@@ -76,7 +71,7 @@ class ConsultaController extends Controller
     public function edit($id)
     {
         $consulta=Consulta::find($id);
-        return view('Consultas/edit',['consultas'=>$consulta]);
+        return view('Consulta/edit',['consulta'=>$consulta]);
     }
 
     /**
@@ -90,8 +85,8 @@ class ConsultaController extends Controller
     {
         $consulta=Consulta::find($id);
         $this->validate($request, [
-            'medico_id' => 'required|exists:Medico,id',
-            'centro_id'=> 'required|exists:Centro,id',
+            'medico_id' => 'required',
+            'centro_id'=> 'required',
         ]);
         $consulta->fill($request->all());
         $consulta->save();

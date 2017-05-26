@@ -3,7 +3,7 @@
 
 <style>
     html, body {
-        background-color: #27b50b;
+        background-color: #00CC99;
 
         color: #0d3625;
         font-family: 'Raleway', sans-serif;
@@ -35,7 +35,7 @@
     .content {
         text-align: center;
         size: 15;
-
+        background-color: #00CC99
     }
 
     .title {
@@ -76,8 +76,8 @@
         ]) !!};
     </script>
 </head>
-<body   style="background-color: #27b50b";>
-    <div id="app" style="background-color: #27b50b;">
+<body style="background-color: #00CC99" >
+    <div id="app" style="background-color: #00CC99">
         <nav class="navbar navbar-default navbar-static-top"style="background-color: #080808;">
             <div class="container" >
                 <div class="navbar-header">
@@ -99,12 +99,13 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-                        &nbsp;
-                    </ul>
-                    <ul class="nav navbar-nav">Bienvenido </ul>
-                    <!-- Right Side Of Navbar -->
-                    <ul class="nav navbar-nav navbar-right">
 
+                    </ul>
+                    <ul class="nav navbar-nav"> </ul>
+                    <!-- Right Side Of Navbar -->
+
+                    <ul class="nav navbar-nav navbar-right">
+                        &nbsp;
                     @if (Route::has('login'))
 
                         <!-- Authentication Links -->
@@ -141,6 +142,12 @@
                      @endif
 
                     </ul>
+                    @if(Auth::user())
+
+                    <ul class="nav navbar-nav navbar-right" style="margin-top: 4px">
+                        <h4>Bienvenido</h4>
+                    </ul>
+                    @endif
                 </div>
             </div>
         </nav>

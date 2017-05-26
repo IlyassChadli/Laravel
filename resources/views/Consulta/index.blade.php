@@ -26,17 +26,18 @@
 
                             <tr>
                                 <td>{{ $consulta->id }}</td>
-                                <td>{{ $consulta->centro_id }}</td>
-                                <td>{{ $consulta->medico_id }}</td>
+                                <td>{{ $consulta->centro->direccion }}</td>
+                                <td>{{ $consulta->medico->user->name }}</td>
 
 
                                 <td>
-                                    {!! Form::open(['route' => ['Consulta.edit',$medico->id], 'method' => 'get']) !!}
+                                    {!! Form::open(['route' => ['Consulta.edit',$consulta->id], 'method' => 'get']) !!}
                                     {!!   Form::submit('Editar', ['class'=> 'btn btn-warning'])!!}
                                     {!! Form::close() !!}
                                 </td>
+
                                 <td>
-                                    {!! Form::open(['route' => ['Consulta.destroy',$medico->id], 'method' => 'delete']) !!}
+                                    {!! Form::open(['route' => ['Consulta.destroy',$consulta->id], 'method' => 'delete']) !!}
                                     {!!   Form::submit('Borrar', ['class'=> 'btn btn-danger' ,'onclick' => 'if(!confirm("¿Está seguro?"))event.preventDefault();'])!!}
                                     {!! Form::close() !!}
 
