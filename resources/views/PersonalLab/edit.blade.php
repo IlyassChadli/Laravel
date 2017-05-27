@@ -10,7 +10,7 @@
                     <div class="panel-body">
                         @include('flash::message')
 
-                        {!! Form::model($Plaboratorio, [ 'route' => ['PersonalLaboratorio.update',$Plaboratorio->id], 'method'=>'PUT']) !!}
+                        {!! Form::model($personalLab, [ 'route' => ['PersonalLab.update',$personalLab->id], 'method'=>'PUT']) !!}
                         <div class="form-group">
                             {!! Form::label('laboratorio_id', 'Id del laboratorio') !!}
                             {!! Form::text('laboratorio_id',null,['class'=>'form-control', 'required']) !!}
@@ -18,9 +18,8 @@
 
                         <div class="form-group">
                             {!! Form::label('facultativo', 'Facultativo') !!}
-                            {!! Form::text('facultativo',null,['class'=>'form-control' ]) !!}
+                            {!! Form::select('facultativo', array('No','Si',),['class'=>'form-control' ])!!}
                         </div>
-
                         {!! Form::submit('Guardar',['class'=>'btn-primary btn']) !!}
 
                         {!! Form::close() !!}

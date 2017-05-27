@@ -7,7 +7,7 @@ use App\User;
 class PersonalLaboratorio extends Model
 
 {
-    protected $fillable = [ 'facultativo', 'laboratorio_id'];
+    protected $fillable = [ 'facultativo', 'lab_id'];
     public function user()
     {
         return $this->belongsTo('App\User') ;

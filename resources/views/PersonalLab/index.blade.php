@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Pagina Personal Laborarotio</div>
+                    <div class="panel-heading">Pagina Personal Laboratotio</div>
 
                     <div class="panel-body">
                         @include('flash::message')
@@ -21,21 +21,26 @@
 
                             </tr>
 
-                            @foreach ($personalLab as $personal)
+                            @foreach ($personalLabs as $personal)
 
 
                                 <tr>
                                     <td>{{ $personal->user->name }}</td>
-                                    <td>{{ $personal->laboratorio_id}}</td>
-                                    <td>{{ $personal->facultativo }}</td>
+                                    <td>{{ $personal->lab_id}}</td>
+                                    <td><?php
+                                        if  ($personal->facultativo==1)
+                                            $facultativo="si";
+                                        elseif($personal->facultativo==0)
+                                            $facultativo="no";
+                                            ?> {{ $facultativo }}</td>
 
                                     <td>
-                                        {!! Form::open(['route' => ['PersonalLab.edit',$paciente->id], 'method' => 'get']) !!}
+                                        {!! Form::open(['route' => ['PersonalLab.edit',$personal->id], 'method' => 'get']) !!}
                                         {!!   Form::submit('Editar', ['class'=> 'btn btn-warning'])!!}
                                         {!! Form::close() !!}
                                     </td>
                                     <td>
-                                        {!! Form::open(['route' => ['PersonalLab.destroy',$paciente->id], 'method' => 'delete']) !!}
+                                        {!! Form::open(['route' => ['PersonalLab.destroy',$personal->id], 'method' => 'delete']) !!}
                                         {!!   Form::submit('Borrar', ['class'=> 'btn btn-danger' ,'onclick' => 'if(!confirm("¿Está seguro?"))event.preventDefault();'])!!}
                                         {!! Form::close() !!}
 

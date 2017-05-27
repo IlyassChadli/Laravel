@@ -21,10 +21,7 @@
                             {!! Form::text('direccion',null,['class'=>'form-control' ]) !!}
                         </div>
 
-                        <div class="form-group">
-                            {!! Form::label('centro_id', 'Centro id ') !!}
-                            {!! Form::text('centro_id',null,['class'=>'form-control', 'required', 'autofocus']) !!}
-                        </div>
+
                         {!! Form::submit('Guardar',['class'=>'btn-primary btn']) !!}
 
                         {!! Form::close() !!}

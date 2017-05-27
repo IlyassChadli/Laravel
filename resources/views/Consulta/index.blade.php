@@ -29,7 +29,11 @@
                                 <td>{{ $consulta->centro->direccion }}</td>
                                 <td>{{ $consulta->medico->user->name }}</td>
 
-
+                                <td>
+                                    {!! Form::open(['route' => ['Cita.create',$consulta->id], 'method' => 'get']) !!}
+                                    {!!   Form::submit('Citas', ['class'=> 'btn btn-warning'])!!}
+                                    {!! Form::close() !!}
+                                </td>
                                 <td>
                                     {!! Form::open(['route' => ['Consulta.edit',$consulta->id], 'method' => 'get']) !!}
                                     {!!   Form::submit('Editar', ['class'=> 'btn btn-warning'])!!}

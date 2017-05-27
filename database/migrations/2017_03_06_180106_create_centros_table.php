@@ -15,7 +15,7 @@ class CreateCentrosTable extends Migration
     {
         Schema::create('centros', function (Blueprint $table) {
             $table->increments('id')->unique();
-            $table->string('direccion')->unique();
+            $table->string('direccion');
             $table->Integer('telefono');
             $table->timestamps();
 

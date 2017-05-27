@@ -15,11 +15,13 @@ class CreatePersonalLaboratoriosTable extends Migration
     {
         Schema::create('personal_laboratorios', function (Blueprint $table) {
             $table->increments('id')->unique();
+
             $table->unsignedInteger('lab_id');
             $table->boolean('facultativo');
             $table->timestamps();
             $table->foreign('lab_id')->references('id')->on('laboratorios')->onDelete('cascade');
-
+            $table->unsignedInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

@@ -1,27 +1,19 @@
 @extends('layouts.app')
+
 @section('content')
 
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading"> Crear PersonalLab</div>
+                    <div class="panel-heading">Crear Personal de Laboratorio</div>
 
                     <div class="panel-body">
                         @include('flash::message')
 
                         {!! Form::open(['route' => 'PersonalLab.store']) !!}
                         <div class="form-group">
-                            {!! Form::label('laboratorio_id', 'Id del laboratorio') !!}
-                            {!! Form::text('laboratorio_id',null,['class'=>'form-control', 'required']) !!}
-                        </div>
-
-                        <div class="form-group">
-                            {!! Form::label('facultativo', 'Facultativo') !!}
-                            {!! Form::select('facultativo',null,['class'=>'form-control' ]) !!}
-                        </div>
-                        <div class="form-group">
-                            {!! Form::label('name', 'Nombre del paciente') !!}
+                            {!! Form::label('name', 'Nombre') !!}
                             {!! Form::text('name',null,['class'=>'form-control', 'required', 'autofocus']) !!}
                         </div>
 
@@ -45,7 +37,18 @@
                             {!! Form::text('direccion',null,['class'=>'form-control', 'required', 'autofocus']) !!}
                         </div>
 
-                        {!! Form::submit('Guardar',['class'=>'btn-primary btn']) !!}
+                        <!--  meter Campo Password -->
+
+                        <div class="form-group">
+                            {!! Form::label('lab_id', 'Laboratorio ') !!}
+                            {!! Form::text('lab_id',null,['class'=>'form-control', 'required', 'autofocus']) !!}
+                        </div>
+
+                        <div class="form-group">
+                            {!! Form::label('facultativo', 'Facultativo') !!}
+                            {!! Form::select('facultativo', array('No','Si',),['class'=>'form-control' ])!!}
+                          </div>
+                          {!! Form::submit('Guardar',['class'=>'btn-primary btn']) !!}
 
                         {!! Form::close() !!}
                     </div>
@@ -54,3 +57,4 @@
         </div>
     </div>
 @endsection
+

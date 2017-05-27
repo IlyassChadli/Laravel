@@ -11,14 +11,14 @@ class Administrador extends Model
 
     public function user()
     {
-        return $this->belongsTo('App/User') ;
+        return $this->belongsTo('App\User') ;
     }
     public function cita()
     {
-        return $this->hasMany('App/Cita') ;
+        return $this->hasMany('App\Cita') ;
     }
     public function centro()
     {
-        return $this->belongsTo('App/Centro') ;
+        return $this->belongsTo('App\Centro') ;
     }
 }

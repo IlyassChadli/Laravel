@@ -34,10 +34,10 @@
 
                             <tr>
                                 <td>{{ $cita->fecha_hora }}</td>
-                                <td>{{ $cita->medico_id }}</td>
-                                <td>{{ $cita->paciente_id }}</td>
+                                <td>{{ $cita->medico->user->name }}</td>
+                                <td>{{ $cita->paciente->user->name }}</td>
                                 <td>{{ $cita->consulta_id }}</td>
-                                <td>{{ $cita->administrador_id }}</td>
+                                <td>{{ $cita->administrador->user->name }}</td>
                                 <td>
                                     {!! Form::open(['route' => ['Cita.edit',$cita->id], 'method' => 'get']) !!}
                                     {!!   Form::submit('Editar', ['class'=> 'btn btn-warning'])!!}

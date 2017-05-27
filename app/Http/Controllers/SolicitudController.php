@@ -9,7 +9,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Solicitud;
-
+use App\Laboratorio;
 class SolicitudController extends Controller
 {
 
@@ -35,8 +35,9 @@ class SolicitudController extends Controller
      */
     public function create()
     {
-        //
-        return view('Solicitud/create');
+        $laboratorios = Laboratorio::all()->pluck('id');
+
+        return view('Solicitud/create',['laboratorios'=>$laboratorios]);
 
     }
 
@@ -50,9 +51,9 @@ class SolicitudController extends Controller
     {
 
         $this->validate($request, [
-            'medico_id' => 'required|exists:Medico,id',
-            'laboratorio_id' => 'required|exists:Laboratorio,id',
-            'cita_id' => 'required|exists:Cita,id',
+            'medico_id' => 'required|',
+            'lab_id' => 'required|',
+            'cita_id' => 'required|',
         ]);
 
 
@@ -100,9 +101,9 @@ class SolicitudController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'medico_id' => 'required|exists:Medico,id',
-            'cita_id' => 'required|exists:Cita,id',
-            'laboratorio_id' => 'required|exists:Laboratorio,id',
+            'medico_id' => 'required|',
+            'cita_id' => 'required|',
+            'lab_id' => 'required|',
         ]);
 
         $solicitud = Solicitud::find($id);

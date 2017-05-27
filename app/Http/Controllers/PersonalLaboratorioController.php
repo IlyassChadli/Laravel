@@ -15,8 +15,8 @@ class PersonalLaboratorioController extends Controller
      */
     public function index()
     {
-        $personalLab=PersonalLaboratorio::all();
-        return view('PersonalLab/index',['personalLab'=>$personalLab]);
+        $personalLabs=PersonalLaboratorio::all();
+        return view('PersonalLab/index',['personalLabs'=>$personalLabs]);
     }
 
     /**
@@ -41,11 +41,13 @@ class PersonalLaboratorioController extends Controller
             'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
             'dni'=> 'required|max:9',
+            'lab_id'=>'required',
             'password' => 'required|min:6|',
             'direccion'=> 'required',
             'facultativo'=>'required',
         ]);
         $user = new User($request->all());
+        $user->password = bcrypt($user->password);
         $user->save();
         $personalLab = new PersonalLaboratorio($request->all());
 
@@ -62,7 +64,7 @@ class PersonalLaboratorioController extends Controller
      * @param  \App\PersonalLaboratorio  $personal_Laboratorio
      * @return \Illuminate\Http\Response
      */
-    public function show(Personal_Laboratorio $personal_Laboratorio)
+    public function show(PersonalLaboratorio $personalLaboratorio)
     {
         //
     }
@@ -96,6 +98,7 @@ class PersonalLaboratorioController extends Controller
             'password' => 'required|min:6|',
             'direccion'=> 'required',
             'facultativo'=>'required',
+            'lab_id'=>'required',
         ]);
         $personalLab->fill($request->all());
         $personalLab->save();
