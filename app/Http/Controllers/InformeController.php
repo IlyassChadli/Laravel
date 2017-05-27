@@ -38,10 +38,10 @@ class InformeController extends Controller
     {
         $this->validate($request, [
             'validado'=>'required',
-            'paciente_id'=>'required|exists:Paciente,id',
-            'medico_id'=>'required|exists:Medico,id',
-            'laboratorio_id'=>'required|exists:Laboratorio,id' ,
-            'personalLab_id'=>'required|exists:PersonalLab,id',
+            'paciente_id'=>'required',
+            'medico_id'=>'required',
+            'lab_id'=>'required' ,
+            'personalLab_id'=>'required',
         ]);
         $informe = new Informe($request->all());
         $informe->save();
@@ -87,10 +87,10 @@ class InformeController extends Controller
         $informe=Administrador::find($id);
         $this->validate($request, [
             'validado'=>'required',
-            'paciente_id'=>'required|exists:Paciente,id',
-            'medico_id'=>'required|exists:Medico,id',
-            'laboratorio_id'=>'required|exists:Laboratorio,id' ,
-            'personalLab_id'=>'required|exists:PersonalLab,id',
+            'paciente_id'=>'required',
+            'medico_id'=>'required',
+            'lab_id'=>'required' ,
+            'personalLab_id'=>'required',
         ]);
         $informe->fill($request->all());
         $informe->save();
