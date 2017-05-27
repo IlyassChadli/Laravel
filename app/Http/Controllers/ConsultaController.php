@@ -39,7 +39,7 @@ class ConsultaController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'medico_id' => 'required',
+
             'centro_id'=> 'required',
         ]);
         $consulta = new Consulta($request->all());
@@ -85,7 +85,7 @@ class ConsultaController extends Controller
     {
         $consulta=Consulta::find($id);
         $this->validate($request, [
-            'medico_id' => 'required',
+
             'centro_id'=> 'required',
         ]);
         $consulta->fill($request->all());

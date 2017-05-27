@@ -16,9 +16,10 @@ class CreateMedicosTable extends Migration
         Schema::create('medicos', function (Blueprint $table) {
             $table->increments('id')->unique();
             $table->integer('numColegiado');
-            $table->timestamps();
+
             $table->unsignedInteger('user_id');
             $table->unsignedInteger('consulta_id');
+            $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
 

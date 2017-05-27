@@ -6,14 +6,14 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading"> Crear medico</div>
+                    <div class="panel-heading"> Crear médico</div>
 
                     <div class="panel-body">
                         @include('flash::message')
 
                         {!! Form::open(['route' => 'Medico.store']) !!}
                         <div class="form-group">
-                            {!! Form::label('name', 'Nombre del medico') !!}
+                            {!! Form::label('name', 'Nombre del médico') !!}
                             {!! Form::text('name',null,['class'=>'form-control', 'required']) !!}
                         </div>
 
@@ -22,7 +22,7 @@
                             {!! Form::text('dni',null,['class'=>'form-control' ]) !!}
                         </div>
                         <div class="form-group">
-                            {!! Form::label('numColegiado', 'Numero de Colegiado ') !!}
+                            {!! Form::label('numColegiado', 'Número de Colegiado ') !!}
                             {!! Form::text('numColegiado',null,['class'=>'form-control', 'required']) !!}
                         </div>
                         <div class="form-group">
@@ -35,7 +35,7 @@
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('direccion', 'Direccion ') !!}
+                            {!! Form::label('direccion', 'Dirección ') !!}
                             {!! Form::text('direccion',null,['class'=>'form-control', 'required', 'autofocus']) !!}
                         </div>
                         <div class="form-group">

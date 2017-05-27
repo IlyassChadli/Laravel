@@ -61,7 +61,7 @@ class MedicoController extends Controller
             $medico->save();
 
 
-            flash('Medico creado correctamente');
+            flash('Médico creado correctamente');
 
             return redirect()->route('Medico.index');
 
@@ -113,7 +113,7 @@ class MedicoController extends Controller
         ]);
         $medico->fill($request->all());
         $medico->save();
-        flash('Medico modificado correctamente');
+        flash('Médico modificado correctamente');
         return redirect()->route('Medico.edit');
     }
 
@@ -127,7 +127,7 @@ class MedicoController extends Controller
     {
         $medico=Medico::find($id);
         $medico->delete();
-        flash('medico borrado correctamente');
+        flash('Médico borrado correctamente');
         return redirect()->route('Medico.index');
     }
 }

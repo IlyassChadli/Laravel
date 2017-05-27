@@ -108,7 +108,7 @@ class InformeController extends Controller
     {
         $informe=Administrador::find($id);
         $informe->delete();
-        flash('informe borrado correctamente');
+        flash('Informe borrado correctamente');
         return redirect()->route('Informe.index');
     }
 }
