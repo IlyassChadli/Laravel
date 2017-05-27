@@ -17,8 +17,7 @@
                         <tr>
                             <th>Consulta</th>
                             <th>Centro</th>
-                            <th>Médico</th>
-                            <th colspan="2">Acciones</th>
+
                         </tr>
 
                         @foreach ($consultas as $consulta)
@@ -27,10 +26,9 @@
                             <tr>
                                 <td>{{ $consulta->id }}</td>
                                 <td>{{ $consulta->centro->direccion }}</td>
-                                <td>{{ $consulta->medico->user->name }}</td>
 
                                 <td>
-                                    {!! Form::open(['route' => ['Cita.create',$consulta->id], 'method' => 'get']) !!}
+                                    {!! Form::open(['route' => ['Consulta.create',$consulta->id], 'method' => 'get']) !!}
                                     {!!   Form::submit('Citas', ['class'=> 'btn btn-warning'])!!}
                                     {!! Form::close() !!}
                                 </td>

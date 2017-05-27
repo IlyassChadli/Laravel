@@ -96,7 +96,7 @@
 
 
 
-    <br><a href="https://www.facebook.com/esteban.rodriguezruiz.14">Esteban Rodriguez Ruiz</a><br>
+    <br><a href="https://www.facebook.com/esteban.rodriguezruiz.14">Esteban Rodríguez Ruiz</a><br>
 </div>
 
 

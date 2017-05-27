@@ -12,7 +12,7 @@
 
                         {!! Form::model($centro, [ 'route' => ['Centro.update',$centro->id], 'method'=>'PUT']) !!}
                         <div class="form-group">
-                            {!! Form::label('telefono', 'Telefono') !!}
+                            {!! Form::label('telefono', 'Teléfono') !!}
                             {!! Form::text('telefono',null,['class'=>'form-control', 'required']) !!}
                         </div>
 

@@ -6,10 +6,10 @@
     <div class="container">
         <div class="row">
             <div class=" col-md-8 col-md-offset-2">
-                <p class="header h1" style="color: #ffffff;">Panel Administracion</p>
+                <p class="header h1" style="color: #ffffff;">Panel Administración</p>
                 <div class="panel panel-default">
                     <div class="panel-heading ">
-                        <h4> <strong> Eliga una Opción</strong>  </h4>
+                        <h4> <strong> Elija una Opción</strong>  </h4>
                     </div>
 
 
@@ -18,7 +18,7 @@
                         <tr>
                             <td class=" " align="" wigth="17%">
                                 <a class="link " href="{{ url('/Medico') }}"><b>
-                                        Medicos</b></a>
+                                        Médicos</b></a>
                             </td>
                             <td  align="" wigth="17%">
                                 <a   class="link " href="{{ url('/Paciente') }}" ><b>

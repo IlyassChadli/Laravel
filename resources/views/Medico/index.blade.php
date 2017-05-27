@@ -4,12 +4,12 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Pagina Medicos</div>
+                <div class="panel-heading">Página Médicos</div>
 
                 <div class="panel-body">
                     @include('flash::message')
                     {!! Form::open(['route' => 'Medico.create', 'method' => 'get']) !!}
-                    {!!   Form::submit('Crear medico', ['class'=> 'btn btn-primary'])!!}
+                    {!!   Form::submit('Crear médico', ['class'=> 'btn btn-primary'])!!}
                     {!! Form::close() !!}
 
                     <br><br>
