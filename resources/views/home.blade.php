@@ -15,7 +15,7 @@
 
 
                         @elseif (Auth::user()->medico)
-                        Opciones de Medico
+                        Opciones de Médico
                             <li>    <a href="{{ url('/Cita') }}"  style="color: #cccccc; "><b>Citas</b></a></li>
                             <li>    <a href="{{ url('/Paciente') }}" style="color: #cccccc; "><b>Pacientes</b></a></li>
                             <li>    <a href="{{ url('/Solicitud') }}" style="color: #cccccc;"> <b> Solicitudes  </b></a> </li>
@@ -27,7 +27,7 @@
 
                             @elseif (Auth::user()->personalLab)
 
-                                Opciones de laborarotio
+                                Opciones de personal de laborarotio
                                 <li>    <a href="{{ url('/Informe') }}"  style="color: #cccccc; "><b>Informes</b></a></li>
                                 <li>    <a href="{{ url('/Solicitud') }}" style="color: #cccccc; "><b>  Solicitudes  </b></a>  </li>
                                 <li>    <a href="{{ url('/') }}" style="color: #cccccc;"> <b> Opcion3  </b></a> </li>
