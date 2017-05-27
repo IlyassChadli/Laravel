@@ -15,9 +15,10 @@
                     <br><br>
                     <table class="table table-striped table-bordered">
                         <tr>
-                            <th>Nombre</th>
-                            <th>Apellidos</th>
-                            <th colspan="2">Acciones</th>
+                            <th>Num. Informe</th>
+                            <th>Medico</th>
+                            <th>Paciente</th>
+                            <th>Resultado</th>
                         </tr>
 
                         @foreach ($informes as $informe)
@@ -25,7 +26,9 @@
 
                             <tr>
                                 <td>{{ $informe->id }}</td>
-                                <td>{{ $informe->centro->direccion }}</td>
+                                <td>{{ $informe->medico->user->name }}</td>
+                                <td>{{ $informe->paciente->user->name }}</td>
+                                <td>{{ $informe->resultado }}</td>
                                 <td>
                                     {!! Form::open(['route' => ['Informe.edit',$informe->id], 'method' => 'get']) !!}
                                     {!!   Form::submit('Editar', ['class'=> 'btn btn-warning'])!!}

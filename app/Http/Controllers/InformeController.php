@@ -14,8 +14,8 @@ class InformeController extends Controller
      */
     public function index()
     {
-        $informe = Informe::all();
-        return view('Informe/index',['informes'=>$informe]);
+        $informes = Informe::all();
+        return view('Informe/index',['informes'=>$informes]);
     }
 
     /**
@@ -41,7 +41,8 @@ class InformeController extends Controller
             'paciente_id'=>'required',
             'medico_id'=>'required',
             'lab_id'=>'required' ,
-
+            'cita_id'=>'required' ,
+            'resutado'=>'',
         ]);
         $informe = new Informe($request->all());
         $informe->save();
@@ -90,7 +91,8 @@ class InformeController extends Controller
             'paciente_id'=>'required',
             'medico_id'=>'required',
             'lab_id'=>'required' ,
-
+            'cita_id'=>'required' ,
+            'resutado'=>'',
         ]);
         $informe->fill($request->all());
         $informe->save();
