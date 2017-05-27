@@ -61,7 +61,7 @@ class MedicoController extends Controller
             $medico->save();
 
 
-            flash('Medico creado correctamente');
+            flash('Médico creado correctamente');
 
             return redirect()->route('Medico.index');
 
@@ -90,7 +90,7 @@ class MedicoController extends Controller
     public function edit($id)
     {
         $medico=Medico::find($id);
-        return view('Medico/edit',['medico'=>$medico,'user'=>$medico->user]);
+        return view('Medico/edit',['medico'=>$medico]);
     }
 
     /**
@@ -103,17 +103,21 @@ class MedicoController extends Controller
     public function update(Request $request,$id)
     {
         $medico=Medico::find($id);
-        $this->validate($request, ['name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
-            'dni'=> 'required|max:8',
-            'password' => 'required|min:6|confirmed',
+        $this->validate($request, [   'name' => 'required|max:255',
+            'numColegiado'=>'required|max:255',
+
+            'dni'=> 'required|max:9',
+
             'direccion'=> 'required',
-            'consulta_id'=>'required|exists:Consulta,id',
+            'consulta_id'=>'required',
         ]);
+        $user=User::find($medico->user_id);
+        $user->fill($request->all());
         $medico->fill($request->all());
+        $user->save();
         $medico->save();
-        flash('Medico modificado correctamente');
-        return redirect()->route('Medico.edit');
+        flash('Médico modificado correctamente');
+        return redirect()->route('Medico.index');
     }
 
     /**
@@ -125,8 +129,10 @@ class MedicoController extends Controller
     public function destroy($id)
     {
         $medico=Medico::find($id);
+        $user=User::find($medico->user_id);
         $medico->delete();
-        flash('medico borrado correctamente');
+        $user->delete();
+        flash('Médico borrado correctamente');
         return redirect()->route('Medico.index');
     }
 }

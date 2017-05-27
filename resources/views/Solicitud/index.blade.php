@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Pagina Solicitud</div>
+                <div class="panel-heading">Página Solicitud</div>
 
                 <div class="panel-body">
                     @include('flash::message')
@@ -18,7 +18,7 @@
                             <th>Numero</th>
                             <th>Medico</th>
                             <th>Paciente</th>
-                            <th colspan="2">Laboratorio</th>
+                            <th>Laboratorio</th>
                         </tr>
 
                         @foreach ($solicitudes as $solicitud)
@@ -26,9 +26,9 @@
 
                             <tr>
                                 <td>{{ $solicitud->id }}</td>
-                                <td>{{ $solicitud->medico_id->user_id->name}}</td>
-                                <td>{{ $solicitud->cita_id->paciente_id->user_id->name}}</td>
-                                <td>{{ $solicitud->laboratorio_id }}</td>
+                                <td>{{ $solicitud->medico->user->name}}</td>
+                                <td>{{ $solicitud->cita->paciente->user->name}}</td>
+                                <td>{{ $solicitud->lab_id }}</td>
 
                                 <td>
                                     {!! Form::open(['route' => ['Solicitud.edit',$solicitud->id], 'method' => 'get']) !!}

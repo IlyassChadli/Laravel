@@ -91,7 +91,7 @@ class LaboratoriosController extends Controller
         $laboratorio->fill($request->all());
         $laboratorio->save();
         flash('Laboratorio modificado correctamente');
-        return redirect()->route('Laboratorio.edit');
+        return redirect()->route('Laboratorio.index');
     }
 
     /**

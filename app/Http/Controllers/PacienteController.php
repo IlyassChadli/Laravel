@@ -42,7 +42,7 @@ class PacienteController extends Controller
             'email' => 'required|email|max:255|unique:users',
             'dni'=> 'required|max:8',
             'password' => 'required|min:6|',
-            'numPaciente'=> 'max:255',
+            'numPaciente' => 'required|max:255',
         ]);
 
 
@@ -52,6 +52,7 @@ class PacienteController extends Controller
         $user->save();
         $paciente=new Paciente($request->all());
         $paciente->user_id=$user->id;
+
         $paciente->save();
 
         flash('Paciente creado correctamente');
@@ -95,15 +96,21 @@ class PacienteController extends Controller
         $paciente=Paciente::find($id);
         $this->validate($request, [
             'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
+            'numPaciente' => 'required|max:255',
+
             'dni'=> 'required|max:8',
-            'password' => 'required|min:6|confirmed',
-            'numPaciente'=> 'required|max:255',
+
+
         ]);
+
+        $user=User::find($paciente->user_id);
+        $user->fill($request->all());
         $paciente->fill($request->all());
+        $user->save();
+
         $paciente->save();
         flash('Paciente modificado correctamente');
-        return redirect()->route('Paciente.edit');
+        return redirect()->route('Paciente.index');
     }
 
     /**

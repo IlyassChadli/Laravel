@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Pagina Citas</div>
+                <div class="panel-heading">Página Citas</div>
 
                 <div class="panel-body">
 
@@ -19,11 +19,12 @@
                     {!! Form::close() !!}
 
                     <br><br>
-                    <table class="table table-striped table-bordered">
+                    <table class="table table-striped table-bordered" >
                         <tr>
                             <th>Fecha y hora</th>
                             <th>Medico</th>
                             <th>Pacicente</th>
+                            <th>Centro</th>
                             <th>Consulta</th>
                             <th>Administrador</th>
 
@@ -36,6 +37,7 @@
                                 <td>{{ $cita->fecha_hora }}</td>
                                 <td>{{ $cita->medico->user->name }}</td>
                                 <td>{{ $cita->paciente->user->name }}</td>
+                                <td>{{ $cita->consulta->centro->direccion }}</td>
                                 <td>{{ $cita->consulta_id }}</td>
                                 <td>{{ $cita->administrador->user->name }}</td>
                                 <td>

@@ -33,7 +33,7 @@
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('direccion', 'Direccion ') !!}
+                            {!! Form::label('direccion', 'Dirección ') !!}
                             {!! Form::text('direccion',null,['class'=>'form-control', 'required', 'autofocus']) !!}
                         </div>
 

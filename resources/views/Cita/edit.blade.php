@@ -12,7 +12,15 @@
 
                         {!! Form::model($cita, [ 'route' => ['Cita.update',$cita->id], 'method'=>'PUT']) !!}
                         <div class="form-group">
-                            {!! Form::label('medico_id', 'Id del medico') !!}
+                            {!! Form::label('fecha_hora', 'Fecha y hora de la cita') !!}
+
+
+                            <input type="datetime-local" id="fecha_hora" name="fecha_hora" class="form-control" value="{{$cita->fecha_hora}}" />
+
+
+                        </div>
+                        <div class="form-group">
+                            {!! Form::label('medico_id', 'Id del médico') !!}
                             {!! Form::text('medico_id',null,['class'=>'form-control', 'required']) !!}
                         </div>
 
@@ -21,17 +29,15 @@
                             {!! Form::text('paciente_id',null,['class'=>'form-control' ]) !!}
                         </div>
                         <div class="form-group">
-                            {!! Form::label('admin_id', 'Id del administrador') !!}
-                            {!! Form::text('admin_id',null,['class'=>'form-control', 'required']) !!}
+                            {!! Form::label('administrador_id', 'Id del administrador') !!}
+                            {!! Form::text('administrador_id',null,['class'=>'form-control', 'required']) !!}
                         </div>
                         <div class="form-group">
                             {!! Form::label('consulta_id', 'Id de la consulta') !!}
                             {!! Form::text('consulta_id',null,['class'=>'form-control', 'required']) !!}
                         </div>
-                        <div class="form-group">
-                            {!! Form::label('id_cita', 'Id de la cita ') !!}
-                            {!! Form::text('id_cita',null,['class'=>'form-control', 'required', 'autofocus']) !!}
-                        </div>
+
+
 
                         {!! Form::submit('Guardar',['class'=>'btn-primary btn']) !!}
 

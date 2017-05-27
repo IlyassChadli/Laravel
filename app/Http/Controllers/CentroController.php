@@ -94,7 +94,7 @@ class CentroController extends Controller
 
         flash('Centro modificado correctamente');
 
-        return redirect()->route('Centro.edit');
+        return redirect()->route('Centro.index');
     }
 
     /**

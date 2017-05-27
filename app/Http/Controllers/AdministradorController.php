@@ -95,16 +95,16 @@ class AdministradorController extends Controller
         $administrador=Administrador::find($id);
         $this->validate($request, [
             'name' => 'required|max:255',
-            'centro_id'=>'required|exists:Centro,id',
-            'email' => 'required|email|max:255|unique:users',
+            'centro_id'=>'required|',
+
             'dni'=> 'required|max:9',
-            'password' => 'required|min:6|',
+
             'direccion'=> 'required',
         ]);
         $administrador->fill($request->all());
         $administrador->save();
         flash('Administrador modificado correctamente');
-        return redirect()->route('Administrador.edit');
+        return redirect()->route('Administrador.index');
     }
 
     /**

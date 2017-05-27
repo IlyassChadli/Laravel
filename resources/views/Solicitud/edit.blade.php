@@ -12,13 +12,18 @@
 
                         {!! Form::model($solicitud, [ 'route' => ['Solicitud.update',$solicitud->id], 'method'=>'PUT']) !!}
                         <div class="form-group">
-                            {!! Form::label('medico_id', 'Id del medico') !!}
-                            {!! Form::text('medico_id',null,['class'=>'form-control', 'required']) !!}
+                            {!! Form::label('medico_id', 'Id del médico') !!}
+                            {!! Form::text('medico_id',$solicitud->medico_id,['class'=>'form-control', 'required']) !!}
+                        </div>
+
+                        <div class="form-group">
+                            {!! Form::label('lab_id', 'Id del laboratorio') !!}
+                            {!! Form::text('lab_id',$solicitud->lab_id,['class'=>'form-control' ]) !!}
                         </div>
 
                         <div class="form-group">
                             {!! Form::label('cita_id', 'Id de la cita') !!}
-                            {!! Form::text('cita_id',null,['class'=>'form-control', 'required']) !!}
+                            {!! Form::text('cita_id',$solicitud->cita_id,['class'=>'form-control', 'required']) !!}
                         </div>
 
                         {!! Form::submit('Guardar',['class'=>'btn-primary btn']) !!}

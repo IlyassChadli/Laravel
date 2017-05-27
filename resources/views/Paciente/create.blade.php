@@ -33,7 +33,7 @@
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('direccion', 'Direccion ') !!}
+                            {!! Form::label('direccion', 'Dirección ') !!}
                             {!! Form::text('direccion',null,['class'=>'form-control', 'required', 'autofocus']) !!}
                         </div>
 
@@ -42,7 +42,7 @@
 
 
                         <div class="form-group">
-                            {!! Form::label('numPaciente', 'Numero del paciente') !!}
+                            {!! Form::label('numPaciente', 'Número del paciente') !!}
                             {!! Form::text('numPaciente',null,['class'=>'form-control', 'required', 'autofocus']) !!}
                         </div>
                         {!! Form::submit('Guardar',['class'=>'btn-primary btn']) !!}

@@ -21,7 +21,7 @@
 
                         </div>
                         <div class="form-group">
-                            {!! Form::label('medico_id', 'Id del medico') !!}
+                            {!! Form::label('medico_id', 'Id del médico') !!}
                             {!! Form::text('medico_id',null,['class'=>'form-control', 'required']) !!}
                         </div>
 

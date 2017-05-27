@@ -89,10 +89,10 @@ class CitaController extends Controller
 
         $this->validate($request, [
             'fecha_hora' => 'required|date|after:now',
-            'medico_id'=> 'required|exists:Medico,id',
-            'paciente_id'=>'required|exists:Paciente,id',
-            'consulta_id'=> 'required|exists:Consulta,id',
-            'administrador_id'=> 'required|exists:Administrador,id',
+            'medico_id'=> 'required|',
+            'paciente_id'=>'required|',
+            'consulta_id'=> 'required|',
+            'administrador_id'=> 'required|',
         ]);
 
 
@@ -101,7 +101,7 @@ class CitaController extends Controller
 
 
         flash('Cita modificada correctamente');
-        return redirect()->route('Cita.edit');
+        return redirect()->route('Cita.index');
     }
 
     /**

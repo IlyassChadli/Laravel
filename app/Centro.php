@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Centro extends Model
 {
-    protected $fillable = ['direccion', 'telefono',];
+    protected $fillable = ['centro_id','direccion', 'telefono',];
 
 
 

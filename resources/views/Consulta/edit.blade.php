@@ -11,15 +11,16 @@
                         @include('flash::message')
 
                         {!! Form::model($consulta, [ 'route' => ['Consulta.update', $consulta->id], 'method'=>'PUT']) !!}
-                        <div class="form-group">
-                            {!! Form::label('medico_id', 'Id del medico') !!}
-                            {!! Form::text('medico_id',null,['class'=>'form-control', 'required']) !!}
-                        </div>
 
                         <div class="form-group">
                             {!! Form::label('centro_id', 'Id del centro') !!}
-                            {!! Form::text('centro_id',null,['class'=>'form-control' ]) !!}
+                            {!! Form::text('centro_id',$consulta->centro->direccion,['class'=>'form-control' ]) !!}
                         </div>
+                        <div class="form-group">
+                            {!! Form::label('medico_id', 'Id del medico') !!}
+                            {!! Form::text('medico',$consulta->medico->user->name,['class'=>'form-control' ]) !!}
+                        </div>
+
                         {!! Form::submit('Guardar',['class'=>'btn-primary btn']) !!}
 
                         {!! Form::close() !!}

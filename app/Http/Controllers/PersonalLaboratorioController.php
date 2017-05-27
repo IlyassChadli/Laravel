@@ -93,9 +93,9 @@ class PersonalLaboratorioController extends Controller
         $personalLab=PersonalLaboratorio::find($id);
         $this->validate($request, [
             'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
+
             'dni'=> 'required|max:9',
-            'password' => 'required|min:6|',
+
             'direccion'=> 'required',
             'facultativo'=>'required',
             'lab_id'=>'required',
@@ -103,7 +103,7 @@ class PersonalLaboratorioController extends Controller
         $personalLab->fill($request->all());
         $personalLab->save();
         flash('Personal de laboratorio modificado correctamente');
-        return redirect()->route('PersonalLab.edit');
+        return redirect()->route('PersonalLab.index');
     }
 
     /**

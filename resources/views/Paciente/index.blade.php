@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Pagina Pacientes</div>
+                    <div class="panel-heading">Página Pacientes</div>
 
                     <div class="panel-body" style="color: #0d3625">
                         @include('flash::message')
@@ -27,7 +27,7 @@
                                 <tr>
                                     <td>{{ $paciente->user->name }}</td>
                                     <td>{{ $paciente->user->dni}}</td>
-                                    <td>{{ $paciente->numPaciente }}</td>
+                                    <td>{{ $paciente->id }}</td>
 
 
                                     <td>

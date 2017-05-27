@@ -13,37 +13,33 @@
                         {!! Form::model($paciente, [ 'route' => ['Paciente.update',$paciente->id], 'method'=>'PUT']) !!}
                         <div class="form-group">
                             {!! Form::label('name', 'Nombre del paciente') !!}
-                            {!! Form::text('name',null,['class'=>'form-control', 'required', 'autofocus']) !!}
+                            {!! Form::text('name',$paciente->user->name,['class'=>'form-control', 'required', 'autofocus']) !!}
                         </div>
 
                         <div class="form-group">
                             {!! Form::label('dni', 'DNI ') !!}
-                            {!! Form::text('dni',null,['class'=>'form-control', 'required', 'autofocus']) !!}
+                            {!! Form::text('dni',$paciente->user->dni,['class'=>'form-control', 'required', 'autofocus']) !!}
                         </div>
 
                         <div class="form-group">
                             {!! Form::label('email', 'Email ') !!}
-                            {!! Form::text('email',null,['class'=>'form-control', 'required', 'autofocus']) !!}
+                            {!! Form::text('email',$paciente->user->email,['class'=>'form-control', 'required', 'autofocus']) !!}
                         </div>
 
-                        <div class="form-group ">
-                            {!! Form::label('password', 'Password') !!}
-                            {!! Form::password('password',null,['class'=>'form-control ', 'required']) !!}
-                        </div>
 
                         <div class="form-group">
-                            {!! Form::label('direccion', 'Direccion ') !!}
-                            {!! Form::text('direccion',null,['class'=>'form-control', 'required', 'autofocus']) !!}
+                            {!! Form::label('direccion', 'Dirección ') !!}
+                            {!! Form::text('direccion',$paciente->user->direccion,['class'=>'form-control', 'required', 'autofocus']) !!}
                         </div>
 
                         <!--  meter Campo Password -->
 
 
-
                         <div class="form-group">
-                            {!! Form::label('numPaciente', 'Numero del paciente') !!}
+                            {!! Form::label('numPaciente', 'Número del paciente') !!}
                             {!! Form::text('numPaciente',null,['class'=>'form-control', 'required', 'autofocus']) !!}
                         </div>
+
                         {!! Form::submit('Guardar',['class'=>'btn-primary btn']) !!}
 
                         {!! Form::close() !!}

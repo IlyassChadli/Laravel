@@ -9,7 +9,7 @@ class Laboratorio extends Model
     protected $fillable = ['centro_id'];
     public function personal_laboratorio()
     {
-        return $this->hasMany('App\Personal_Laboratorio');
+        return $this->hasMany('App\PersonalLaboratorio');
     }
     public function centro()
     {

@@ -112,8 +112,8 @@
                         @if (Auth::guest())
                                 <li>    <a href="{{ route('login') }}"  style="color: #cccccc; "><b>Login</b></a></li>
                                 <li>    <a href="{{ url('/objetivos') }}" style="color: #cccccc; "><b>  Objetivos  </b></a>  </li>
-                                <li>    <a href="{{ url('/autores') }}" style="color: #cccccc;"> <b> Autores  </b></a> </li>
-
+                                <li>    <a href="{{ url('/autores') }}" style="color: #cccccc;"> <b> Autores      </b></a>  </li>
+                                <li>    <a href="{{ url('/zona_admin') }}"> <b> Zona Admin</b></a>              </li>
                         @else
 
                             <li class="dropdown">
@@ -122,6 +122,8 @@
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
+                                    <li><a href="{{ url('/home') }}"> <b> Menu</b></a></li>
+                                    <li><a href="{{ url('/inicio') }}"> <b> Inicio</b></a></li>
                                     <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
@@ -134,8 +136,8 @@
                                         </form>
                                         </li>
 
-                                    <li><a href="{{ url('/zona_admin') }}"> <b> Zona Admin</b></a></li>
-                                    <li><a href="{{ url('/home') }}"> <b> Inicio</b></a></li>
+
+
                                 </ul>
                             </li>
                         @endif
