@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Informe extends Model
 {
-    protected $fillable = ['validado','paciente_id','medico_id', 'laboratorio_id','personalLab_id'];
+    protected $fillable = ['validado','paciente_id','medico_id', 'lab_id'];
     public function personalLaboratorio()
     {
         return $this->belongsTo('App\PersonalLaboratorio') ;

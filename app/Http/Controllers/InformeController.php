@@ -41,7 +41,7 @@ class InformeController extends Controller
             'paciente_id'=>'required',
             'medico_id'=>'required',
             'lab_id'=>'required' ,
-            'personalLab_id'=>'required',
+
         ]);
         $informe = new Informe($request->all());
         $informe->save();
@@ -90,7 +90,7 @@ class InformeController extends Controller
             'paciente_id'=>'required',
             'medico_id'=>'required',
             'lab_id'=>'required' ,
-            'personalLab_id'=>'required',
+
         ]);
         $informe->fill($request->all());
         $informe->save();
