@@ -94,7 +94,7 @@ class PersonalLaboratorioController extends Controller
         $this->validate($request, [
             'name' => 'required|max:255',
 
-            'dni'=> 'required|max:9',
+            'dni'=> 'required|max:9|min:8',
 
             'direccion'=> 'required',
             'facultativo'=>'required',

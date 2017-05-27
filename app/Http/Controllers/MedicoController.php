@@ -106,7 +106,7 @@ class MedicoController extends Controller
         $this->validate($request, [   'name' => 'required|max:255',
             'numColegiado'=>'required|max:255',
 
-            'dni'=> 'required|max:9',
+            'dni'=> 'required|max:9|min:8',
 
             'direccion'=> 'required',
             'consulta_id'=>'required',

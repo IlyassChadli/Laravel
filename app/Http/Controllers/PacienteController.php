@@ -98,7 +98,7 @@ class PacienteController extends Controller
             'name' => 'required|max:255',
             'numPaciente' => 'required|max:255',
 
-            'dni'=> 'required|max:8',
+            'dni'=> 'required|max:9|min:8',
 
 
         ]);

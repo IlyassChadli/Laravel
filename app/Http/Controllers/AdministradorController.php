@@ -97,7 +97,7 @@ class AdministradorController extends Controller
             'name' => 'required|max:255',
             'centro_id'=>'required|',
 
-            'dni'=> 'required|max:9',
+            'dni'=> 'required|max:9|min:8',
 
             'direccion'=> 'required',
         ]);
