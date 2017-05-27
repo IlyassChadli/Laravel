@@ -16,6 +16,7 @@
                     <table class="table table-striped table-bordered">
                         <tr>
                             <th>Nombre</th>
+                            <th>Codigo</th>
                             <th>Consulta</th>
                             <th>Colegiado num.</th>
 
@@ -26,7 +27,9 @@
 
                             <tr>
                                 <td>{{ $medico->user->name }}</td>
+                                <td>{{ $medico->id}}</td>
                                 <td>{{ $medico->consulta_id}}</td>
+
                                 <td>{{ $medico->numColegiado }}</td>
 
                                 <td>
