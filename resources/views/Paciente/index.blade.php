@@ -17,7 +17,7 @@
                             <tr>
                                 <th>Nombre</th>
                                 <th>DNI</th>
-                                <th>numPaciente</th>
+                                <th>Número Paciente</th>
 
                             </tr>
 
