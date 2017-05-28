@@ -35,9 +35,9 @@ class SolicitudController extends Controller
      */
     public function create()
     {
-        $laboratorios = Laboratorio::all()->pluck('id');
+        $solicitudes = Solicitud::all()->pluck('id');
 
-        return view('Solicitud/create',['laboratorios'=>$laboratorios]);
+        return view('Solicitud/create',['solicitudes'=>$solicitudes]);
 
     }
 
@@ -128,7 +128,7 @@ class SolicitudController extends Controller
     {
         $solicitud = Solicitud::find($id);
         $solicitud->delete();
-        flash('Paciente borrado correctamente');
+        flash('Solicitud borrado correctamente');
 
         return redirect()->route('Solicitud.index');
     }

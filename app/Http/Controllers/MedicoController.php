@@ -105,11 +105,10 @@ class MedicoController extends Controller
         $medico=Medico::find($id);
         $this->validate($request, [   'name' => 'required|max:255',
             'numColegiado'=>'required|max:255',
-
             'dni'=> 'required|max:9|min:8',
-
             'direccion'=> 'required',
             'consulta_id'=>'required',
+
         ]);
         $user=User::find($medico->user_id);
         $user->fill($request->all());

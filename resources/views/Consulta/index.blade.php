@@ -28,7 +28,7 @@
                                 <td>{{ $consulta->centro->direccion }}</td>
 
                                 <td>
-                                    {!! Form::open(['route' => ['Cita.index'], 'method' => 'get']) !!}
+                                    {!! Form::open(['route' => ['Consulta.index'], 'method' => 'get']) !!}
                                     {!!   Form::submit('Citas', ['class'=> 'btn btn-warning'])!!}
                                     {!! Form::close() !!}
                                 </td>
