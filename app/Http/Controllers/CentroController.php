@@ -15,7 +15,7 @@ class CentroController extends Controller
     public function index()
     {
         $centros=Centro::all();
-        return view('Centro/index',['Centros'=>$centros]);
+        return view('Centro/index',['centros'=>$centros]);
     }
 
     /**
@@ -103,9 +103,11 @@ class CentroController extends Controller
      * @param  \App\Centro  $centro
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Centro $centro)
+    public function destroy($id)
     {
+        $centro=Centro::find($id);
         $centro->delete();
+
         flash('centro borrado correctamente');
         return redirect()->route('Centro.index');
     }

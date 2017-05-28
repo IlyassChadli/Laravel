@@ -18,6 +18,7 @@
                             <th>Num. Informe</th>
                             <th>Medico</th>
                             <th>Paciente</th>
+                            <th>Validado(1=SI,0=NO)</th>
                             <th>Resultado</th>
                         </tr>
 
@@ -28,7 +29,11 @@
                                 <td>{{ $informe->id }}</td>
                                 <td>{{ $informe->medico->user->name }}</td>
                                 <td>{{ $informe->paciente->user->name }}</td>
+                                <td>{{ $informe->validado }}</td>
                                 <td>{{ $informe->resultado }}</td>
+
+
+
                                 <td>
                                     {!! Form::open(['route' => ['Informe.edit',$informe->id], 'method' => 'get']) !!}
                                     {!!   Form::submit('Editar', ['class'=> 'btn btn-warning'])!!}

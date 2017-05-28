@@ -20,7 +20,7 @@
                             <th>Centro</th>
                         </tr>
 
-                        @foreach ($Centros as $centro)
+                        @foreach ($centros as $centro)
 
 
                             <tr>

@@ -12,10 +12,7 @@
                         @include('flash::message')
 
                         {!! Form::open(['route' => 'Informe.store']) !!}
-                        <div class="form-group">
-                            {!! Form::label('personalLab_id', 'Id del Tecnico de Lab') !!}
-                            {!! Form::text('personalLab_id',null,['class'=>'form-control', 'required']) !!}
-                        </div>
+
                         <div class="form-group">
                             {!! Form::label('lab_id', 'Id del Laboratorio') !!}
                             {!! Form::text('lab_id',null,['class'=>'form-control', 'required']) !!}

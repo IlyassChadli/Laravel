@@ -20,11 +20,6 @@
                             {!! Form::label('dni', 'DNI ') !!}
                             {!! Form::text('dni',$personalLab->user->dni,['class'=>'form-control', 'required', 'autofocus']) !!}
                         </div>
-
-
-
-
-
                         <div class="form-group">
                             {!! Form::label('direccion', 'Direccion ') !!}
                             {!! Form::text('direccion',$personalLab->user->direccion,['class'=>'form-control', 'required', 'autofocus']) !!}

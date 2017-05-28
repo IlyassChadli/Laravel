@@ -72,7 +72,7 @@ class InformeController extends Controller
      */
     public function edit($id)
     {
-        $informe=Administrador::find($id);
+        $informe=Informe::find($id);
         return view('Informe/edit',['informe'=>$informe]);
     }
 
@@ -85,13 +85,11 @@ class InformeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $informe=Administrador::find($id);
+        $informe=Informe::find($id);
         $this->validate($request, [
             'validado'=>'required',
             'paciente_id'=>'required',
             'medico_id'=>'required',
-            'lab_id'=>'required' ,
-            'cita_id'=>'required' ,
             'resutado'=>'',
         ]);
         $informe->fill($request->all());
@@ -108,7 +106,7 @@ class InformeController extends Controller
      */
     public function destroy($id)
     {
-        $informe=Administrador::find($id);
+        $informe=Informe::find($id);
         $informe->delete();
         flash('Informe borrado correctamente');
         return redirect()->route('Informe.index');

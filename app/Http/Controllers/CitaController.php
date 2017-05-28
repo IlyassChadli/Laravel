@@ -98,8 +98,6 @@ class CitaController extends Controller
 
         $cita->fill($request->all());
         $cita->save();
-
-
         flash('Cita modificada correctamente');
         return redirect()->route('Cita.index');
     }
@@ -110,8 +108,9 @@ class CitaController extends Controller
      * @param  \App\Cita  $cita
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Cita $cita)
+    public function destroy($id)
     {
+        $cita=Cita::find($id);
         $cita->delete();
         flash('cita borrada correctamente');
         return redirect()->route('Cita.index');

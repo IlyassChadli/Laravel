@@ -93,9 +93,7 @@ class PersonalLaboratorioController extends Controller
         $personalLab=PersonalLaboratorio::find($id);
         $this->validate($request, [
             'name' => 'required|max:255',
-
             'dni'=> 'required|max:9|min:8',
-
             'direccion'=> 'required',
             'facultativo'=>'required',
             'lab_id'=>'required',

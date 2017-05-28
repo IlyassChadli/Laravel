@@ -12,25 +12,22 @@
 
                         {!! Form::model($informe, [ 'route' => ['Informe.update',$informe->id], 'method'=>'PUT']) !!}
                         <div class="form-group">
-                            {!! Form::label('personalLab_id', 'Id del Tecnico de Lab') !!}
-                            {!! Form::text('personalLab_id',null,['class'=>'form-control', 'required']) !!}
-                        </div>
-                        <div class="form-group">
-                            {!! Form::label('lab_id', 'Id del Laboratorio') !!}
-                            {!! Form::text('lab_id',null,['class'=>'form-control', 'required']) !!}
+                            {!! Form::label('paciente_id', 'Id de la Paciente') !!}
+                            {!! Form::text('paciente_id',null,['class'=>'form-control' ]) !!}
                         </div>
                         <div class="form-group">
                             {!! Form::label('medico_id', 'Id del medico') !!}
                             {!! Form::text('medico_id',null,['class'=>'form-control', 'required']) !!}
                         </div>
+                        <div class="form-group">
+                            {!! Form::label('lab_id', 'Id del Laboratorio') !!}
+                            {!! Form::text('lab_id',null,['class'=>'form-control', 'required']) !!}
+                        </div>
+
 
                         <div class="form-group">
-                            {!! Form::label('paciente_id', 'Id de la Paciente') !!}
-                            {!! Form::text('paciente_id',null,['class'=>'form-control' ]) !!}
-                        </div>
-                        <div class="form-group">
                             {!! Form::label('validado', 'Validado') !!}
-                            {!! Form::checkbox ('validado',null,['class'=>'form-control']) !!}
+                            {!! Form::select ('validado',array("No","Si"),['class'=>'form-control']) !!}
                         </div>
 
                         {!! Form::submit('Guardar',['class'=>'btn-primary btn']) !!}
