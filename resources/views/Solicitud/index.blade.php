@@ -15,8 +15,8 @@
                     <br><br>
                     <table class="table table-striped table-bordered">
                         <tr>
-                            <th>Numero</th>
-                            <th>Medico</th>
+                            <th>Número</th>
+                            <th>Médico</th>
                             <th>Paciente</th>
                             <th>Laboratorio</th>
                         </tr>

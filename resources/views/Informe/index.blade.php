@@ -16,7 +16,7 @@
                     <table class="table table-striped table-bordered">
                         <tr>
                             <th>Num. Informe</th>
-                            <th>Medico</th>
+                            <th>Médico</th>
                             <th>Paciente</th>
                             <th>Validado(1=SI,0=NO)</th>
                             <th>Resultado</th>
