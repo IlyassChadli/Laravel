@@ -19,12 +19,13 @@ class CreateInformesTable extends Migration
             $table->unsignedInteger('cita_id');
             $table->boolean('validado');
             $table->unsignedInteger('paciente_id');
-            $table->unsignedInteger('lab_id');
+
             $table->string('resultado');
             $table->timestamps();
             $table->foreign('medico_id')->references('id')->on('medicos')->onDelete('cascade');
             $table->foreign('paciente_id')->references('id')->on('pacientes')->onDelete('cascade');
-            $table->foreign('lab_id')->references('id')->on('laboratorios')->onDelete('cascade');
+
+            $table->foreign('cita_id')->references('id')->on('citas')->onDelete('cascade');
 
 
 

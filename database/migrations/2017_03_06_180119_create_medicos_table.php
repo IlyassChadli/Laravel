@@ -18,10 +18,10 @@ class CreateMedicosTable extends Migration
             $table->integer('numColegiado');
 
             $table->unsignedInteger('user_id');
-
+            $table->unsignedInteger('consulta_id');
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-
+            $table->foreign('consulta_id')->references('id')->on('users')->onDelete('cascade');
         });    }
 
     /**

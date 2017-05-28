@@ -16,10 +16,7 @@
                             {!! Form::label('centro_id', 'Id del centro') !!}
                             {!! Form::text('centro_id',$consulta->centro->direccion,['class'=>'form-control' ]) !!}
                         </div>
-                        <div class="form-group">
-                            {!! Form::label('medico_id', 'Id del medico') !!}
-                            {!! Form::text('medico',$consulta->medico->user->name,['class'=>'form-control' ]) !!}
-                        </div>
+
 
                         {!! Form::submit('Guardar',['class'=>'btn-primary btn']) !!}
 

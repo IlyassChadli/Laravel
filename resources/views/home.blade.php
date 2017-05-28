@@ -9,12 +9,12 @@
 
                 <div class="panel-body" style="color: #0d3625">
 
-            @if(Auth::user()->paciente)
+            @if(Auth::user()->Paciente)
                         <p>Opciones de paciente</p>
                             <li>    <a href="{{ url('/Cita') }}"  style="color: #cccccc; "><b>Citas</b></a></li>
 
 
-                        @elseif (Auth::user()->medico)
+                        @elseif (Auth::user()->Medico)
                         Opciones de Médico
                             <li>    <a href="{{ url('/Cita') }}"  style="color: #cccccc; "><b>Citas</b></a></li>
                             <li>    <a href="{{ url('/Paciente') }}" style="color: #cccccc; "><b>Pacientes</b></a></li>
@@ -25,7 +25,7 @@
                             <li>    <a href="{{ url('/zona_admin') }}"  style="color: #cccccc; "><b>Panel de control</b></a></li>
 
 
-                            @elseif (Auth::user()->personalLab)
+                            @elseif (Auth::user()->PersonalLab)
 
                                 Opciones de personal de laborarotio
                                 <li>    <a href="{{ url('/Informe') }}"  style="color: #cccccc; "><b>Informes</b></a></li>
